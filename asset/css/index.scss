@@ -1,0 +1,87 @@
+body {
+    overflow: hidden;
+}
+
+.visual {
+    height: 100vh;
+    background: #000;
+    position: relative;
+
+    &__bg {
+        width: 100%;
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        opacity: .5;
+        transform: translate(-50%,-50%) scale(1);
+        // animation: a 5s;
+    }
+    @keyframes a {
+        100% {
+            transform: translate(-50%,-50%) scale(1.03);
+        }
+    }
+
+    &__text {
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+
+        &_wrap {
+            margin: 0 auto;
+            text-align: center;
+            overflow: hidden;
+
+            span {
+                font-size: 6.5rem;
+                font-weight: bold;
+                line-height: 9rem;
+                color: transparent;
+                -webkit-text-stroke: 2px #fff;
+                transform: translateY(130%);
+            }
+            &:last-of-type {
+                span {
+                    color: #fff;
+                    -webkit-text-stroke: 0;
+                }
+                &.active span {
+                    transform: translateY(0);
+                    transition: 1.2s .2s cubic-bezier(0.16, 1, 0.3, 1);
+                }
+            }
+            &.active span {
+                transform: translateY(0);
+                transition: 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+        }
+    }
+
+    &__line {
+        width: 100%;
+        height: 1px;
+        border-top: 1px solid #ccc;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+
+        &_bold {
+            width: 0;
+            height: 1px;
+            background: #fff;
+            position: absolute;
+
+            &.active {
+                width: 100%;
+                transition: 5s linear;
+            }
+        }
+    }
+}
