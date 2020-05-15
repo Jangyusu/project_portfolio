@@ -2,6 +2,23 @@ body {
     overflow: hidden;
 }
 
+.header {
+    z-index: 9999;
+    position: fixed;
+
+    &__title {
+        position: absolute;
+        left: 50px;
+        top: 20px;
+
+        & a {
+          font-size: 2rem;
+          font-weight: 800;
+          color: #fff;
+        }
+    }
+}
+
 .visual {
     height: 100vh;
     background: #000;
@@ -9,7 +26,7 @@ body {
 
     &__bg {
         width: 100%;
-        height: 100vh;
+        height: 0;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -17,12 +34,12 @@ body {
         left: 50%;
         top: 50%;
         opacity: .5;
-        transform: translate(-50%,-50%) scale(1);
-        // animation: a 5s;
-    }
-    @keyframes a {
-        100% {
-            transform: translate(-50%,-50%) scale(1.03);
+        transform: translate(-50%,-50%) scale(1.05);
+
+        &.active {
+            height: 85vh;
+            transform: translate(-50%,-50%) scale(1);
+            transition: 5s;
         }
     }
 
@@ -39,12 +56,12 @@ body {
             overflow: hidden;
 
             span {
-                font-size: 6.5rem;
+                font-size: 7rem;
                 font-weight: bold;
                 line-height: 9rem;
                 color: transparent;
-                -webkit-text-stroke: 2px #fff;
-                transform: translateY(130%);
+                -webkit-text-stroke: 1px #fff;
+                transform: translateY(200%);
             }
             &:last-of-type {
                 span {
@@ -66,16 +83,15 @@ body {
     &__line {
         width: 100%;
         height: 1px;
-        border-top: 1px solid #ccc;
+        background: rgba(255,255,255,.6);
         position: absolute;
         left: 0;
         top: 50%;
-        transform: translateY(-50%);
 
         &_bold {
             width: 0;
             height: 1px;
-            background: #fff;
+            background: rgba(255,255,255,1);
             position: absolute;
 
             &.active {

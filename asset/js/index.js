@@ -3,25 +3,22 @@ window.addEventListener("DOMContentLoaded", function () {
 
     var visualBg = document.querySelector(".visual__bg"),
         visualText = document.querySelectorAll(".visual__text_wrap"),
-        visualLine = document.querySelector(".visual__line_bold");
+        visualLine = document.querySelector(".visual__line_bold"),
+        visualIndex = 0;
+
+    visualBg.style.backgroundImage = "url('/asset/img/index/bg_01.jpg')"; //visual 첫 bg
 
 
+    setInterval(function () {
+        visualBg.classList.add("active");
+    }, 1);
 
-    visualBg.style.backgroundImage = "url('/asset/img/index/bg_02.jpg')";
-
-    setTimeout(function () {
-        visualBg.style.backgroundImage = "url('/asset/img/index/bg_03.jpg')";
-
-        if (visualBg.style.backgroundImage == "url(\"/asset/img/index/bg_03.jpg\")") {
-            setTimeout(function () {
-                for (var i = 0; i < visualText.length; i++) {
-                    visualText[i].classList.add("active");
-                }
-
-                visualLine.classList.add("active");
-            }, 1000);
+    setInterval(function () {
+        visualLine.classList.add("active");
+        for (var i = 0; i < visualText.length; i++) {
+            visualText[i].classList.add("active");
         }
-    }, 1000);
+    }, 2000);
 
     // setTimeout(function () {
     //     for (var i = 0; i < visualText.length; i++) {
