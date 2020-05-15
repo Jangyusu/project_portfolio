@@ -20,17 +20,17 @@ body {
   .visual__bg {
     width: 100%;
     height: 0;
+    margin: -0.5px -0.5px 0 0;
     background-repeat: no-repeat;
-    background-size: cover;
     background-position: center;
-    position: absolute;
+    position: fixed;
     left: 50%;
     top: 50%;
     opacity: .5;
-    transform: translate(-50%, -50%) scale(1.05); }
+    transform: translate(-50%, -50%) rotate(0.001deg) scale(1.1); }
     .visual__bg.active {
       height: 85vh;
-      transform: translate(-50%, -50%) scale(1);
+      transform: translate(-50%, -50%) rotate(0.001deg) scale(1);
       transition: 5s; }
   .visual__text {
     width: 100%;
