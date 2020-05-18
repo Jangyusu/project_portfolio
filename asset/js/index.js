@@ -27,7 +27,7 @@ window.addEventListener("DOMContentLoaded", function () {
         setInterval(function () { //view Project on
             visualLink.classList.add("active");
         }, 1500);
-    }, 2000);
+    }, 500);
 
     //end
 })
