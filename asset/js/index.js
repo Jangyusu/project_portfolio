@@ -6,7 +6,7 @@ window.addEventListener("DOMContentLoaded", function () {
         visualLine = document.querySelector(".visual__line_bold"),
         visualIndex = 0;
 
-    visualBg.style.backgroundImage = "url('/asset/img/index/bg_01.jpg')"; //visual 첫 bg
+    visualBg.style.backgroundImage = "url('asset/img/index/bg_01.jpg')"; //visual 첫 bg
 
 
     setInterval(function () {

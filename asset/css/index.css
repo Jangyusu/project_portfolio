@@ -19,7 +19,7 @@ body {
   position: relative; }
   .visual__bg {
     width: 100%;
-    height: 0;
+    height: 100vh;
     margin: -0.5px -0.5px 0 0;
     background-repeat: no-repeat;
     background-position: center;
@@ -29,7 +29,6 @@ body {
     opacity: .5;
     transform: translate(-50%, -50%) rotate(0.001deg) scale(1.1); }
     .visual__bg.active {
-      height: 85vh;
       transform: translate(-50%, -50%) rotate(0.001deg) scale(1);
       transition: 5s; }
   .visual__text {
