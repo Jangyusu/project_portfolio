@@ -10,7 +10,7 @@ body {
     &__title {
         position: fixed;
         left: 50px;
-        top: 20px;
+        top: 25px;
 
         & a {
           font-size: 1.65rem;
@@ -186,34 +186,120 @@ body {
             }
         }
         &_link {
-            font-family: 'Chakra Petch', sans-serif;
-            font-weight: 500;
-            letter-spacing: .1rem;
-            color: #fff;
             display: inline-block;
             position: absolute;
             bottom: -50px;
             visibility: hidden;
             opacity: 0;
-            transform: translateX(-50%);
+            transform: translate(-55px);
 
             &.active {
                 visibility: visible;
                 opacity: 1;
                 transition: 1s;
             }
-            &::after {
+            & span {
+                margin: 10px;                
+                font-family: 'Chakra Petch', sans-serif;
+                font-weight: 500;
+                letter-spacing: .1rem;
+                color: #fff;                
+
+                &::before {
+                    content: "";
+                    width: 0;
+                    height: 1px;
+                    background: #fff;
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                }
+                &::after {
+                    content: "";
+                    width: 0;
+                    height: 1px;
+                    background: #fff;
+                    display: block;
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                } 
+            }            
+            &::before {
                 content: "";
-                width: 0;
-                height: 2px;
-                margin-top: 3px;
+                width: 1px;
+                height: 0;
                 background: #fff;
                 display: block;
-                transition: .3s cubic-bezier(0.76, 0, 0.24, 1);
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+            &::after {
+                content: "";
+                width: 1px;
+                height: 0;
+                background: #fff;
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 100%;
             }
             &:hover {
+                &::before {
+                    animation: right 1s .5s infinite cubic-bezier(0.76, 0, 0.24, 1);
+                }
+                @keyframes right {
+                    50% {
+                        height: 100%;
+                        top: 0;
+                    }
+                    100% {
+                        height: 0;
+                        top: 100%;
+                    }
+                }
                 &::after {
-                    width: 100%;
+                    animation: left 1s .5s infinite cubic-bezier(0.76, 0, 0.24, 1);
+                }
+                @keyframes left {
+                    50% {
+                        height: 100%;
+                        top: 0;
+                    }
+                    100% {
+                        height: 0;
+                        top: 0;
+                    }
+                }              
+                & span {
+                    &::before {
+                        animation: top 1s infinite cubic-bezier(0.76, 0, 0.24, 1);
+                    }
+                    @keyframes top {
+                        50% {
+                            width: 100%;
+                            left: 0;
+                        }
+                        100% {
+                            width: 0;
+                            left: 100%;
+                        }
+                    }
+                    &::after {
+                        animation: bottom 1s infinite cubic-bezier(0.76, 0, 0.24, 1);
+                    }
+                    @keyframes bottom {
+                        50% {
+                            width: 100%;
+                            right: 0;
+                        }
+                        100% {
+                            width: 0;
+                            right: 100%;
+                        }
+                    }
                 }
             }
         }
@@ -234,7 +320,7 @@ body {
 
             &.active {
                 width: 100%;
-                transition: 5s linear;
+                transition: 5s cubic-bezier(0.45, 0, 0.55, 1);
             }
         }
     }
@@ -249,8 +335,8 @@ body {
         transform: translateY(-50%);
 
         & button {
-            width: 16px;
-            height: 16px;
+            width: 24px;
+            height: 24px;
             display: flex;
             justify-content: center;
             align-items: center;
