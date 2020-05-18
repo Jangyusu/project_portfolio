@@ -102,14 +102,33 @@ body {
     margin: -0.5px -0.5px 0 0;
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
     position: fixed;
     left: 50%;
     top: 50%;
     opacity: .5;
-    transform: translate(-50%, -50%) rotate(0.001deg) scale(1.05); }
+    transform: translate(-50%, -50%) scale(1); }
     .visual__bg.active {
-      transform: translate(-50%, -50%) rotate(0.001deg) scale(1);
-      transition: 5s linear; }
+      transform: translate(-50%, -50%) scale(1);
+      transition: transform 5s linear; }
+    .visual__bg.slideUp {
+      animation: slideUp 1.8s forwards cubic-bezier(0.45, 0, 0.55, 1); }
+    .visual__bg.slideDown {
+      animation: slideDown 1.8s forwards cubic-bezier(0.45, 0, 0.55, 1); }
+@keyframes slideUp {
+  30% {
+    transform: translate(-50%, -50%) scale(0.5); }
+  70% {
+    transform: translate(-50%, -150%) scale(0.5); }
+  100% {
+    transform: translate(-50%, -150%) scale(1); } }
+@keyframes slideDown {
+  30% {
+    transform: translate(-50%, -50%) scale(0.5); }
+  70% {
+    transform: translate(-50%, 50%) scale(0.5); }
+  100% {
+    transform: translate(-50%, 50%) scale(1); } }
   .visual__text {
     width: 100%;
     text-align: center;
@@ -117,6 +136,10 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%); }
+    .visual__text.active_wrap span {
+      transform: translateY(0); }
+    .visual__text.active_wrap:last-of-type.active span {
+      transform: translateY(0); }
     .visual__text_wrap {
       margin: 0 auto;
       text-align: center;
@@ -127,16 +150,12 @@ body {
         line-height: 9rem;
         color: transparent;
         -webkit-text-stroke: 1px #fff;
-        transform: translateY(200%); }
+        transform: translateY(100%);
+        transition: 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
       .visual__text_wrap:last-of-type span {
         color: #fff;
-        -webkit-text-stroke: 0; }
-      .visual__text_wrap:last-of-type.active span {
-        transform: translateY(0);
+        -webkit-text-stroke: 0;
         transition: 1.2s 0.2s cubic-bezier(0.16, 1, 0.3, 1); }
-      .visual__text_wrap.active span {
-        transform: translateY(0);
-        transition: 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
     .visual__text_link {
       display: inline-block;
       position: absolute;

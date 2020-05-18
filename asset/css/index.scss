@@ -135,15 +135,44 @@ body {
         margin: -0.5px -0.5px 0 0;
         background-repeat: no-repeat;
         background-position: center;
+        background-size: cover;
         position: fixed;
         left: 50%;
         top: 50%;
         opacity: .5;
-        transform: translate(-50%,-50%) rotate(0.001deg) scale(1.05);
+        transform: translate(-50%,-50%) scale(1);
 
         &.active {
-            transform: translate(-50%,-50%) rotate(0.001deg) scale(1);
-            transition: 5s linear;
+            transform: translate(-50%,-50%) scale(1);
+            transition: transform 5s linear;
+        }
+        &.slideUp {
+            animation: slideUp 1.8s forwards cubic-bezier(0.45, 0, 0.55, 1);
+        }
+        &.slideDown {
+            animation: slideDown 1.8s forwards cubic-bezier(0.45, 0, 0.55, 1);
+        }
+        @keyframes slideUp {
+            30% {
+                transform: translate(-50%,-50%) scale(.5);
+            };
+            70% {
+                transform: translate(-50%,-150%) scale(.5);
+            }
+            100% {
+                transform: translate(-50%,-150%) scale(1);
+            }
+        }
+        @keyframes slideDown {
+            30% {
+                transform: translate(-50%,-50%) scale(.5);
+            };
+            70% {
+                transform: translate(-50%,50%) scale(.5);
+            }
+            100% {
+                transform: translate(-50%,50%) scale(1);
+            }
         }
     }
 
@@ -155,6 +184,16 @@ body {
         top: 50%;
         transform: translate(-50%,-50%);
 
+        &.active {
+            &_wrap {
+                & span {
+                    transform: translateY(0);
+                }
+                &:last-of-type.active span {
+                    transform: translateY(0);
+                }
+            }
+        }
         &_wrap {
             margin: 0 auto;
             text-align: center;
@@ -166,22 +205,14 @@ body {
                 line-height: 9rem;
                 color: transparent;
                 -webkit-text-stroke: 1px #fff;
-                transform: translateY(200%);
+                transform: translateY(100%);
+                transition: 1.2s cubic-bezier(0.16, 1, 0.3, 1);
             }
             &:last-of-type {
                 span {
                     color: #fff;
                     -webkit-text-stroke: 0;
-                }
-                &.active span {
-                    transform: translateY(0);
                     transition: 1.2s .2s cubic-bezier(0.16, 1, 0.3, 1);
-                }
-            }
-            &.active {
-                span {
-                    transform: translateY(0);
-                    transition: 1.2s cubic-bezier(0.16, 1, 0.3, 1);
                 }
             }
         }
