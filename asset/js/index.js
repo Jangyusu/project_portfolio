@@ -3,8 +3,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
     var visualBg = document.querySelector(".visual__bg"),
         visualText = document.querySelectorAll(".visual__text_wrap"),
-        visualLine = document.querySelector(".visual__line_bold"),
-        visualIndex = 0;
+        visualLine = document.querySelector(".visual__line_bold");
 
     visualBg.style.backgroundImage = "url('asset/img/index/bg_01.jpg')"; //visual 첫 bg
 
@@ -19,12 +18,6 @@ window.addEventListener("DOMContentLoaded", function () {
             visualText[i].classList.add("active");
         }
     }, 2000);
-
-    // setTimeout(function () {
-    //     for (var i = 0; i < visualText.length; i++) {
-    //         visualText[i].classList.add("active");
-    //     }
-    // }, 2000);
 
     //end
 })
