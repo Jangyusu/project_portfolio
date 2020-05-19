@@ -103,6 +103,9 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
     position: fixed;
     left: 50%;
     top: 50%;
