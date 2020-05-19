@@ -152,7 +152,7 @@ body {
         line-height: 9rem;
         color: transparent;
         -webkit-text-stroke: 1px #fff;
-        transform: translateY(100%); }
+        transform: translateY(200%); }
       .visual__text_wrap:last-of-type span {
         color: #fff;
         -webkit-text-stroke: 0; }
@@ -168,7 +168,7 @@ body {
         opacity: 1;
         transition: 1s .7s; }
       .visual__text_link span {
-        margin: 10px;
+        margin: 10px 30px;
         font-family: 'Chakra Petch', sans-serif;
         font-weight: 500;
         letter-spacing: .1rem;
