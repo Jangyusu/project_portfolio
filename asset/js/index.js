@@ -14,7 +14,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
         visualTotalText = document.querySelector(".visual__ind_total"),
         visualBln = true,
         headerMenu = document.querySelector(".header__menu"),
-        stopSlide,
+        slideStop,
         loading = document.querySelector(".loading"),
         body = document.body;
 
@@ -25,40 +25,39 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
     body.removeChild(loading); //loading tag 제거
     visualCurrent.innerHTML = "0" + (visualIndex + 1); //visual 현재 슬라이드 입력
     visualTotalText.innerHTML = "0" + visualTotal; //visual total 슬라이드 입력
+    visualCurrentBg.style.backgroundImage = "url('asset/img/index/bg_01.jpg')"; //visual 첫 배경
+    setTimeout(function () { //첫 이벤트 실행
+        slideStart();
+        TextOn();
+    }, 1000)
 
     headerMenu.addEventListener("click", function () { //header menu on/off
         this.classList.toggle("active");
     })
 
-    function slideStart() { //자동 슬라이드
-        stopSlide = setInterval(function () {
-            visualNext.click();
-        }, 5000);
-    }
-    slideStart();
-
-
     visualNext.addEventListener("click", () => visualControl(1, visualTotal, 0)) //visual Next 버튼
     visualPrev.addEventListener("click", () => visualControl(-1, -1, visualTotal - 1)) //visual Prev 버튼
 
-    visualCurrentBg.style.backgroundImage = "url('asset/img/index/bg_01.jpg')"; //visual current 배경   
 
 
-    function TextOn() {
+    function slideStart() { //자동 슬라이드
+        slideStop = setInterval(function () {
+            visualNext.click();
+        }, 5000);
+    }
+
+    function TextOn() { //Text Event
         visualLine.classList.add("active"); //visual Line on
         visualText[visualIndex].classList.add("active"); //visual Text on
         visualLink[visualIndex].classList.add("active"); //visual Link on
     }
-    setTimeout(function () { //첫 이벤트 실행
-        TextOn();
-    }, 1)
 
     function visualControl(calc, condition, reset) { //visual Next, Prev 실행
         if (visualBln == true) { //중복실행 방지
             visualBln = false;
 
             visualLine.classList.remove("active"); //visual Line off
-            clearInterval(stopSlide); //슬라이드 초기화
+            clearInterval(slideStop); //슬라이드 초기화
 
             visualIndex = visualIndex + calc;
             if (visualIndex == condition) { //visual Index 초기화
