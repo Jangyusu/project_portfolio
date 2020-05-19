@@ -18,6 +18,13 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
 
 
 
+    window.addEventListener("mousewheel", function (e) { //visual mousewheel Event
+        if (e.deltaY > 0) { //아래로 휠
+            visualControl(1, visualTotal, 0);
+        } else { //위로 휠
+            visualControl(-1, -1, visualTotal - 1);
+        }
+    })
     visualNext.addEventListener("click", function () { //visual Next 버튼
         visualControl(1, visualTotal, 0);
     })
