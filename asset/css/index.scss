@@ -225,7 +225,7 @@ body {
             bottom: -50px;
             visibility: hidden;
             opacity: 0;
-            transform: translate(-55px);
+            transform: translate(-75px);
 
             &.active {
                 visibility: visible;
@@ -341,7 +341,7 @@ body {
     &__line {
         width: 100%;
         height: 1px;
-        background: rgba(255,255,255,.6);
+        background: rgba(255,255,255,.3);
         position: absolute;
         left: 0;
         top: 50%;
