@@ -1,5 +1,4 @@
-
-window.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 실행
     //start
 
     var visualCurrentBg = document.querySelector(".visual__bg"),
@@ -7,7 +6,6 @@ window.addEventListener("DOMContentLoaded", function () {
         visualText = document.querySelectorAll(".visual__text"),
         visualLine = document.querySelector(".visual__line_bold"),
         visualLink = document.querySelectorAll(".visual__text_link"),
-        headerMenu = document.querySelector(".header__menu"),
         visualCurrent = document.querySelector(".visual__ind_current"),
         visualTotal = document.querySelectorAll(".visual__text").length,
         visualNext = document.querySelector(".visual__ind_down"),
@@ -15,10 +13,16 @@ window.addEventListener("DOMContentLoaded", function () {
         visualIndex = 0,
         visualTotalText = document.querySelector(".visual__ind_total"),
         visualBln = true,
-        stopSlide;
+        headerMenu = document.querySelector(".header__menu"),
+        stopSlide,
+        loading = document.querySelector(".loading"),
+        body = document.body;
 
 
-
+    for (var i = 0; i < visualTotal; i++) { //loading img 추가
+        loading.innerHTML += "<img src='asset/img/index/bg_0" + (i + 1) + ".jpg' alt=''>";
+    }
+    body.removeChild(loading); //loading tag 제거
     visualCurrent.innerHTML = "0" + (visualIndex + 1); //visual 현재 슬라이드 입력
     visualTotalText.innerHTML = "0" + visualTotal; //visual total 슬라이드 입력
 
