@@ -1,3 +1,4 @@
+
 window.addEventListener("DOMContentLoaded", function () {
     //start
 
@@ -25,8 +26,8 @@ window.addEventListener("DOMContentLoaded", function () {
         this.classList.toggle("active");
     })
 
-    function slideStart() {
-        stopSlide = setInterval(function () { //자동 슬라이드
+    function slideStart() { //자동 슬라이드
+        stopSlide = setInterval(function () {
             visualNext.click();
         }, 5000);
     }
