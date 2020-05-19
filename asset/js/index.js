@@ -13,32 +13,112 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
         visualIndex = 0,
         visualTotalText = document.querySelector(".visual__ind_total"),
         visualBln = true,
+
+        nav = document.querySelector(".header__nav"),
+        navList = document.querySelectorAll(".header__nav_left_list li"),
+        navLine = document.querySelector(".header__nav_line"),
+        navRight = document.querySelector(".header__nav_right"),
+        navBln = true,
+
         headerMenu = document.querySelector(".header__menu"),
         slideStop,
         loading = document.querySelector(".loading"),
         body = document.body;
 
 
-    for (var i = 0; i < visualTotal; i++) { //loading img 추가
-        loading.innerHTML += "<img src='asset/img/index/bg_0" + (i + 1) + ".jpg' alt=''>";
-    }
-    body.removeChild(loading); //loading tag 제거
-    visualCurrent.innerHTML = "0" + (visualIndex + 1); //visual 현재 슬라이드 입력
-    visualTotalText.innerHTML = "0" + visualTotal; //visual total 슬라이드 입력
-    visualCurrentBg.style.backgroundImage = "url('asset/img/index/bg_01.jpg')"; //visual 첫 배경
-    setTimeout(function () { //첫 이벤트 실행
-        slideStart();
-        TextOn();
-    }, 1000)
+
+
+
+
+
+
+
+
+
+
 
     headerMenu.addEventListener("click", function () { //header menu on/off
-        this.classList.toggle("active");
+        if (navBln == true) { //중복 실행 방지
+            navBln = false;
+
+            if (!this.classList.contains("active")) { //header menu on
+                addActive(this);
+                addActive(nav);
+
+                setTimeout(function () {
+                    addActive(navLine);
+                    addActive(navRight);
+
+                    textSlideFun(addActive); //text Slide on
+                }, 600);
+            } else { //header menu off
+                removeActive(this);
+                removeActive(navLine);
+                removeActive(navRight);
+
+                setTimeout(function () {
+                    removeActive(nav);
+                }, 100);
+
+                textSlideFun(removeActive);  //text Slide off
+            }
+
+            function textSlideFun(fun) { //text Slide 함수
+                for (var i = 0; i < navList.length; i++) { //text Slide 반복
+                    var textSlide = textSlideFunction(i, fun);
+                    textSlide();
+                };
+
+                function textSlideFunction(j, fun) { //text slide 실행
+                    return function () {
+                        setTimeout(function () {
+                            fun(navList[j]);
+                        }, j * 50);
+                    }
+                };
+            }
+
+            setTimeout(function () { //중복 실행 방지 시간
+                navBln = true;
+            }, 1000);
+        }
     })
 
-    visualNext.addEventListener("click", () => visualControl(1, visualTotal, 0)) //visual Next 버튼
-    visualPrev.addEventListener("click", () => visualControl(-1, -1, visualTotal - 1)) //visual Prev 버튼
+    visualNext.addEventListener("click", function () { //visual Next 버튼
+        visualControl(1, visualTotal, 0);
+    })
+    visualPrev.addEventListener("click", function () { //visual Prev 버튼
+        visualControl(-1, -1, visualTotal - 1);
+    })
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function firstEvent() { //first Event 실행
+        for (var i = 0; i < visualTotal; i++) { //loading img 추가
+            loading.innerHTML += "<img src='asset/img/index/bg_0" + (i + 1) + ".jpg' alt=''>";
+        }
+        body.removeChild(loading); //loading tag 제거
+        visualCurrent.innerHTML = "0" + (visualIndex + 1); //visual 현재 슬라이드 입력
+        visualTotalText.innerHTML = "0" + visualTotal; //visual total 슬라이드 입력
+        visualCurrentBg.style.backgroundImage = "url('asset/img/index/bg_01.jpg')"; //visual 첫 배경
+        setTimeout(function () { //1초 Delay Event 실행
+            slideStart(); //슬라이드 시작
+            TextOn(); //Text on
+        }, 1000)
+    }
+    firstEvent();
 
     function slideStart() { //자동 슬라이드
         slideStop = setInterval(function () {
@@ -47,16 +127,16 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
     }
 
     function TextOn() { //Text Event
-        visualLine.classList.add("active"); //visual Line on
-        visualText[visualIndex].classList.add("active"); //visual Text on
-        visualLink[visualIndex].classList.add("active"); //visual Link on
+        addActive(visualLine); //visual Line on
+        addActive(visualText[visualIndex]); //visual Text on
+        addActive(visualLink[visualIndex]); //visual Link on
     }
 
     function visualControl(calc, condition, reset) { //visual Next, Prev 실행
-        if (visualBln == true) { //중복실행 방지
+        if (visualBln == true) { //중복 실행 방지
             visualBln = false;
 
-            visualLine.classList.remove("active"); //visual Line off
+            removeActive(visualLine); //visual Line off
             clearInterval(slideStop); //슬라이드 초기화
 
             visualIndex = visualIndex + calc;
@@ -85,16 +165,15 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
             };
 
             for (var i = 0; i < visualText.length; i++) {
-                visualText[i].classList.remove("active"); //visual Text on
-                visualLink[i].classList.remove("active"); //visual Link on
+                removeActive(visualText[i]); //visual Text on
+                removeActive(visualLink[i]); //visual Link on
             };
 
-            setTimeout(function () { //슬라이드 끝난 후
+            setTimeout(function () { //중복 실행 방지 시간
                 visualBln = true;
 
-                TextOn();
-
-                slideStart(); //슬라이드 재시작
+                TextOn(); //Text on
+                slideStart(); //슬라이드 시작
             }, 1800);
         }
     };
