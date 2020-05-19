@@ -5,6 +5,22 @@ body {
   width: 100%;
   z-index: 2;
   position: fixed; }
+  .header.active .header__title a {
+    color: #262626; }
+    .header.active .header__title a.active {
+      color: #fff; }
+  .header.active .header__menu span {
+    background: #262626; }
+    .header.active .header__menu span.active {
+      background: #fff; }
+  .header.active .header__side_tel {
+    color: #262626; }
+  .header.active .header__side_link img {
+    filter: brightness(0); }
+  .header.active .header__side_link span {
+    color: #262626; }
+    .header.active .header__side_link span::after {
+      background: #262626; }
   .header__title {
     position: fixed;
     left: 50px;
@@ -210,12 +226,41 @@ body {
         height: 100vh;
         transition: .2s ease-in-out; }
 
-.header__side {
-  display: none; }
-
-.visual {
-  width: 100%;
+.main__left {
+  width: 20%;
   height: 100vh;
-  background: #000; }
+  padding: 250px 0 0 65px;
+  position: fixed; }
+  .main__left_title {
+    margin-bottom: 30px;
+    font-family: "Chakra Petch";
+    font-size: 5rem;
+    font-weight: 700;
+    color: #262626; }
+  .main__left_list li {
+    margin-bottom: 20px;
+    width: max-content; }
+    .main__left_list li a {
+      padding-right: 6px;
+      font-family: "Chakra Petch";
+      font-size: 1.25rem;
+      color: #262626;
+      position: relative; }
+      .main__left_list li a::before {
+        content: "";
+        width: 0;
+        height: 5px;
+        background: #eaeaea;
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 10%;
+        z-index: -1;
+        transition: .3s; }
+      .main__left_list li a:hover::before {
+        width: 100%; }
+.main__right {
+  width: 100%;
+  background: #262626; }
 
 /*# sourceMappingURL=work.css.map */

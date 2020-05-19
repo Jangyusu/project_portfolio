@@ -7,6 +7,45 @@ body {
     z-index: 2;
     position: fixed;
 
+    &.active {
+        .header {
+            &__title {
+                & a {
+                    color: #262626;
+
+                    &.active {
+                        color: #fff;
+                    }
+                }
+            }
+            &__menu {
+                & span {
+                    background: #262626;
+
+                    &.active {
+                        background: #fff;
+                    }
+                }
+            }
+            &__side {        
+                &_tel {
+                    color: #262626;
+                }
+                &_link {
+                    & img {
+                        filter: brightness(0);
+                    }
+                    & span {
+                        color: #262626;
+    
+                        &::after {
+                            background: #262626;
+                        }
+                    }
+                }
+            }            
+        }
+    }
     &__title {
         position: fixed;
         left: 50px;

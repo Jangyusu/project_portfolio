@@ -10,7 +10,9 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
             navRight = document.querySelector(".header__nav_right"),
             navBln = true,
 
-            headerMenu = document.querySelector(".header__menu");
+            headerMenu = document.querySelector(".header__menu"),
+            headerMenuSpan = document.querySelectorAll(".header__menu span"),
+            headerTitle = document.querySelector(".header__title a");
 
 
 
@@ -21,6 +23,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
                 if (!this.classList.contains("active")) { //header menu on
                     addActive(this);
                     addActive(nav);
+                    headerColor(addActive, 200);
 
                     setTimeout(function () {
                         addActive(navLine);
@@ -33,11 +36,22 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
                     removeActive(navLine);
                     removeActive(navRight);
 
+                    headerColor(removeActive, 800);
+
                     setTimeout(function () {
                         removeActive(nav);
                     }, 100);
 
                     textSlideFun(removeActive);  //text Slide off
+                }
+
+                function headerColor(list, time) { //header color 변경
+                    setTimeout(function () {
+                        list(headerTitle);
+                        for (var i = 0; i < headerMenuSpan.length; i++) {
+                            list(headerMenuSpan[i]);
+                        }
+                    }, time);
                 }
 
                 function textSlideFun(fun) { //text Slide 함수
@@ -50,7 +64,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
                         return function () {
                             setTimeout(function () {
                                 fun(navList[j]);
-                            }, j * 50);
+                            }, j * 75);
                         }
                     };
                 }

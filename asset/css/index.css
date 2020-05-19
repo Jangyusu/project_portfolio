@@ -5,6 +5,22 @@ body {
   width: 100%;
   z-index: 2;
   position: fixed; }
+  .header.active .header__title a {
+    color: #262626; }
+    .header.active .header__title a.active {
+      color: #fff; }
+  .header.active .header__menu span {
+    background: #262626; }
+    .header.active .header__menu span.active {
+      background: #fff; }
+  .header.active .header__side_tel {
+    color: #262626; }
+  .header.active .header__side_link img {
+    filter: brightness(0); }
+  .header.active .header__side_link span {
+    color: #262626; }
+    .header.active .header__side_link span::after {
+      background: #262626; }
   .header__title {
     position: fixed;
     left: 50px;
