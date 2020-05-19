@@ -13,76 +13,10 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
         visualIndex = 0,
         visualTotalText = document.querySelector(".visual__ind_total"),
         visualBln = true,
-
-        nav = document.querySelector(".header__nav"),
-        navList = document.querySelectorAll(".header__nav_left_list li"),
-        navLine = document.querySelector(".header__nav_line"),
-        navRight = document.querySelector(".header__nav_right"),
-        navBln = true,
-
-        headerMenu = document.querySelector(".header__menu"),
         slideStop,
-        loading = document.querySelector(".loading"),
-        body = document.body;
+        loading = document.querySelector(".loading");
 
 
-
-
-
-
-
-
-
-
-
-
-
-    headerMenu.addEventListener("click", function () { //header menu on/off
-        if (navBln == true) { //중복 실행 방지
-            navBln = false;
-
-            if (!this.classList.contains("active")) { //header menu on
-                addActive(this);
-                addActive(nav);
-
-                setTimeout(function () {
-                    addActive(navLine);
-                    addActive(navRight);
-
-                    textSlideFun(addActive); //text Slide on
-                }, 600);
-            } else { //header menu off
-                removeActive(this);
-                removeActive(navLine);
-                removeActive(navRight);
-
-                setTimeout(function () {
-                    removeActive(nav);
-                }, 100);
-
-                textSlideFun(removeActive);  //text Slide off
-            }
-
-            function textSlideFun(fun) { //text Slide 함수
-                for (var i = 0; i < navList.length; i++) { //text Slide 반복
-                    var textSlide = textSlideFunction(i, fun);
-                    textSlide();
-                };
-
-                function textSlideFunction(j, fun) { //text slide 실행
-                    return function () {
-                        setTimeout(function () {
-                            fun(navList[j]);
-                        }, j * 50);
-                    }
-                };
-            }
-
-            setTimeout(function () { //중복 실행 방지 시간
-                navBln = true;
-            }, 1000);
-        }
-    })
 
     visualNext.addEventListener("click", function () { //visual Next 버튼
         visualControl(1, visualTotal, 0);
@@ -93,23 +27,11 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
     function firstEvent() { //first Event 실행
         for (var i = 0; i < visualTotal; i++) { //loading img 추가
             loading.innerHTML += "<img src='asset/img/index/bg_0" + (i + 1) + ".jpg' alt=''>";
         }
-        body.removeChild(loading); //loading tag 제거
+        document.body.removeChild(loading); //loading tag 제거
         visualCurrent.innerHTML = "0" + (visualIndex + 1); //visual 현재 슬라이드 입력
         visualTotalText.innerHTML = "0" + visualTotal; //visual total 슬라이드 입력
         visualCurrentBg.style.backgroundImage = "url('asset/img/index/bg_01.jpg')"; //visual 첫 배경
