@@ -217,10 +217,6 @@ html::-webkit-scrollbar {
                         letter-spacing: 0.1rem;
                         color: #fff;
                         transition: .3s cubic-bezier(0.45, 0, 0.55, 1);
-
-                        &:hover {
-                            transform: translate(30px);
-                        }
                     }
                     & small {
                         font-size: .7rem;

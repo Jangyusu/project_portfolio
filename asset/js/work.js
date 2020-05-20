@@ -13,9 +13,12 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
 
 
     function firstEvent() { //초기값 실행
-        addActive(header); //header 색상 변경
-        addActive(workMenu[0]); //header 색상 변경
-        addActive(workTitle[workIndex]); //workTitle on
+        setTimeout(function () {
+            addActive(header); //header 색상 변경
+            addActive(workMenu[0]); //header 색상 변경
+            addActive(workTitle[workIndex]); //workTitle on
+        }, 900)
+
         for (var i = 0; i < workImg.length; i++) { //workImg 삽입
             workImg[i].style.backgroundImage = "url('/asset/img/work/bg_0" + (i + 1) + ".jpg')";
         };

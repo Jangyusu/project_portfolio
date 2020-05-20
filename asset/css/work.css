@@ -159,8 +159,6 @@ html::-webkit-scrollbar {
             letter-spacing: 0.1rem;
             color: #fff;
             transition: 0.3s cubic-bezier(0.45, 0, 0.55, 1); }
-            .header__nav_left_list li a:hover {
-              transform: translate(30px); }
           .header__nav_left_list li small {
             font-size: .7rem;
             letter-spacing: .05rem;
