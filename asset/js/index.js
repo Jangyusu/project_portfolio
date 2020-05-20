@@ -34,7 +34,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
 
 
 
-    function firstEvent() { //first Event 실행
+    function firstEvent() { //초기값 실행
         for (var i = 0; i < visualTotal; i++) { //loading img 추가
             loading.innerHTML += "<img src='asset/img/index/bg_0" + (i + 1) + ".jpg' alt=''>";
         }
