@@ -266,28 +266,71 @@
           width: 100%; }
   .main__right {
     width: 80%;
-    margin-left: 20%; }
+    margin-left: 20%;
+    position: relative; }
     .main__right_title {
-      padding-left: 80px;
-      font-size: 1.875rem;
-      font-weight: 300;
-      color: #666; }
-    .main__right_sub {
-      margin: 20px 0 40px;
-      padding-left: 80px;
-      font-size: 3.75rem;
-      font-weight: 800; }
+      width: 100%;
+      height: 180px;
+      overflow: hidden;
+      position: relative; }
+      .main__right_title h2 {
+        padding-left: 80px;
+        font-size: 1.875rem;
+        font-weight: 300;
+        color: #666;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        transform: translateY(140%);
+        transition: 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+        .main__right_title h2.active {
+          opacity: 1;
+          transform: translateY(0); }
+        .main__right_title h2 span {
+          font-size: 3.75rem;
+          font-weight: 800;
+          display: block; }
+    .main__right_ind {
+      font-size: 0;
+      position: absolute;
+      right: 120px;
+      top: 60px; }
+      .main__right_ind button {
+        width: 31px;
+        height: 57px;
+        opacity: 1; }
+        .main__right_ind button.active {
+          cursor: auto;
+          opacity: .3; }
+        .main__right_ind button:first-of-type {
+          margin-right: 40px;
+          background-image: url("/asset/img/work/prev.png"); }
+        .main__right_ind button:last-of-type {
+          background-image: url("/asset/img/work/next.png"); }
     .main__right_img {
-      margin-bottom: 150px; }
-      .main__right_img div figure {
-        width: 95%;
+      width: 95%;
+      height: 720px;
+      margin-bottom: 150px;
+      position: relative;
+      overflow: hidden; }
+      .main__right_img figure {
+        width: 0;
         padding-bottom: 720px;
-        background-image: url("/asset/img/index/bg_01.jpg");
         background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center; }
+        background-size: auto;
+        background-position: center;
+        position: absolute;
+        top: 0;
+        transition: .6s ease; }
+        .main__right_img figure.active {
+          width: 100%; }
+        .main__right_img figure.right {
+          right: 0; }
+        .main__right_img figure.left {
+          left: 0; }
     .main__right_list li {
-      padding-right: 10%;
+      margin-right: 10%;
       border-top: 1px solid #f2f2f2; }
       .main__right_list li a {
         padding: 50px 0;
