@@ -12,7 +12,6 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
         workBln = true;
 
 
-
     function firstEvent() { //초기값 실행
         addActive(header); //header 색상 변경
         addActive(workMenu[0]); //header 색상 변경
