@@ -17,44 +17,22 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
 
 
 
-        function firstEvent() { //초기값 실행
-            nav.style.transition = "0s";
-            navLine.style.transition = "0s";
-            navLeft.style.transition = "0s";
-            navRight.style.transition = "0s";
-            for (var i = 0; i < headerMenuSpan.length; i++) {
-                headerMenuSpan[i].style.transition = "0s";
-            };
-
-            addActive(nav);
-            addActive(navLine);
-            addActive(navRight);
-            addActive(headerMenu);
-            for (var i = 0; i < navList.length; i++) {
-                navList[i].style.transition = "0s";
-                addActive(navList[i]);
-            };
-
-            setTimeout(function () {
-                nav.style.transition = "1s cubic-bezier(0.87, 0, 0.13, 1)";
-                navLine.style.transition = ".2s ease-in-out";
-                navLeft.style.transition = ".7s";
-                navRight.style.transition = ".7s";
-                for (var i = 0; i < headerMenuSpan.length; i++) {
-                    headerMenuSpan[i].style.transition = ".2s";
-                };
-
-                removeActive(nav);
-                removeActive(navLine);
-                removeActive(navRight);
-                removeActive(headerMenu);
+        if (document.cookie.match("check")) {
+            function firstEvent() { //초기값 실행
+                pageSwitch("0s", "0s", "0s", "0s", addActive); //header menu on
                 for (var i = 0; i < navList.length; i++) {
-                    navList[i].style.transition = ".7s";
+                    addActive(navList[i]);
                 };
-                textSlideFun(removeActive);
-            }, 100);
+
+                setTimeout(function () { //header menu off
+                    pageSwitch("1s cubic-bezier(0.87, 0, 0.13, 1)", ".2s ease-in-out", ".7s", ".2s", removeActive);
+                    textSlideFun(removeActive);
+                }, 100);
+
+            }
+            firstEvent();
         }
-        firstEvent();
+        document.cookie = "check=on";
 
         headerMenu.addEventListener("click", function () { //header menu on/off
             if (navBln == true) { //중복 실행 방지
@@ -112,6 +90,24 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
                         fun(navList[j]);
                     }, j * 75);
                 }
+            };
+        }
+
+        function pageSwitch(fir, sec, thi, four, fun) { //header menu on/off 함수
+            nav.style.transition = fir;
+            navLine.style.transition = sec;
+            navLeft.style.transition = thi;
+            navRight.style.transition = thi;
+            for (var i = 0; i < headerMenuSpan.length; i++) {
+                headerMenuSpan[i].style.transition = four;
+            };
+
+            fun(nav);
+            fun(navLine);
+            fun(navRight);
+            fun(headerMenu);
+            for (var i = 0; i < navList.length; i++) {
+                navList[i].style.transition = thi;
             };
         }
 
