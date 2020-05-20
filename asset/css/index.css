@@ -1,6 +1,3 @@
-body {
-  overflow: hidden; }
-
 .header {
   width: 100%;
   z-index: 2;
@@ -112,6 +109,10 @@ body {
     width: 100%;
     height: 0;
     background: #04070b;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -1;
     transition: 1s cubic-bezier(0.87, 0, 0.13, 1); }
     .header__nav.active {
       height: 100vh; }
@@ -225,6 +226,9 @@ body {
       .header__nav_line.active {
         height: 100vh;
         transition: .2s ease-in-out; }
+
+body {
+  overflow: hidden; }
 
 .visual {
   height: 100vh;

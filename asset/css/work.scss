@@ -1,10 +1,12 @@
 @import "../common/css/common";
 
 .main {
+    margin-top: 240px;
+    display: flex;
+
     &__left {
         width: 20%;
-        height: 100vh;
-        padding: 250px 0 0 65px;
+        padding-left: 50px;
         position: fixed;
 
         &_title {
@@ -19,34 +21,126 @@
                 margin-bottom: 20px;
                 width: max-content;
 
-                & a {
-                    padding-right: 6px;
-                    font-family: "Chakra Petch";
-                    font-size: 1.25rem;
-                    color: #262626;
-                    position: relative;
-
-                    &::before {
-                        content: "";
-                        width: 0;
-                        height: 5px;
-                        background: #eaeaea;
-                        display: block;
-                        position: absolute;
-                        left: 0;
-                        bottom: 10%;
-                        z-index: -1;
-                        transition: .3s;
-                    }
-                    &:hover::before {
-                        width: 100%;
+                & h3 {
+                    & a {
+                        padding-right: 6px;
+                        font-family: "Chakra Petch";
+                        font-size: 1.25rem;
+                        color: #262626;
+                        position: relative;
+    
+                        &::before {
+                            content: "";
+                            width: 0;
+                            height: 5px;
+                            background: #eaeaea;
+                            display: block;
+                            position: absolute;
+                            left: 0;
+                            bottom: 10%;
+                            z-index: -1;
+                            transition: .3s;
+                        }
+                        &:hover::before {
+                            width: 100%;
+                        }
+                        &.active::before {
+                            width: 100%;
+                        }
                     }
                 }
             }
         }
     }
     &__right {
-        width: 100%;
-        background: #262626;
+        width: 80%;
+        margin-left: 20%;
+
+        &_title {
+            padding-left: 80px;
+            font-size: 1.875rem;
+            font-weight: 300;
+            color: #666;
+        }
+        &_sub {
+            margin: 20px 0 40px;
+            padding-left: 80px;
+            font-size: 3.75rem;
+            font-weight: 800;
+        }
+        &_img {
+            margin-bottom: 150px;
+
+            & div {
+                & figure {
+                    width: 95%;
+                    padding-bottom: 720px;
+                    background-image: url("/asset/img/index/bg_01.jpg");
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                }
+            }
+        }
+        &_list {
+            & li {
+                padding-right: 10%;
+                border-top: 1px solid #f2f2f2;
+
+                & a {
+                    padding: 50px 0;
+                    display: flex;
+                    align-items: center;
+
+                    &:hover {
+                        & div {
+                            transform: translate(30px);
+                        }
+                    }
+                    & div {
+                        margin-right: 100px;
+                        display: flex;
+                        flex-direction: column;
+                        transition: .4s;
+
+                        & time {
+                            margin-bottom: 5px;
+                            font-family: "Chakra Petch";
+                            font-size: 2.5rem;
+                            font-weight: 100;
+                            color: #555;
+                        }
+                        & small {
+                            font-family: "Chakra Petch";
+                            font-weight: 800;
+                            color: #555;
+                        }
+                    }
+                    & p {
+                        font-size: 1.875rem;
+                        font-weight: 900;
+                        color: #333;
+                    }
+                } 
+            }
+        }
+        &_preview {
+            width: 400px;
+            height: 400px;
+            position: fixed;
+            right: 76px;
+            bottom: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            visibility: hidden;
+            opacity: 0;
+
+            &.active {
+                visibility: visible;
+                opacity: 1;
+                transition: .3s ease-in-out;
+            }
+        }
     }
 }

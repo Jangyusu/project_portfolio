@@ -1,5 +1,9 @@
 @import "../common/css/common";
 
+body {
+    overflow: hidden;
+}
+
 .visual {
     height: 100vh;
     background: #000;
