@@ -313,9 +313,9 @@ html::-webkit-scrollbar {
           opacity: .3; }
         .main__right_ind button:first-of-type {
           margin-right: 40px;
-          background-image: url("/asset/img/work/prev.png"); }
+          background-image: url("asset/img/work/prev.png"); }
         .main__right_ind button:last-of-type {
-          background-image: url("/asset/img/work/next.png"); }
+          background-image: url("asset/img/work/next.png"); }
     .main__right_img {
       width: 95%;
       height: 720px;
