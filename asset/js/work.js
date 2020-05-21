@@ -9,8 +9,83 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
         workTitle = document.querySelectorAll(".main__right_title h2"),
         workImg = document.querySelectorAll(".main__right_img figure"),
         workIndex = 0,
-        workBln = true;
+        workBln = true,
+        workDetail = document.querySelectorAll(".main__detail"),
+        workDetailWrapper = document.querySelector(".main__detail_wrapper"),
+        workDetailClose = document.querySelector(".main__detail_close"),
+        workDetailPrev = document.querySelector(".main__detail_prev"),
+        workDetailNext = document.querySelector(".main__detail_next"),
+        workDetailIndex = 0,
+        workDetailBln = true;
 
+
+
+    for (var i = 0; i < workDetail.length; i++) {
+        workDetail[i].style.transform = "translate(" + i + "00%)";
+    }
+
+    function detailSlide() {
+        detailEvent(workDetailPrev, 1); //이전 버튼
+        detailEvent(workDetailNext, -1); //다음 버튼
+
+        function detailEvent(target, calc) {
+            target.addEventListener("click", function () {
+                if (workDetailBln) {
+                    workDetailBln = false;
+
+                    workDetailIndex = workDetailIndex + calc;
+
+                    for (var i = 0; i < workDetail.length; i++) {
+                        workDetail[i].style.transform = "translate(" + (workDetailIndex + i) + "00%)";
+                    }
+
+                    removeActive(workDetailPrev);
+                    removeActive(workDetailNext);
+                    if (workDetailIndex == 0) {
+                        addActive(workDetailPrev);
+                    } else if (workDetailIndex == (-workDetail.length + 1)) {
+                        addActive(workDetailNext);
+                    };
+
+                    setTimeout(function () {
+                        workDetailBln = true
+                    }, 1000);
+                };
+            });
+        }
+    }
+    detailSlide();
+
+    function detailOnOff() { //work 상세보기 on/off
+        for (var i = 0; i < workImg.length; i++) { //work 상세보기 on
+            detaileOn(workImg);
+            detaileOn(workList);
+        };
+
+        workDetailClose.addEventListener("click", function () { //work 상세보기 off
+            removeActive(workDetailWrapper);
+
+            setTimeout(function () {
+                workDetailIndex = 0;
+
+                for (var i = 0; i < workDetail.length; i++) {
+                    workDetail[i].style.transform = "translate(" + i + "00%)";
+                }
+            }, 1000);
+        });
+
+        function detaileOn(target) { //work 상세보기 함수
+            target[i].addEventListener("click", function (e) {
+                e.preventDefault();
+
+                addActive(workDetailWrapper);
+
+                addActive(workDetailPrev);
+                removeActive(workDetailNext);
+            });
+        }
+    }
+    detailOnOff();
 
     function firstEvent() { //초기값 실행
         setTimeout(function () {

@@ -6,6 +6,7 @@
 
     &__left {
         width: 20%;
+        height: 100vh;
         padding-left: 50px;
         position: fixed;
 
@@ -194,6 +195,102 @@
                 opacity: 1;
                 transition: .3s ease-in-out;
             }
+        }
+    }
+    &__detail {
+        width: 100%;
+        height: 100vh;
+        padding-top: 140px;
+        text-align: center;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: 1s cubic-bezier(0.76, 0, 0.24, 1);
+
+        &.active {
+            transform: translate(-100%);
+        }
+        &_wrapper {
+            width: 0;
+            height: 100vh;
+            background: #04070b;
+            position: fixed;
+            right: 0;
+            top: 0;
+            overflow: hidden;
+            z-index: 2;
+            transition: 1s cubic-bezier(0.87, 0, 0.13, 1);
+
+            &.active {
+                width: 80%;
+    
+                .main__detail {
+                    &_close {
+                        visibility: visible;
+                        opacity: 1;
+                        transition: .5s 1s ease-in-out;
+                    }
+                }
+            }
+        }
+        &_title {
+            margin-bottom: 60px;
+            font-size: 4rem;
+            font-weight: 600;
+            color: #fff;
+
+            & small {
+                font-family: "Chakra Petch";
+                font-size: 2rem;
+                font-weight: 100;
+                line-height: 5rem;
+                letter-spacing: .05rem;
+                color: rgba(255,255,255,.7);
+                display: block;
+            }
+        }
+        & img {
+            width: 60%;
+        }
+        &_prev {
+            width: 31px;
+            height: 57px;
+            background-image: url("../img/work/prev.png");
+            position: absolute;
+            left: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+
+            &.active {
+                cursor: auto;
+                opacity: .3;
+            }
+        }
+        &_next {
+            width: 31px;
+            height: 57px;
+            background-image: url("../img/work/next.png");
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+
+            &.active {
+                cursor: auto;
+                opacity: .3;
+            }
+        }
+        &_close {
+            width: 50px;
+            height: 50px;
+            background-image: url("../img/work/close.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            right: 50px;
+            top: 50px;
+            visibility: hidden;
+            opacity: 0;
         }
     }
 }

@@ -32,6 +32,8 @@ html::-webkit-scrollbar {
     position: fixed;
     left: 50px;
     top: 25px; }
+    .header__title.active a {
+      color: #262626; }
     .header__title a {
       font-size: 1.65rem;
       font-weight: 800;
@@ -437,40 +439,56 @@ body {
       color: #fff;
       transform: translate(2px); }
   .visual__scroll {
-    width: 36px;
-    height: 56px;
-    border: 3px solid #fff;
+    width: 30px;
+    height: 45px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 40px;
     position: fixed;
     left: 50%;
-    bottom: 30px;
+    bottom: 40px;
     visibility: hidden;
     opacity: 0;
     transform: translate(-50%);
-    transition: 1s ease-in-out; }
+    animation: scroll 2.5s infinite ease-in-out;
+    animation-delay: 1.5s; }
     .visual__scroll.active {
       visibility: visible;
-      opacity: 1; }
+      opacity: 1;
+      transition: 1s ease-in-out; }
     .visual__scroll::before {
       content: "";
-      width: 4px;
-      height: 8px;
-      background: #fff;
-      border-radius: 8px;
+      width: 2px;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 2px;
       display: block;
       position: absolute;
       left: 50%;
       top: 20%;
-      opacity: 1;
+      opacity: 0;
       transform: translate(-50%);
-      animation: scroll 1s infinite ease-in-out; }
+      animation: wheel 2.5s infinite ease-in-out;
+      animation-delay: 1.5s; }
 @keyframes scroll {
-  50% {
-    top: 60%;
-    opacity: 1; }
+  33% {
+    bottom: 40px; }
+  66% {
+    bottom: 30px; }
   100% {
-    top: 60%;
-    opacity: 0; } }
+    bottom: 40px; } }
+@keyframes wheel {
+  33% {
+    top: 20%;
+    height: 6px;
+    opacity: 1; }
+  66% {
+    top: 80%;
+    height: 0;
+    opacity: 0; }
+  100% {
+    top: 20%;
+    height: 0;
+    opacity: 1; } }
 footer {
   position: fixed;
   left: 50px;

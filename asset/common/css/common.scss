@@ -55,10 +55,13 @@ html::-webkit-scrollbar {
         left: 50px;
         top: 25px;
 
+        &.active a{
+            color: #262626;
+        }
         & a {
-          font-size: 1.65rem;
-          font-weight: 800;
-          color: #fff;
+            font-size: 1.65rem;
+            font-weight: 800;
+            color: #fff;
         }
     }
     &__menu {

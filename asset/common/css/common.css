@@ -32,6 +32,8 @@ html::-webkit-scrollbar {
     position: fixed;
     left: 50px;
     top: 25px; }
+    .header__title.active a {
+      color: #262626; }
     .header__title a {
       font-size: 1.65rem;
       font-weight: 800;
