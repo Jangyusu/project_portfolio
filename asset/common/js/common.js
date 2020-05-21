@@ -1,5 +1,5 @@
 window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 실행
-    $(".header").load("/asset/common/html/header.html"); //header 로드
+    $(".header").load("asset/common/html/header.html"); //header 로드
 
     setTimeout(function () { //html 로드 후 실행
         //start
