@@ -13,12 +13,15 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
         visualIndex = 0,
         visualTotalText = document.querySelector(".visual__ind_total"),
         visualBln = true,
+        visualScroll = document.querySelector(".visual__scroll"),
         slideStop,
         loading = document.querySelector(".loading");
 
 
 
     window.addEventListener("mousewheel", function (e) { //visual mousewheel Event
+        removeActive(visualScroll); //visual scroll off
+
         if (e.deltaY > 0) { //아래로 휠
             visualControl(1, visualTotal, 0);
         } else { //위로 휠
@@ -45,6 +48,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
         setTimeout(function () { //1초 Delay Event 실행
             slideStart(); //슬라이드 시작
             TextOn(); //Text on
+            addActive(visualScroll); //visual scroll on
         }, 1000)
     }
     firstEvent();

@@ -1,3 +1,7 @@
+// window.addEventListener("DOMContentLoaded", function () {
+//     $(".header").load("asset/common/html/header.html");
+// });
+
 window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 실행
     //start
 
@@ -47,7 +51,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
                 navList[i].style.transition = thi;
             };
         }
-    }
+    };
     firstEvent();
 
     function pageChange() { //페이지 이동 함수
@@ -68,7 +72,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
             }
             location.href = "index.html";
         }
-    }
+    };
     pageChange();
 
     headerMenu.addEventListener("click", function () { //header menu on/off
@@ -113,7 +117,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
                 navBln = true;
             }, 1000);
         }
-    })
+    });
 
     function textSlideFun(fun) { //text Slide 함수
         for (var i = 0; i < navList.length; i++) { //text Slide 반복
@@ -128,7 +132,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
                 }, j * 75);
             }
         };
-    }
+    };
 
     //end
-})
+});

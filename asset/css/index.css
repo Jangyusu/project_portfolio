@@ -437,15 +437,40 @@ body {
       color: #fff;
       transform: translate(2px); }
   .visual__scroll {
-    width: 40px;
-    height: 50px;
-    border: 5px solid #fff;
-    border-radius: 15px;
+    width: 36px;
+    height: 56px;
+    border: 3px solid #fff;
+    border-radius: 40px;
     position: fixed;
     left: 50%;
     bottom: 30px;
-    transform: translate(-15px); }
-
+    visibility: hidden;
+    opacity: 0;
+    transform: translate(-50%);
+    transition: 1s ease-in-out; }
+    .visual__scroll.active {
+      visibility: visible;
+      opacity: 1; }
+    .visual__scroll::before {
+      content: "";
+      width: 4px;
+      height: 8px;
+      background: #fff;
+      border-radius: 8px;
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 20%;
+      opacity: 1;
+      transform: translate(-50%);
+      animation: scroll 1s infinite ease-in-out; }
+@keyframes scroll {
+  50% {
+    top: 60%;
+    opacity: 1; }
+  100% {
+    top: 60%;
+    opacity: 0; } }
 footer {
   position: fixed;
   left: 50px;
