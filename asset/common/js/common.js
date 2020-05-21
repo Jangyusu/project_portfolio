@@ -53,7 +53,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
         }
         firstEvent();
 
-        function pageChange() {
+        function pageChange() { //페이지 이동 함수
             window.addEventListener("keydown", function (e) { //새로고침
                 if (e.keyCode == 116) {
                     refresh(e);
@@ -69,7 +69,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
                 if (!headerMenu.classList.contains("active")) { //menu 열린상태로 클릭 시
                     sessionStorage.removeItem("check");
                 }
-                location.href = "/index.html";
+                location.href = "index.html";
             }
         }
         pageChange();
@@ -134,5 +134,5 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
         }
 
         //end
-    }, 50);
+    }, 60);
 })
