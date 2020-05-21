@@ -393,7 +393,7 @@ html::-webkit-scrollbar {
     .main__detail.active {
       transform: translate(-100%); }
     .main__detail_wrapper {
-      width: 0;
+      width: 80%;
       height: 100vh;
       background: #04070b;
       position: fixed;
@@ -401,9 +401,10 @@ html::-webkit-scrollbar {
       top: 0;
       overflow: hidden;
       z-index: 2;
+      transform: translate(100%);
       transition: 1s cubic-bezier(0.87, 0, 0.13, 1); }
       .main__detail_wrapper.active {
-        width: 80%; }
+        transform: translate(0); }
         .main__detail_wrapper.active .main__detail_close {
           visibility: visible;
           opacity: 1;
@@ -432,8 +433,8 @@ html::-webkit-scrollbar {
       top: 50%;
       transform: translateY(-50%); }
       .main__detail_prev.active {
-        cursor: auto;
-        opacity: .3; }
+        visibility: hidden;
+        opacity: 0; }
     .main__detail_next {
       width: 31px;
       height: 57px;
@@ -443,8 +444,8 @@ html::-webkit-scrollbar {
       top: 50%;
       transform: translateY(-50%); }
       .main__detail_next.active {
-        cursor: auto;
-        opacity: .3; }
+        visibility: hidden;
+        opacity: 0; }
     .main__detail_close {
       width: 50px;
       height: 50px;

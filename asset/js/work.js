@@ -24,7 +24,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
         workDetail[i].style.transform = "translate(" + i + "00%)";
     }
 
-    function detailSlide() {
+    function detailSlide() { //work 상세보기 이전/다음 버튼
         detailEvent(workDetailPrev, 1); //이전 버튼
         detailEvent(workDetailNext, -1); //다음 버튼
 
@@ -65,13 +65,13 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
         workDetailClose.addEventListener("click", function () { //work 상세보기 off
             removeActive(workDetailWrapper);
 
-            setTimeout(function () {
+            setTimeout(function () { //work 상세보기 off후 초기화
                 workDetailIndex = 0;
 
                 for (var i = 0; i < workDetail.length; i++) {
                     workDetail[i].style.transform = "translate(" + i + "00%)";
                 }
-            }, 1000);
+            }, 100);
         });
 
         function detaileOn(target) { //work 상세보기 함수
