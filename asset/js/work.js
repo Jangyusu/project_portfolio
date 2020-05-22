@@ -12,57 +12,78 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
         workBln = true,
         workDetail = document.querySelectorAll(".main__detail"),
         workDetailWrapper = document.querySelector(".main__detail_wrapper"),
+        workDetailText = document.querySelectorAll(".main__detail_text p"),
+        workDetailLink = document.querySelector(".main__detail_text_link"),
         workDetailClose = document.querySelector(".main__detail_close"),
-        workDetailPrev = document.querySelector(".main__detail_prev"),
-        workDetailNext = document.querySelector(".main__detail_next"),
         workDetailIndex = 0,
         workDetailBln = true;
 
 
+    workDetailWrapper.addEventListener("mousewheel", function (e) {
+        if (workDetailBln) {
+            workDetailBln = false;
 
-    for (var i = 0; i < workDetail.length; i++) {
-        workDetail[i].style.transform = "translate(" + i + "00%)";
-    }
+            if (e.deltaY > 0) { //아래로 휠
+                detailSlide(1);
 
-    function detailSlide() { //work 상세보기 이전/다음 버튼
-        detailEvent(workDetailPrev, 1); //이전 버튼
-        detailEvent(workDetailNext, -1); //다음 버튼
-
-        function detailEvent(target, calc) {
-            target.addEventListener("click", function () {
-                if (workDetailBln) {
-                    workDetailBln = false;
-
-                    workDetailIndex = workDetailIndex + calc;
-
-                    for (var i = 0; i < workDetail.length; i++) {
-                        workDetail[i].style.transform = "translate(" + (workDetailIndex + i) + "00%)";
+                setTimeout(function () {
+                    for (var i = 0; i < workDetailText.length; i++) {
+                        var textSlide = textSlideFunction(i);
+                        textSlide();
                     }
 
-                    removeActive(workDetailPrev);
-                    removeActive(workDetailNext);
-                    if (workDetailIndex == 0) {
-                        addActive(workDetailPrev);
-                    } else if (workDetailIndex == (-workDetail.length + 1)) {
-                        addActive(workDetailNext);
-                    };
-
                     setTimeout(function () {
-                        workDetailBln = true
-                    }, 1000);
-                };
-            });
+                        addActive(workDetailLink);
+                    }, workDetailText.length * 200);
+
+                    function textSlideFunction(j) { //text slide 실행
+                        return function () {
+                            setTimeout(function () {
+                                addActive(workDetailText[j]);
+                            }, j * 100);
+                        }
+                    };
+                }, 1000);
+            } else { //위로 휠
+                detailSlide(-1);
+            }
+
+            setTimeout(function () {
+                workDetailBln = true;
+            }, 1000);
+        };
+
+        function detailSlide(calc) {
+            workDetailIndex = workDetailIndex + calc;
+
+            if (workDetailIndex == workDetail.length) {
+                workDetailIndex = workDetail.length - 1;
+            } else if (workDetailIndex == -1) {
+                workDetailIndex = 0;
+            };
+
+            for (var i = 0; i < workDetail.length; i++) {
+                workDetail[i].style.transform = "translate(" + (-workDetailIndex + i) + "00%)";
+            }
+
         }
-    }
-    detailSlide();
+    });
 
     function detailOnOff() { //work 상세보기 on/off
-        for (var i = 0; i < workImg.length; i++) { //work 상세보기 on
+        for (var i = 0; i < workList.length; i++) { //work 상세보기 on
             detaileOn(workImg);
             detaileOn(workList);
+
+            workList[i].addEventListener("click", function () {
+                addActive(this);
+            });
         };
 
         workDetailClose.addEventListener("click", function () { //work 상세보기 off
+            for (var i = 0; i < workDetailText.length; i++) {
+                removeActive(workDetailText[i]);
+            }
+            removeActive(workDetailLink);
             removeActive(workDetailWrapper);
 
             setTimeout(function () { //work 상세보기 off후 초기화
@@ -71,7 +92,8 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
                 for (var i = 0; i < workDetail.length; i++) {
                     workDetail[i].style.transform = "translate(" + i + "00%)";
                 }
-            }, 100);
+            }, 1000);
+
         });
 
         function detaileOn(target) { //work 상세보기 함수
@@ -79,9 +101,6 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
                 e.preventDefault();
 
                 addActive(workDetailWrapper);
-
-                addActive(workDetailPrev);
-                removeActive(workDetailNext);
             });
         }
     }

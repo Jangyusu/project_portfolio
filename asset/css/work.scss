@@ -141,10 +141,14 @@
                 margin-right: 10%;
                 border-top: 1px solid #f2f2f2;
 
+                &.active a {
+                    opacity: .5;
+                }
                 & a {
                     padding: 50px 0;
                     display: flex;
                     align-items: center;
+                    transition: 1s ease-in-out;
 
                     &:hover {
                         & div {
@@ -200,13 +204,16 @@
     &__detail {
         width: 100%;
         height: 100vh;
-        padding-top: 140px;
         text-align: center;
         position: absolute;
         left: 0;
         top: 0;
         transition: 1s cubic-bezier(0.76, 0, 0.24, 1);
 
+        &:last-of-type {
+            display: flex;
+            transform: translate(100%);
+        }
         &.active {
             transform: translate(-100%);
         }
@@ -235,7 +242,7 @@
             }
         }
         &_title {
-            margin-bottom: 60px;
+            margin: 140px 0 60px;
             font-size: 4rem;
             font-weight: 600;
             color: #fff;
@@ -253,32 +260,82 @@
         & img {
             width: 60%;
         }
-        &_prev {
-            width: 31px;
-            height: 57px;
-            background-image: url("../img/work/prev.png");
-            position: absolute;
-            left: 30px;
-            top: 50%;
-            transform: translateY(-50%);
-
-            &.active {
-                visibility: hidden;
-                opacity: 0;
-            }
+        &_img {
+            width: 44%;
+            margin-left: 6%;
+            padding-bottom: 100vh;
+            background-image: url("../img/work/detail/detail_02.jpg");
+            background-position: top;
+            background-size: cover;
         }
-        &_next {
-            width: 31px;
-            height: 57px;
-            background-image: url("../img/work/next.png");
-            position: absolute;
-            right: 30px;
-            top: 50%;
-            transform: translateY(-50%);
+        &_text {
+            width: 50%;
+            padding: 125px 30px 140px 75px;
+            text-align: left;
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
 
-            &.active {
+            & p {
+                width: 50%;
+                font-family: "Chakra Petch";
+                font-size: 1.625rem;
+                font-weight: 600;
+                color: #fff;
+                position: relative;
+                transform: translate(-20px);
                 visibility: hidden;
                 opacity: 0;
+                transition: .5s ease-in-out;
+
+                &.active {
+                    transform: translate(0);
+                    visibility: visible;
+                    opacity: 1;
+                }
+                &::before {
+                    content: "";
+                    width: 60px;
+                    height: 7px;
+                    background: #e20714;
+                    display: block;
+                    position: absolute;
+                    left: -8px;
+                    top: 23px;
+                    z-index: -1;
+                }
+                &:nth-of-type(5), &:nth-of-type(6) {
+                    width: 100%;
+                }
+                & span {
+                    margin: 4px 0 0 16px;
+                    font-family: "Chakra Petch";
+                    color: #ccc;
+                    display: block;
+                }
+            }
+            &_link {
+                padding: 0 30px;
+                font-family: "Chakra Petch";
+                font-size: 1.875rem;
+                line-height: 3rem;
+                color: #fff;
+                position: absolute;
+                left: 50%;
+                bottom: 85px;
+                visibility: hidden;
+                opacity: 0;
+                transform: translate(-50%, 10%);
+                transition: 1s ease-in-out;
+
+                &.active {
+                    visibility: visible;
+                    opacity: 1;
+                    transform: translate(-50%);
+                }
+                &:hover {
+                    transform: translate(-50%, 5%);
+                }
             }
         }
         &_close {

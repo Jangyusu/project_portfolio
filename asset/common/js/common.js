@@ -1,7 +1,3 @@
-// window.addEventListener("DOMContentLoaded", function () {
-//     $(".header").load("asset/common/html/header.html");
-// });
-
 window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 실행
     //start
 
@@ -20,19 +16,19 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
 
 
     function firstEvent() { //초기값 실행
-        // if (sessionStorage.getItem("check") == "on") {
-        //     pageSwitch("0s", "0s", "0s", "0s", addActive); //header menu on
-        //     for (var i = 0; i < navList.length; i++) {
-        //         addActive(navList[i]);
-        //     };
+        if (sessionStorage.getItem("check") == "on") {
+            pageSwitch("0s", "0s", "0s", "0s", addActive); //header menu on
+            for (var i = 0; i < navList.length; i++) {
+                addActive(navList[i]);
+            };
 
-        //     setTimeout(function () { //header menu off
-        //         pageSwitch("1s cubic-bezier(0.87, 0, 0.13, 1)", ".2s ease-in-out", ".7s", ".2s", removeActive);
-        //         textSlideFun(removeActive);
-        //     }, 100);
-        // }
+            setTimeout(function () { //header menu off
+                pageSwitch("1s cubic-bezier(0.87, 0, 0.13, 1)", ".2s ease-in-out", ".7s", ".2s", removeActive);
+                textSlideFun(removeActive);
+            }, 100);
+        }
 
-        // sessionStorage.setItem("check", "on");
+        sessionStorage.setItem("check", "on");
 
         function pageSwitch(fir, sec, thi, four, fun) { //header menu on/off 함수
             nav.style.transition = fir;

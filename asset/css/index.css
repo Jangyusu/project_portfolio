@@ -257,7 +257,7 @@ body {
     position: fixed;
     left: 50%;
     top: 50%;
-    opacity: .5;
+    opacity: .3;
     transform: translate(-50%, -50%) scale(1); }
     .visual__bg.active {
       transform: translate(-50%, -50%) scale(1);
