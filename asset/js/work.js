@@ -11,96 +11,93 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
         workIndex = 0,
         workBln = true,
         workDetail = document.querySelectorAll(".main__detail"),
-        workDetailWrapper = document.querySelector(".main__detail_wrapper"),
-        workDetailText = document.querySelectorAll(".main__detail_text p"),
-        workDetailLink = document.querySelector(".main__detail_text_link"),
-        workDetailClose = document.querySelector(".main__detail_close"),
+        workDetailWrapper = document.querySelectorAll(".main__detail_wrapper"),
+        workDetailText = document.querySelectorAll(".main__detail_text"),
+        workDetailLink = document.querySelectorAll(".main__detail_text_link"),
+        workDetailClose = document.querySelectorAll(".main__detail_close"),
         workDetailIndex = 0,
         workDetailBln = true;
 
 
-    workDetailWrapper.addEventListener("mousewheel", function (e) {
-        if (workDetailBln) {
-            workDetailBln = false;
 
-            if (e.deltaY > 0) { //아래로 휠
-                detailSlide(1);
+    for (var i = 0; i < workDetailWrapper.length; i++) { //work 상세메뉴 휠 기능
+        workDetailWrapper[i].addEventListener("mousewheel", function (e) {
+            e.preventDefault();
 
-                setTimeout(function () {
-                    for (var i = 0; i < workDetailText.length; i++) {
-                        var textSlide = textSlideFunction(i);
-                        textSlide();
-                    }
+            if (workDetailBln) { //중복 실행 방지
+                workDetailBln = false;
+
+                if (e.deltaY > 0) { //아래로 휠
+                    detailSlide(1, addActive);
 
                     setTimeout(function () {
-                        addActive(workDetailLink);
-                    }, workDetailText.length * 200);
-
-                    function textSlideFunction(j) { //text slide 실행
-                        return function () {
-                            setTimeout(function () {
-                                addActive(workDetailText[j]);
-                            }, j * 100);
+                        for (var i = 0; i < workDetailText.length; i++) {
+                            addActive(workDetailText[i]);
                         }
-                    };
-                }, 1000);
-            } else { //위로 휠
-                detailSlide(-1);
-            }
 
-            setTimeout(function () {
-                workDetailBln = true;
-            }, 1000);
+                        setTimeout(function () {
+                            for (var i = 0; i < workDetailLink.length; i++) {
+                                console.log(this);
+                                addActive(workDetailLink[i]);
+                            }
+                        }, 1200);
+                    }, 1000);
+                } else { //위로 휠
+                    detailSlide(-1, removeActive);
+                }
+
+                setTimeout(function () { //중복 실행 방지 시간
+                    workDetailBln = true;
+                }, 1000);
+            };
+        });
+    };
+
+    function detailSlide(calc, fun) {
+        workDetailIndex = workDetailIndex + calc;
+
+        if (workDetailIndex == 2) {
+            workDetailIndex = 1;
+        } else if (workDetailIndex == -1) {
+            workDetailIndex = 0;
         };
 
-        function detailSlide(calc) {
-            workDetailIndex = workDetailIndex + calc;
-
-            if (workDetailIndex == workDetail.length) {
-                workDetailIndex = workDetail.length - 1;
-            } else if (workDetailIndex == -1) {
-                workDetailIndex = 0;
-            };
-
-            for (var i = 0; i < workDetail.length; i++) {
-                workDetail[i].style.transform = "translate(" + (-workDetailIndex + i) + "00%)";
-            }
-
-        }
-    });
+        for (var i = 0; i < workDetail.length; i++) {
+            fun(workDetail[i]);
+        };
+    };
 
     function detailOnOff() { //work 상세보기 on/off
         for (var i = 0; i < workList.length; i++) { //work 상세보기 on
-            detaileOn(workImg);
-            detaileOn(workList);
+            workImg[i].addEventListener("click", function (e) {
+                e.preventDefault();
 
-            workList[i].addEventListener("click", function () {
+                addActive(workDetailWrapper[this.dataset.num - 1]);
+            });
+
+            workList[i].addEventListener("click", function (e) {
+                e.preventDefault();
+
                 addActive(this);
+                addActive(workDetailWrapper[this.dataset.num - 1]);
             });
         };
 
-        workDetailClose.addEventListener("click", function () { //work 상세보기 off
-            for (var i = 0; i < workDetailText.length; i++) {
-                removeActive(workDetailText[i]);
-            }
-            removeActive(workDetailLink);
-            removeActive(workDetailWrapper);
-
-            setTimeout(function () { //work 상세보기 off후 초기화
-                workDetailIndex = 0;
-
-                for (var i = 0; i < workDetail.length; i++) {
-                    workDetail[i].style.transform = "translate(" + i + "00%)";
+        for (var i = 0; i < workDetailClose.length; i++) {
+            workDetailClose[i].addEventListener("click", function () { //work 상세보기 off
+                for (var i = 0; i < workDetailWrapper.length; i++) {
+                    removeActive(workDetailWrapper[i]);
+                    removeActive(workDetailLink[i]);
+                    removeActive(workDetailText[i]);
                 }
-            }, 1000);
 
-        });
+                setTimeout(function () { //work 상세보기 off후 초기화
+                    workDetailIndex = 0;
 
-        function detaileOn(target) { //work 상세보기 함수
-            target[i].addEventListener("click", function (e) {
-                e.preventDefault();
-
-                addActive(workDetailWrapper);
+                    for (var i = 0; i < workDetail.length; i++) {
+                        removeActive(workDetail[i]);
+                    }
+                }, 1000);
             });
         }
     }

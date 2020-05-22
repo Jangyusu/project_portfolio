@@ -397,6 +397,8 @@ html::-webkit-scrollbar {
       transform: translate(100%); }
     .main__detail.active {
       transform: translate(-100%); }
+    .main__detail.active:last-of-type {
+      transform: translate(0); }
     .main__detail_wrapper {
       width: 80%;
       height: 100vh;
@@ -408,6 +410,14 @@ html::-webkit-scrollbar {
       z-index: 2;
       transform: translate(100%);
       transition: 1s cubic-bezier(0.87, 0, 0.13, 1); }
+      .main__detail_wrapper:nth-of-type(1) p::before {
+        background: #282c6b; }
+      .main__detail_wrapper:nth-of-type(2) p::before {
+        background: #e20714; }
+      .main__detail_wrapper:nth-of-type(3) p::before {
+        background: #222131; }
+      .main__detail_wrapper:nth-of-type(4) p::before {
+        background: #8cbff8; }
       .main__detail_wrapper.active {
         transform: translate(0); }
         .main__detail_wrapper.active .main__detail_close {
@@ -443,6 +453,10 @@ html::-webkit-scrollbar {
       position: relative;
       display: flex;
       flex-wrap: wrap; }
+      .main__detail_text.active p {
+        transform: translate(0);
+        visibility: visible;
+        opacity: 1; }
       .main__detail_text p {
         width: 50%;
         font-family: "Chakra Petch";
@@ -454,15 +468,22 @@ html::-webkit-scrollbar {
         visibility: hidden;
         opacity: 0;
         transition: .5s ease-in-out; }
-        .main__detail_text p.active {
-          transform: translate(0);
-          visibility: visible;
-          opacity: 1; }
+        .main__detail_text p:nth-of-type(1) {
+          transition-delay: 0s; }
+        .main__detail_text p:nth-of-type(2) {
+          transition-delay: 0.1s; }
+        .main__detail_text p:nth-of-type(3) {
+          transition-delay: 0.2s; }
+        .main__detail_text p:nth-of-type(4) {
+          transition-delay: 0.3s; }
+        .main__detail_text p:nth-of-type(5) {
+          transition-delay: 0.4s; }
+        .main__detail_text p:nth-of-type(6) {
+          transition-delay: 0.5s; }
         .main__detail_text p::before {
           content: "";
           width: 60px;
           height: 7px;
-          background: #e20714;
           display: block;
           position: absolute;
           left: -8px;

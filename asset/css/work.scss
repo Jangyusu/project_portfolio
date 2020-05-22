@@ -217,6 +217,9 @@
         &.active {
             transform: translate(-100%);
         }
+        &.active:last-of-type {
+            transform: translate(0);
+        }
         &_wrapper {
             width: 80%;
             height: 100vh;
@@ -229,6 +232,26 @@
             transform: translate(100%);
             transition: 1s cubic-bezier(0.87, 0, 0.13, 1);
 
+            &:nth-of-type(1) {
+                p::before {
+                    background: #282c6b;
+                }
+            }
+            &:nth-of-type(2) {
+                p::before {
+                    background: #e20714;
+                }
+            }
+            &:nth-of-type(3) {
+                p::before {
+                    background: #222131;
+                }
+            }
+            &:nth-of-type(4) {
+                p::before {
+                    background: #8cbff8;
+                }
+            }
             &.active {
                 transform: translate(0);
 
@@ -276,6 +299,11 @@
             display: flex;
             flex-wrap: wrap;
 
+            &.active p{
+                transform: translate(0);
+                visibility: visible;
+                opacity: 1;
+            }
             & p {
                 width: 50%;
                 font-family: "Chakra Petch";
@@ -288,16 +316,15 @@
                 opacity: 0;
                 transition: .5s ease-in-out;
 
-                &.active {
-                    transform: translate(0);
-                    visibility: visible;
-                    opacity: 1;
+                @for $i from 1 to 7 {
+                    &:nth-of-type(#{$i}) {
+                        transition-delay: (($i - 1) * 0.1) + s;
+                    }
                 }
                 &::before {
                     content: "";
                     width: 60px;
                     height: 7px;
-                    background: #e20714;
                     display: block;
                     position: absolute;
                     left: -8px;
