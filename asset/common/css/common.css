@@ -8,6 +8,10 @@ html::-webkit-scrollbar {
   display: none;
   /* Chrome, Safari, Opera*/ }
 
+::selection {
+  background: #262626;
+  color: #fff; }
+
 .header {
   width: 100%;
   z-index: 2;

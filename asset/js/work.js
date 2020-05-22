@@ -20,6 +20,21 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
 
 
 
+
+
+    function firstEvent() { //초기값 실행
+        setTimeout(function () {
+            addActive(header); //header 색상 변경
+            addActive(workMenu[0]); //header 색상 변경
+            addActive(workTitle[workIndex]); //workTitle on
+        }, 900);
+
+        for (var i = 0; i < workImg.length; i++) { //workImg 삽입
+            workImg[i].style.backgroundImage = "url('asset/img/work/bg_0" + (i + 1) + ".jpg')";
+        };
+    }
+    firstEvent();
+
     for (var i = 0; i < workDetailWrapper.length; i++) { //work 상세메뉴 휠 기능
         workDetailWrapper[i].addEventListener("mousewheel", function (e) {
             e.preventDefault();
@@ -33,11 +48,10 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
                     setTimeout(function () {
                         for (var i = 0; i < workDetailText.length; i++) {
                             addActive(workDetailText[i]);
-                        }
+                        };
 
                         setTimeout(function () {
                             for (var i = 0; i < workDetailLink.length; i++) {
-                                console.log(this);
                                 addActive(workDetailLink[i]);
                             }
                         }, 1200);
@@ -69,18 +83,8 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
 
     function detailOnOff() { //work 상세보기 on/off
         for (var i = 0; i < workList.length; i++) { //work 상세보기 on
-            workImg[i].addEventListener("click", function (e) {
-                e.preventDefault();
-
-                addActive(workDetailWrapper[this.dataset.num - 1]);
-            });
-
-            workList[i].addEventListener("click", function (e) {
-                e.preventDefault();
-
-                addActive(this);
-                addActive(workDetailWrapper[this.dataset.num - 1]);
-            });
+            workDetailOn(workImg[i], "");
+            workDetailOn(workList[i], "addActive(this)");
         };
 
         for (var i = 0; i < workDetailClose.length; i++) {
@@ -100,23 +104,19 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
                 }, 1000);
             });
         }
+
+        function workDetailOn(target, add) {
+            target.addEventListener("click", function (e) {
+                e.preventDefault();
+
+                addActive(workDetailWrapper[this.dataset.num - 1]);
+                add;
+            });
+        }
     }
     detailOnOff();
 
-    function firstEvent() { //초기값 실행
-        setTimeout(function () {
-            addActive(header); //header 색상 변경
-            addActive(workMenu[0]); //header 색상 변경
-            addActive(workTitle[workIndex]); //workTitle on
-        }, 900)
-
-        for (var i = 0; i < workImg.length; i++) { //workImg 삽입
-            workImg[i].style.backgroundImage = "url('asset/img/work/bg_0" + (i + 1) + ".jpg')";
-        };
-    }
-    firstEvent();
-
-    for (var i = 0; i < workList.length; i++) {
+    for (var i = 0; i < workList.length; i++) { //preview 이미지 on/off
         workList[i].addEventListener("mouseenter", function () { //work List 마우스 오버시
             addActive(workPreview);
             workPreview.style.backgroundImage = "url('asset/img/work/preview_0" + this.dataset.num + ".jpg')"
