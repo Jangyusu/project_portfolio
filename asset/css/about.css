@@ -1,3 +1,60 @@
+@charset "UTF-8";
+@import "https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap";
+/* Noto Sans KR 폰트 */
+@import "https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap";
+/* Chakra Petch 폰트 */
+html, body, dl, dt {
+  margin: 0;
+  padding: 0; }
+
+body {
+  width: 100%; }
+
+span, em, strong, a {
+  display: inline-block; }
+
+p, span, small, figcaption, li, h1, h2, h3, h4, h5, h6 {
+  word-break: keep-all; }
+
+ul, li {
+  list-style-type: none; }
+
+dt, dd {
+  display: inline-block; }
+
+em {
+  font-style: normal; }
+
+a {
+  color: #000;
+  text-decoration: none;
+  display: block; }
+
+img {
+  font-size: 0;
+  vertical-align: top;
+  display: inline-block; }
+
+button {
+  background: transparent;
+  border: 0;
+  outline: 0;
+  cursor: pointer; }
+
+input {
+  border: 0;
+  background: transparent;
+  outline: 0; }
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  color: #000;
+  font-weight: normal;
+  box-sizing: border-box; }
+
 html {
   -ms-overflow-style: none;
   /* IE and Edge */
@@ -14,7 +71,7 @@ html::-webkit-scrollbar {
 
 .header {
   width: 100%;
-  z-index: 2;
+  z-index: 3;
   position: fixed; }
   .header.active .header__title a {
     color: #262626; }
@@ -261,5 +318,86 @@ html::-webkit-scrollbar {
     top: 20%;
     height: 0;
     opacity: 1; } }
+body {
+  overflow: hidden;
+  transition: 1s; }
 
-/*# sourceMappingURL=common.css.map */
+.main__title {
+  font-family: "Chakra Petch";
+  font-size: 5rem;
+  font-weight: 700;
+  color: #fff;
+  position: fixed;
+  left: 50px;
+  top: 240px;
+  z-index: 2; }
+  .main__title.active {
+    color: #262626; }
+.main section {
+  width: 100%;
+  height: 100vh;
+  transition: 1s cubic-bezier(0.33, 1, 0.68, 1); }
+.main__visual_img {
+  width: 100%;
+  height: 100vh; }
+  .main__visual_img.active {
+    width: 75%;
+    height: 72vh;
+    margin: 0 auto;
+    padding-top: 295px;
+    transition: 0.7s 0.7s cubic-bezier(0.76, 0, 0.24, 1); }
+  .main__visual_img div {
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/about/about_bg_00.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; }
+.main__visual_text {
+  text-align: center;
+  transform: translateY(-5%); }
+  .main__visual_text span {
+    width: 1px;
+    height: 0;
+    background: #262626;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: -50%;
+    transition: .5s 1.7s; }
+    .main__visual_text span.active {
+      height: 60px; }
+  .main__visual_text strong {
+    font-family: "Chakra Petch";
+    margin-bottom: 30px;
+    font-size: 5rem;
+    font-weight: 900;
+    letter-spacing: .1rem;
+    color: #000;
+    transform: translateY(100%);
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s 2s; }
+    .main__visual_text strong.active {
+      transform: translateY(0);
+      visibility: visible;
+      opacity: 1; }
+  .main__visual_text p {
+    margin: 0 auto;
+    font-size: 1.25rem;
+    font-weight: 100;
+    transform: translateY(100%);
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s 2.3s; }
+    .main__visual_text p.active {
+      transform: translateY(0);
+      visibility: visible;
+      opacity: 1; }
+.main__introduce {
+  background-image: url("../img/about/about_bg_01.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+/*# sourceMappingURL=about.css.map */
