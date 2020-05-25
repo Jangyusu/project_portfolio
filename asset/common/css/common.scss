@@ -6,7 +6,7 @@ html::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera*/
 }
 
-::selection {
+::selection { //드래그 시
     background: #262626;
     color: #fff;
  }
@@ -327,5 +327,35 @@ html::-webkit-scrollbar {
                 transition: .2s ease-in-out;
             }
         }
+    }
+}
+
+// keyframes
+@keyframes scroll {
+    33% {
+        top: 50%;
+    }
+    66% {
+        top: 51%;
+    }
+    100% {
+        top: 50%;
+    }
+}
+@keyframes wheel {
+    33% {
+        top: 20%;
+        height: 6px;
+        opacity: 1;
+    }
+    66% {
+        top: 80%;
+        height: 0;
+        opacity: 0;
+    }
+    100% {
+        top: 20%;
+        height: 0;
+        opacity: 1;
     }
 }

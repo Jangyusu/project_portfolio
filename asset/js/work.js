@@ -15,10 +15,9 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
         workDetailText = document.querySelectorAll(".main__detail_text"),
         workDetailLink = document.querySelectorAll(".main__detail_text_link"),
         workDetailClose = document.querySelectorAll(".main__detail_close"),
+        workDetailScroll = document.querySelectorAll(".main__detail_scroll"),
         workDetailIndex = 0,
         workDetailBln = true;
-
-
 
 
 
@@ -46,14 +45,10 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
                     detailSlide(1, addActive);
 
                     setTimeout(function () {
-                        for (var i = 0; i < workDetailText.length; i++) {
-                            addActive(workDetailText[i]);
-                        }
+                        addActives(workDetailText);
 
                         setTimeout(function () {
-                            for (var i = 0; i < workDetailLink.length; i++) {
-                                addActive(workDetailLink[i]);
-                            }
+                            addActives(workDetailLink);
                         }, 1200);
                     }, 1000);
                 } else { //위로 휠
@@ -83,8 +78,8 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
 
     function detailOnOff() { //work 상세보기 on/off
         for (var i = 0; i < workList.length; i++) { //work 상세보기 on
-            workDetailOn(workImg[i], "");
-            workDetailOn(workList[i], "addActive(this)");
+            workDetailOn(workImg[i]);
+            workDetailOn(workList[i]);
         }
 
         for (var i = 0; i < workDetailClose.length; i++) {
@@ -93,24 +88,28 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
                     removeActive(workDetailWrapper[i]);
                     removeActive(workDetailLink[i]);
                     removeActive(workDetailText[i]);
+                    removeActive(workDetailScroll[i]);
                 }
 
                 setTimeout(function () { //work 상세보기 off후 초기화
                     workDetailIndex = 0;
 
-                    for (var i = 0; i < workDetail.length; i++) {
-                        removeActive(workDetail[i]);
-                    }
+                    removeActives(workDetail);
                 }, 1000);
             });
         }
 
-        function workDetailOn(target, add) { //work 상세보기 on 함수
+        function workDetailOn(target) { //work 상세보기 on 함수
             target.addEventListener("click", function (e) {
                 e.preventDefault();
 
-                addActive(workDetailWrapper[this.dataset.num - 1]);
-                add;
+                var targets = this;
+                addActive(workDetailWrapper[targets.dataset.num - 1]); //work detail wrapper on
+                addActive(workList[targets.dataset.num - 1]); //봤던 work list
+
+                setTimeout(function () { //work detail scroll on
+                    addActive(workDetailScroll[targets.dataset.num - 1]);
+                }, 1000);
             });
         }
     }

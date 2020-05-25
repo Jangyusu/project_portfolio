@@ -241,6 +241,26 @@ html::-webkit-scrollbar {
         height: 100vh;
         transition: .2s ease-in-out; }
 
+@keyframes scroll {
+  33% {
+    top: 50%; }
+  66% {
+    top: 51%; }
+  100% {
+    top: 50%; } }
+@keyframes wheel {
+  33% {
+    top: 20%;
+    height: 6px;
+    opacity: 1; }
+  66% {
+    top: 80%;
+    height: 0;
+    opacity: 0; }
+  100% {
+    top: 20%;
+    height: 0;
+    opacity: 1; } }
 .main {
   margin-top: 240px;
   display: flex; }
@@ -403,6 +423,37 @@ html::-webkit-scrollbar {
       transform: translate(-100%); }
     .main__detail.active:last-of-type {
       transform: translate(0); }
+    .main__detail_scroll {
+      width: 30px;
+      height: 45px;
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      border-radius: 40px;
+      position: fixed;
+      right: 50px;
+      top: 50%;
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(-50%);
+      animation: scroll 2.5s infinite ease-in-out;
+      animation-delay: 1.5s; }
+      .main__detail_scroll.active {
+        visibility: visible;
+        opacity: 1;
+        transition: 1s ease-in-out; }
+      .main__detail_scroll::before {
+        content: "";
+        width: 2px;
+        height: 6px;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 2px;
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 20%;
+        opacity: 0;
+        transform: translate(-50%);
+        animation: wheel 2.5s infinite ease-in-out;
+        animation-delay: 1.5s; }
     .main__detail_wrapper {
       width: 80%;
       height: 100vh;
@@ -414,6 +465,22 @@ html::-webkit-scrollbar {
       z-index: 2;
       transform: translate(100%);
       transition: 1s cubic-bezier(0.87, 0, 0.13, 1); }
+      .main__detail_wrapper:nth-of-type(1) .main__detail_img {
+        background-image: url("../img/work/detail/detail_01_01.jpg"); }
+        .main__detail_wrapper:nth-of-type(1) .main__detail_img::after {
+          background-image: url("../img/work/detail/detail_01_02.jpg"); }
+      .main__detail_wrapper:nth-of-type(2) .main__detail_img {
+        background-image: url("../img/work/detail/detail_02_01.jpg"); }
+        .main__detail_wrapper:nth-of-type(2) .main__detail_img::after {
+          background-image: url("../img/work/detail/detail_02_02.jpg"); }
+      .main__detail_wrapper:nth-of-type(3) .main__detail_img {
+        background-image: url("../img/work/detail/detail_03_01.jpg"); }
+        .main__detail_wrapper:nth-of-type(3) .main__detail_img::after {
+          background-image: url("../img/work/detail/detail_03_02.jpg"); }
+      .main__detail_wrapper:nth-of-type(4) .main__detail_img {
+        background-image: url("../img/work/detail/detail_04_01.jpg"); }
+        .main__detail_wrapper:nth-of-type(4) .main__detail_img::after {
+          background-image: url("../img/work/detail/detail_04_02.jpg"); }
       .main__detail_wrapper:nth-of-type(1) p::before {
         background: #282c6b; }
       .main__detail_wrapper:nth-of-type(2) p::before {
@@ -445,11 +512,20 @@ html::-webkit-scrollbar {
       width: 60%; }
     .main__detail_img {
       width: 44%;
+      height: 50vh;
       margin-left: 6%;
-      padding-bottom: 100vh;
-      background-image: url("../img/work/detail/detail_02.jpg");
-      background-position: top;
-      background-size: cover; }
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat; }
+      .main__detail_img::after {
+        content: "";
+        width: 100%;
+        height: 50vh;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        display: block;
+        transform: translateY(100%); }
     .main__detail_text {
       width: 50%;
       padding: 125px 30px 140px 75px;
