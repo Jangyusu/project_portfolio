@@ -31,7 +31,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
 
         for (var i = 0; i < workImg.length; i++) { //workImg 삽입
             workImg[i].style.backgroundImage = "url('asset/img/work/bg_0" + (i + 1) + ".jpg')";
-        };
+        }
     }
     firstEvent();
 
@@ -48,7 +48,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
                     setTimeout(function () {
                         for (var i = 0; i < workDetailText.length; i++) {
                             addActive(workDetailText[i]);
-                        };
+                        }
 
                         setTimeout(function () {
                             for (var i = 0; i < workDetailLink.length; i++) {
@@ -63,9 +63,9 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
                 setTimeout(function () { //중복 실행 방지 시간
                     workDetailBln = true;
                 }, 1000);
-            };
+            }
         });
-    };
+    }
 
     function detailSlide(calc, fun) {
         workDetailIndex = workDetailIndex + calc;
@@ -74,18 +74,18 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
             workDetailIndex = 1;
         } else if (workDetailIndex == -1) {
             workDetailIndex = 0;
-        };
+        }
 
         for (var i = 0; i < workDetail.length; i++) {
             fun(workDetail[i]);
-        };
-    };
+        }
+    }
 
     function detailOnOff() { //work 상세보기 on/off
         for (var i = 0; i < workList.length; i++) { //work 상세보기 on
             workDetailOn(workImg[i], "");
             workDetailOn(workList[i], "addActive(this)");
-        };
+        }
 
         for (var i = 0; i < workDetailClose.length; i++) {
             workDetailClose[i].addEventListener("click", function () { //work 상세보기 off
@@ -105,7 +105,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
             });
         }
 
-        function workDetailOn(target, add) {
+        function workDetailOn(target, add) { //work 상세보기 on 함수
             target.addEventListener("click", function (e) {
                 e.preventDefault();
 
@@ -125,7 +125,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
         workList[i].addEventListener("mouseleave", function () {  //work List 마우스 리브시
             removeActive(workPreview);
         });
-    };
+    }
 
     workBtn.addEventListener("click", function (e) { //work slide button
         if (workBln == true) { //중복 실행 방지
@@ -142,12 +142,12 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
                 if (workIndex > 0) { //첫번째 슬라이드까지 실행
                     workIndex--;
                     workSlide(1, 0, 0, workIndex + 1); //prev 슬라이드 실행
-                };
+                }
             } else if (e.target.dataset.text == "next") { //next button
                 if (workIndex < workList.length - 1) { //마지막 슬라이드까지 실행
                     workIndex++;
                     workSlide(0, 1, workList.length - 1, workIndex); //next 슬라이드 실행
-                };
+                }
             }
 
             function workSlide(firstIndex, secondIndex, trues, imgIndex) { //workSlide 함수
@@ -155,7 +155,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
 
                 if (workIndex == trues) {
                     addActive(workBtn.children[secondIndex]);
-                };
+                }
 
                 workImg[imgIndex].classList.add("right");
             }

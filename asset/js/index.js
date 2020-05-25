@@ -75,14 +75,14 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
             visualIndex = visualIndex + calc;
             if (visualIndex == condition) { //visual Index 초기화
                 visualIndex = reset;
-            };
+            }
             visualCurrent.innerHTML = "0" + (visualIndex + 1); //visual Index업데이트
 
             if (calc == 1) { //visual Next 실행
                 slideUpDown("150%", "slideUp");
             } else { //visual Prev 실행
                 slideUpDown("-50%", "slideDown");
-            };
+            }
 
             function slideUpDown(top, className) { //slide Event
                 visualNextBg.style.top = top; //visual Next 배경
@@ -95,12 +95,12 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
                     visualNextBg.classList.remove(className);
                     visualNextBg.style.top = "150%"; //visual Next 배경
                 }, 1800);
-            };
+            }
 
             for (var i = 0; i < visualText.length; i++) {
                 removeActive(visualText[i]); //visual Text on
                 removeActive(visualLink[i]); //visual Link on
-            };
+            }
 
             setTimeout(function () { //중복 실행 방지 시간
                 visualBln = true;
@@ -109,7 +109,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
                 slideStart(); //슬라이드 시작
             }, 1800);
         }
-    };
+    }
 
     //end
 })

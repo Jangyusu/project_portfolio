@@ -20,7 +20,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
             pageSwitch("0s", "0s", "0s", "0s", addActive); //header menu on
             for (var i = 0; i < navList.length; i++) {
                 addActive(navList[i]);
-            };
+            }
 
             setTimeout(function () { //header menu off
                 pageSwitch("1s cubic-bezier(0.87, 0, 0.13, 1)", ".2s ease-in-out", ".7s", ".2s", removeActive);
@@ -37,7 +37,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
             navRight.style.transition = thi;
             for (var i = 0; i < headerMenuSpan.length; i++) {
                 headerMenuSpan[i].style.transition = four;
-            };
+            }
 
             fun(nav);
             fun(navLine);
@@ -45,9 +45,9 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
             fun(headerMenu);
             for (var i = 0; i < navList.length; i++) {
                 navList[i].style.transition = thi;
-            };
+            }
         }
-    };
+    }
     firstEvent();
 
     function pageChange() { //페이지 이동 함수
@@ -59,7 +59,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
 
         headerLogo.addEventListener("click", function (e) { //header Logo click
             refresh(e);
-        })
+        });
 
         function refresh(e) {
             e.preventDefault();
@@ -68,7 +68,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
             }
             location.href = "index.html";
         }
-    };
+    }
     pageChange();
 
     headerMenu.addEventListener("click", function () { //header menu on/off
@@ -119,7 +119,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
         for (var i = 0; i < navList.length; i++) { //text Slide 반복
             var textSlide = textSlideFunction(i, fun);
             textSlide();
-        };
+        }
 
         function textSlideFunction(j, fun) { //text slide 실행
             return function () {
@@ -127,8 +127,8 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
                     fun(navList[j]);
                 }, j * 75);
             }
-        };
-    };
+        }
+    }
 
     //end
 });
