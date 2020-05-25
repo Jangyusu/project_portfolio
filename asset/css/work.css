@@ -365,31 +365,32 @@ html::-webkit-scrollbar {
     .main__right_list li {
       margin-right: 10%;
       border-top: 1px solid #f2f2f2; }
-      .main__right_list li.active a {
+      .main__right_list li.active button {
         opacity: .5; }
-      .main__right_list li a {
+      .main__right_list li button {
+        width: 100%;
         padding: 50px 0;
         display: flex;
         align-items: center;
         transition: 1s ease-in-out; }
-        .main__right_list li a:hover div {
+        .main__right_list li button:hover div {
           transform: translate(30px); }
-        .main__right_list li a div {
+        .main__right_list li button div {
           margin-right: 100px;
           display: flex;
           flex-direction: column;
           transition: .4s; }
-          .main__right_list li a div time {
+          .main__right_list li button div time {
             margin-bottom: 5px;
             font-family: "Chakra Petch";
             font-size: 2.5rem;
             font-weight: 100;
             color: #555; }
-          .main__right_list li a div small {
+          .main__right_list li button div small {
             font-family: "Chakra Petch";
             font-weight: 800;
             color: #555; }
-        .main__right_list li a p {
+        .main__right_list li button p {
           font-size: 1.875rem;
           font-weight: 900;
           color: #333; }
