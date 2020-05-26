@@ -40,7 +40,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
 
             setTimeout(function () { //중복 실행 방지 시간
                 scrollBln = !scrollBln;
-            }, 700);
+            }, 600);
         }
     });
 
