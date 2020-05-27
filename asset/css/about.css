@@ -266,36 +266,14 @@ html::-webkit-scrollbar {
             .header__nav_right_list li a img {
               margin-right: 16px;
               width: 20px; }
-      .header__nav_right_tel {
+      .header__nav_right a {
         margin-bottom: 20px;
         font-size: 1.1rem;
         font-weight: 100;
         letter-spacing: .1rem;
-        color: #fff;
-        display: inline-block; }
-      .header__nav_right_comment {
-        width: 250px;
-        padding: 0 30px;
-        border: 1px solid #fff;
-        line-height: 3rem;
-        color: #fff;
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-        transition: 0.3s cubic-bezier(0.45, 0, 0.55, 1); }
-        .header__nav_right_comment:hover {
-          background: #fff;
-          color: #000; }
-          .header__nav_right_comment:hover::after {
-            background: #04070b; }
-        .header__nav_right_comment::after {
-          content: "";
-          width: 12px;
-          height: 1px;
-          background: #fff;
-          display: inline-block;
-          transform: translateY(25px);
-          transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1); }
+        color: #fff; }
+        .header__nav_right a:last-of-type {
+          margin-bottom: 0; }
     .header__nav_line {
       position: absolute;
       left: 62%;

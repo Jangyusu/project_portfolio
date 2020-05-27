@@ -278,41 +278,15 @@ html::-webkit-scrollbar {
                     }
                 }
             }
-            &_tel {
+            a {
                 margin-bottom: 20px;
                 font-size: 1.1rem;
                 font-weight: 100;
                 letter-spacing: .1rem;
                 color: #fff;
-                display: inline-block;
-            }
-            &_comment {
-                width: 250px;
-                padding: 0 30px;
-                border: 1px solid #fff;
-                line-height: 3rem;
-                color: #fff;
-                position: relative;
-                display: flex;
-                justify-content: space-between;
-                transition: .3s cubic-bezier(0.45, 0, 0.55, 1);
 
-                &:hover {
-                    background: #fff;
-                    color: #000;
-
-                    &::after {
-                        background: #04070b;
-                    }
-                }
-                &::after {
-                    content: "";
-                    width: 12px;
-                    height: 1px;
-                    background: #fff;
-                    display: inline-block;
-                    transform: translateY(25px);
-                    transition: .2s cubic-bezier(0.45, 0, 0.55, 1);
+                &:last-of-type {
+                    margin-bottom: 0;
                 }
             }
         }
