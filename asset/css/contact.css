@@ -327,162 +327,152 @@ html::-webkit-scrollbar {
     top: 20%;
     height: 0;
     opacity: 1; } }
-body {
-  overflow: hidden;
-  transition: 1s; }
+.main {
+  margin-top: 200px; }
 
-.main__title {
-  font-family: "Chakra Petch";
-  font-size: 5rem;
-  font-weight: 700;
-  color: #fff;
-  position: fixed;
-  left: 50px;
-  top: 240px;
-  z-index: 2; }
-  .main__title.active {
-    color: #262626; }
-.main section {
-  width: 100%;
+.contact {
+  width: 20%;
   height: 100vh;
-  transition: 1s cubic-bezier(0.33, 1, 0.68, 1); }
-.main__visual_img {
-  width: 100%;
-  height: 100vh; }
-  .main__visual_img.active {
-    width: 75%;
-    height: 72vh;
-    margin: 0 auto;
-    padding-top: 295px;
-    transition: 0.7s 0.7s cubic-bezier(0.76, 0, 0.24, 1); }
-  .main__visual_img div {
-    width: 100%;
-    height: 100%;
-    background-image: url("../img/about/about_bg_00.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; }
-.main__visual_text {
-  text-align: center;
-  transform: translateY(-5%); }
-  .main__visual_text span {
-    width: 1px;
-    height: 0;
-    background: #262626;
-    display: block;
-    position: absolute;
-    left: 50%;
-    top: -50%;
-    transition: .5s 1.7s; }
-    .main__visual_text span.active {
-      height: 60px; }
-  .main__visual_text strong {
-    font-family: "Chakra Petch";
+  padding-left: 50px;
+  position: fixed; }
+  .contact__title {
     margin-bottom: 30px;
-    font-size: 5rem;
-    font-weight: 900;
-    letter-spacing: .1rem;
-    color: #000;
-    transform: translateY(100%);
-    visibility: hidden;
-    opacity: 0;
-    transition: .5s 2s; }
-    .main__visual_text strong.active {
-      transform: translateY(0);
-      visibility: visible;
-      opacity: 1; }
-  .main__visual_text p {
-    margin: 0 auto;
-    font-size: 1.25rem;
-    font-weight: 100;
-    transform: translateY(100%);
-    visibility: hidden;
-    opacity: 0;
-    transition: .5s 2.3s; }
-    .main__visual_text p.active {
-      transform: translateY(0);
-      visibility: visible;
-      opacity: 1; }
-.main__introduce {
-  padding: 200px 0 0 20%;
-  background-image: url("../img/about/about_bg_01.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex; }
-  .main__introduce article h3 {
     font-family: "Chakra Petch";
-    font-size: 1.375rem;
-    font-weight: 600;
-    color: #fff; }
-  .main__introduce article > strong {
-    font-size: 2.875rem;
-    font-weight: 300;
-    line-height: 7rem;
-    color: #fff; }
-  .main__introduce_passion {
-    margin-right: 15%; }
-    .main__introduce_passion p {
-      margin-top: 20px;
-      font-size: 1.125rem;
-      font-weight: 100;
-      color: #fff; }
-  .main__introduce_vision ul {
-    margin-top: 20px; }
-    .main__introduce_vision ul li {
-      margin-bottom: 24px;
-      display: flex; }
-      .main__introduce_vision ul li:last-of-type {
-        margin-bottom: 0; }
-      .main__introduce_vision ul li > p {
-        color: #fff; }
-        .main__introduce_vision ul li > p:nth-of-type(1) {
-          width: 165px;
-          font-family: "Chakra Petch";
-          font-size: 1.125rem;
-          font-weight: 500; }
-        .main__introduce_vision ul li > p:nth-of-type(2) {
-          font-weight: 300; }
-  .main__introduce_vision_tech div {
-    margin-bottom: 36px; }
-    .main__introduce_vision_tech div:last-of-type {
-      margin-bottom: 0; }
-    .main__introduce_vision_tech div strong {
-      width: max-content;
+    font-size: 5rem;
+    font-weight: 700;
+    color: #262626; }
+  .contact__list li {
+    margin-bottom: 20px;
+    width: max-content; }
+    .contact__list li p {
+      padding-right: 6px;
       font-family: "Chakra Petch";
-      font-size: 1.125rem;
-      font-weight: 600;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      position: relative;
-      cursor: help; }
-      .main__introduce_vision_tech div strong:hover span {
-        left: 75px;
-        visibility: visible;
-        opacity: 1; }
-      .main__introduce_vision_tech div strong img {
-        margin-left: 8px; }
-      .main__introduce_vision_tech div strong span {
-        width: max-content;
-        padding: 0 12px;
-        border-radius: 16px;
-        background: rgba(0, 0, 0, 0.5);
-        font-size: .9rem;
-        font-weight: 300;
-        color: #fff;
+      font-size: 1.25rem;
+      color: #262626;
+      position: relative; }
+      .contact__list li p::before {
+        content: "";
+        width: 0;
+        height: 5px;
+        background: #eaeaea;
+        display: block;
         position: absolute;
-        left: 68px;
-        top: 0;
-        visibility: hidden;
-        opacity: 0;
-        transition: 0.5s cubic-bezier(0.33, 1, 0.68, 1); }
-    .main__introduce_vision_tech div small {
-      width: 100%;
-      margin-top: 6px;
-      font-family: "Chakra Petch";
-      font-weight: 300;
-      color: #fff;
-      display: block; }
+        left: 0;
+        bottom: 10%;
+        z-index: -1;
+        transition: .3s; }
+      .contact__list li p:hover::before {
+        width: 100%; }
+      .contact__list li p.active::before {
+        width: 100%; }
 
-/*# sourceMappingURL=about.css.map */
+.question {
+  width: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-48%, -50%); }
+  .question__title {
+    margin-bottom: 50px;
+    font-size: 3rem;
+    font-weight: 500; }
+    .question__title span {
+      font-size: 3rem;
+      font-weight: 500;
+      display: block;
+      text-align: right; }
+  .question__form {
+    clear: both;
+    text-align: center; }
+    .question__form_left {
+      float: left;
+      width: 50%; }
+      .question__form_left li {
+        width: 80%;
+        margin-bottom: 60px;
+        text-align: left;
+        position: relative; }
+        .question__form_left li::before {
+          content: "";
+          width: 100%;
+          height: 2px;
+          background: #262626;
+          display: block;
+          position: absolute;
+          left: 0;
+          bottom: 0; }
+        .question__form_left li::after {
+          content: "";
+          width: 0;
+          height: 2px;
+          background: #f00;
+          display: block;
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          transition: .2s; }
+        .question__form_left li.active::after {
+          left: 0;
+          width: 100%; }
+        .question__form_left li:last-of-type {
+          margin-bottom: 0; }
+        .question__form_left li input {
+          width: 100%;
+          font-size: .9rem;
+          line-height: 2rem; }
+        .question__form_left li label {
+          font-size: .875rem;
+          position: absolute;
+          left: 0;
+          top: 0;
+          opacity: .5;
+          z-index: -1;
+          transition: .2s; }
+          .question__form_left li label.active {
+            font-size: .7rem;
+            color: #f00;
+            opacity: 1;
+            transform: translateY(-100%); }
+    .question__form_right {
+      float: right;
+      width: 50%;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      position: relative; }
+      .question__form_right textarea {
+        height: 320px;
+        padding: 10px;
+        border: 2px solid #262626;
+        font-size: .9rem; }
+        .question__form_right textarea:focus {
+          border: 2px solid #f00; }
+      .question__form_right label {
+        font-size: 0.875rem;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        cursor: auto;
+        opacity: .5;
+        transition: .2s; }
+        .question__form_right label.active {
+          font-size: .7rem;
+          color: #f00;
+          left: 0;
+          top: 0;
+          opacity: 1;
+          transform: translateY(-120%); }
+      .question__form_right small {
+        font-size: .9rem;
+        color: #f00; }
+    .question__form_submit {
+      width: 100%;
+      margin-top: 100px;
+      background: #262626;
+      line-height: 3rem;
+      color: #fff;
+      cursor: pointer; }
+      .question__form_submit:hover {
+        background: rgba(255, 0, 0, 0.9); }
+
+/*# sourceMappingURL=contact.css.map */

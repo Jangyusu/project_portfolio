@@ -6,8 +6,8 @@ https://designpixel.co.kr/ --------------------- index02, munu
 
 http://reflexion.co.kr/new/*
 
-http://pixdine.com/ --------------------- contact
+http://pixdine.com/
 
-http://metabrain.co.kr/*
+http://metabrain.co.kr/ --------------------- contact_01
 
-http://www.designpop.co.kr/dpop/main/main.asp/*
+http://www.designpop.co.kr/dpop/main/main.asp/ --------------------- contact_02

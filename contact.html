@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="asset/css/contact.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="asset/common/js/util.js"></script>
+    <script src="asset/common/js/common.js"></script>
+    <script src="asset/js/contact.js"></script>
+    <title>Yusu's portfolio | contact</title>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header__title"><a href="#">YUSU</a></h1>
+        <button type="button" class="header__menu">
+            <span></span>
+            <span></span>
+        </button>
+        <div class="header__side">
+            <a href="tel:010-2911-6847" class="header__side_tel">T.010 2911 6847</a>
+            <a href="https://github.com/Jangyusu" class="header__side_link" target="_blank">
+                <img src="asset/common/img/link_01.png" alt="#">
+                <span>깃허브</span>
+            </a>
+            <a href="https://jangyusu.github.io" class="header__side_link" target="_blank">
+                <img src="asset/common/img/link_02.png" alt="#">
+                <span>블로그</span>
+            </a>
+            <a href="https://jangyusu.github.io" class="header__side_link" target="_blank">
+                <img src="asset/common/img/link_03.png" alt="#">
+                <span>이력서</span>
+            </a>
+        </div>
+        <nav class="header__nav">
+            <div class="header__nav_left">
+                <ul class="header__nav_left_list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="work.html">Work</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><small>(C) 2020 Jang yusu ALL RIGHTS RESERVED T.010 2911 6847</small></li>
+                </ul>
+            </div>
+            <div class="header__nav_right">
+                <ul class="header__nav_right_list">
+                    <li><a href="#"><img src="asset/common/img/link_01.png" alt="">깃허브</a></li>
+                    <li><a href="#"><img src="asset/common/img/link_02.png" alt="">블로그</a></li>
+                    <li><a href="#"><img src="asset/common/img/link_03.png" alt="">이력서</a></li>
+                </ul>
+                <a href="tel:010-2911-6847" class="header__nav_right_tel">T. 010 2911 6847</a>
+                <a href="#" class="header__nav_right_comment">COMMENT</a>
+            </div>
+            <span class="header__nav_line"></span>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="contact">
+            <h2 class="contact__title">Contact</h2>
+            <ul class="contact__list">
+                <li>
+                    <p>장유수</p>
+                </li>
+                <li>
+                    <p>010. 2911. 6847</p>
+                </li>
+                <li>
+                    <p>dbtnss@naver.com</p>
+                </li>
+            </ul>
+        </section>
+        <section class="question">
+            <p class="question__title">“문의하실 내용을 보내주시면 <span>빠른 시일 내로 연락드리겠습니다.”</span></p>
+            <form action="#" class="question__form">
+                <ul class="question__form_left">
+                    <li>
+                        <input type="text" id="name" name="name" class="question__form_typing">
+                        <label for="name">*이름</label>
+                    </li>
+                    <li>
+                        <input type="text" id="company" name="company" class="question__form_typing">
+                        <label for="company">회사명</label>
+                    </li>
+                    <li>
+                        <input type="email" id="email" name="email" class="question__form_typing">
+                        <label for="email">*이메일</label>
+                    </li>
+                    <li>
+                        <input type="tel" id="tel" name="tel" maxlength="13" required class="question__form_typing">
+                        <label for="tel">*전화번호</label>
+                    </li>
+                </ul>
+                <div class="question__form_right">
+                    <textarea id="contents" name="contents" class="question__form_typing"></textarea>
+                    <label for="contents">*문의내용</label>
+                    <small>*는 필수 입력 사항입니다.</small>
+                </div>
+                <input type="submit" value="전송하기" class="question__form_submit">
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
