@@ -8,6 +8,8 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
         visualLine = document.querySelector(".main__visual_text span"),
         visualFirstTxt = document.querySelector(".main__visual_text strong"),
         visualSecondTxt = document.querySelector(".main__visual_text p"),
+        introImg = document.querySelectorAll(".main__introduce_vision_tech img"),
+        introInfo = document.querySelectorAll(".main__introduce_vision_tech_info"),
         scrollBln = true,
         scrollIndex = 0;
 
