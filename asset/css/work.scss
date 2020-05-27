@@ -173,6 +173,7 @@
                             font-family: "Chakra Petch";
                             font-weight: 800;
                             color: #555;
+                            text-align: left;
                         }
                     }
                     & p {
@@ -264,7 +265,7 @@
             right: 0;
             top: 0;
             overflow: hidden;
-            z-index: 2;
+            z-index: 4;
             transform: translate(100%);
             transition: 1s cubic-bezier(0.87, 0, 0.13, 1);
 
