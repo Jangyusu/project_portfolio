@@ -26,6 +26,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
             addActive(header); //header 색상 변경
             addActive(workMenu[0]); //header 색상 변경
             addActive(workTitle[workIndex]); //workTitle on
+            workOpen(); //home에서 view more 클릭 시 해당 리스트 on
         }, 900);
 
         for (var i = 0; i < workImg.length; i++) { //workImg 삽입
@@ -114,6 +115,15 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
         }
     }
     detailOnOff();
+
+    function workOpen() { //home에서 view more 클릭 시 해당 리스트 on 함수
+        var workNumber = window.location.href.split("#")[1];
+
+        if (workNumber != null) {
+            console.log(workList[workNumber - 1].querySelector("button"));
+            workList[workNumber - 1].querySelector("button").click();
+        }
+    }
 
     for (var i = 0; i < workList.length; i++) { //preview 이미지 on/off
         workList[i].addEventListener("mouseenter", function () { //work List 마우스 오버시
