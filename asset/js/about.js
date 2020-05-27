@@ -8,8 +8,6 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
         visualLine = document.querySelector(".main__visual_text span"),
         visualFirstTxt = document.querySelector(".main__visual_text strong"),
         visualSecondTxt = document.querySelector(".main__visual_text p"),
-        introImg = document.querySelectorAll(".main__introduce_vision_tech img"),
-        introInfo = document.querySelectorAll(".main__introduce_vision_tech_info"),
         scrollBln = true,
         scrollIndex = 0;
 
@@ -31,7 +29,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
             scrollBln = !scrollBln;
 
             if (e.deltaY > 0) { //아래로 휠
-                wheelIndex(1, section.length, section.length - 1, removeActive, 600);
+                wheelIndex(1, section.length, section.length - 1, removeActive, 300);
             } else { //위로 휠
                 wheelIndex(-1, -1, 0, addActive, 0);
             }
@@ -56,8 +54,11 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
         }
 
         setTimeout(function () {
-            fun(header);
-            fun(visualTitle);
+            fun(visualTitle); //About title 색상 변경
+
+            setTimeout(function () {
+                fun(header); //Header 색상 변경
+            }, time);
         }, time);
     }
     //end
