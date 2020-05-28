@@ -35,23 +35,16 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
     }
     firstEvent();
 
-    for (var i = 0; i < workDetailWrapper.length; i++) { //work 상세메뉴 휠 기능
-        workDetailWrapper[i].addEventListener("mousewheel", function (e) {
+    var touchStartX, touchEndX;
+    for (var i = 0; i < workDetailWrapper.length; i++) { //work 상세메뉴 슬라이드 이벤트
+        workDetailWrapper[i].addEventListener("mousewheel", function (e) { //work 상세메뉴 휠 기능
             e.preventDefault();
 
             if (workDetailBln) { //중복 실행 방지
                 workDetailBln = false;
 
                 if (e.deltaY > 0) { //아래로 휠
-                    detailSlide(1, addActive);
-
-                    setTimeout(function () {
-                        addActives(workDetailText);
-
-                        setTimeout(function () {
-                            addActives(workDetailLink);
-                        }, 1200);
-                    }, 1000);
+                    detailNext();
                 } else { //위로 휠
                     detailSlide(-1, removeActive);
                 }
@@ -61,6 +54,40 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
                 }, 1000);
             }
         });
+
+        workDetailWrapper[i].addEventListener("touchstart", function (e) { //터치 시작
+            touchStartX = e.changedTouches[0].pageX;
+        });
+
+        workDetailWrapper[i].addEventListener("touchend", function (e) { //터치 끝
+            touchEndX = e.changedTouches[0].pageX;
+
+            if (workDetailBln) { //중복 실행 방지
+                workDetailBln = false;
+
+                if (touchEndX + 100 < touchStartX) { //오른쪽에서 왼쪽 혹은 아래에서 위로 터치
+                    detailNext();
+                } else if (touchStartX + 100 < touchEndX) { //왼쪽에서 오른쪽 혹은 위에서 아래로 터치
+                    detailSlide(-1, removeActive);
+                }
+
+                setTimeout(function () { //중복 실행 방지 시간
+                    workDetailBln = true;
+                }, 1000);
+            }
+        });
+    }
+
+    function detailNext() { //detail next 함수
+        detailSlide(1, addActive);
+
+        setTimeout(function () {
+            addActives(workDetailText);
+
+            setTimeout(function () {
+                addActives(workDetailLink);
+            }, 1200);
+        }, 1000);
     }
 
     function detailSlide(calc, fun) { //work detail slide 함수
