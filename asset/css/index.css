@@ -331,9 +331,6 @@ html::-webkit-scrollbar {
     display: none; }
   .header__side {
     display: none; } }
-@media screen and (max-width: 375px) {
-  .header__nav_left {
-    left: 3%; } }
 body {
   overflow: hidden; }
 
@@ -576,5 +573,34 @@ footer {
     font-weight: 100;
     letter-spacing: .05rem;
     color: #ccc; }
+
+@media screen and (max-width: 1024px) {
+  .visual__ind {
+    left: 35px;
+    top: 50%; }
+  .visual__text_wrap span {
+    font-size: 5rem;
+    line-height: 7rem; } }
+@media screen and (max-width: 768px) {
+  .visual__ind {
+    left: 15px;
+    top: 50%; }
+  .visual__text_wrap span {
+    font-size: 4rem;
+    line-height: 6rem; }
+  .visual__scroll {
+    display: none; } }
+@media screen and (max-width: 640px) {
+  .visual__text_wrap span {
+    font-size: 3rem;
+    line-height: 5rem; } }
+@media screen and (max-width: 425px) {
+  .visual__text_wrap span {
+    font-size: 2rem;
+    line-height: 4rem; }
+
+  footer {
+    left: 20px;
+    bottom: 20px; } }
 
 /*# sourceMappingURL=index.css.map */

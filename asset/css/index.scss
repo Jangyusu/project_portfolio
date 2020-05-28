@@ -341,13 +341,58 @@ footer {
 @include pc-mid { //1440px 이하 ------------------------------------------------
 }
 @include tab-large { //1024px 이하 ------------------------------------------------
+    .visual {
+        &__ind {
+            left: 35px;
+            top: 50%;
+        }
+        &__text {
+            &_wrap span {
+                font-size: 5rem;
+                line-height: 7rem;
+            }
+        }
+    }
 }
 @include tab-small { //768px 이하 ------------------------------------------------
+    .visual {
+        &__ind {
+            left: 15px;
+            top: 50%;
+        }
+        &__text {
+            &_wrap span {
+                font-size: 4rem;
+                line-height: 6rem;
+            }
+        }
+        &__scroll {
+            display: none;
+        }
+    }
 }
 @include mob-large { //640px 이하 ------------------------------------------------
+    .visual {
+        &__text {
+            &_wrap span {
+                font-size: 3rem;
+                line-height: 5rem;
+            }
+        }
+    }
 }
 @include mob-mid { //425px 이하 ------------------------------------------------
-}
-@include mob-small { //375px 이하 ------------------------------------------------
+    .visual {
+        &__text {
+            &_wrap span {
+                font-size: 2rem;
+                line-height: 4rem;
+            }
+        }
+    }
+    footer {
+        left: 20px;
+        bottom: 20px;
+    }
 }
 //반응형 끝 -------------------------------------------------------------------

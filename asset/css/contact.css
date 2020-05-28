@@ -331,9 +331,6 @@ html::-webkit-scrollbar {
     display: none; }
   .header__side {
     display: none; } }
-@media screen and (max-width: 375px) {
-  .header__nav_left {
-    left: 3%; } }
 .main {
   margin-top: 200px; }
 
