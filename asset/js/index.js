@@ -27,15 +27,37 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
         } else { //위로 휠
             visualControl(-1, -1, visualTotal - 1);
         }
-    })
+    });
     visualNext.addEventListener("click", function () { //visual Next 버튼
         visualControl(1, visualTotal, 0);
-    })
+    });
     visualPrev.addEventListener("click", function () { //visual Prev 버튼
         visualControl(-1, -1, visualTotal - 1);
-    })
+    });
 
+    function touch() { //터치 함수
+        var touchStartX,
+            touchStartY,
+            touchEndX,
+            touchEndY;
 
+        window.addEventListener("touchstart", function (e) { //터치 시작
+            touchStartX = e.changedTouches[0].pageX;
+            touchStartY = e.changedTouches[0].pageY;
+        });
+
+        window.addEventListener("touchend", function (e) { //터치 끝
+            touchEndX = e.changedTouches[0].pageX;
+            touchEndY = e.changedTouches[0].pageY;
+
+            if (touchEndX + 100 < touchStartX || touchEndY + 100 < touchStartY) { //오른쪽에서 왼쪽 혹은 아래에서 위로 터치
+                visualNext.click();
+            } else if (touchStartX + 100 < touchEndX || touchStartY + 100 < touchEndY) { //왼쪽에서 오른쪽 혹은 위에서 아래로 터치
+                visualPrev.click();
+            }
+        });
+    }
+    touch();
 
     function firstEvent() { //초기값 실행
         for (var i = 0; i < visualTotal; i++) { //loading img 추가
