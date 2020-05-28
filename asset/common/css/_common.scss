@@ -363,6 +363,9 @@ html::-webkit-scrollbar {
                 right: 10%;
             }
         }
+        &__side {
+            display: none;
+        }
     }
 }
 @include tab-small { //768px 이하 ------------------------------------------------
@@ -402,9 +405,6 @@ html::-webkit-scrollbar {
             &_line {
                 display: none;
             }
-        }
-        &__side {
-            display: none;
         }
     }
 }

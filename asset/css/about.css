@@ -309,7 +309,9 @@ html::-webkit-scrollbar {
   .header__nav_left {
     left: 10%; }
   .header__nav_right {
-    right: 10%; } }
+    right: 10%; }
+  .header__side {
+    display: none; } }
 @media screen and (max-width: 640px) {
   .header__nav_left {
     left: 5%; }
@@ -328,8 +330,6 @@ html::-webkit-scrollbar {
   .header__nav_right {
     display: none; }
   .header__nav_line {
-    display: none; }
-  .header__side {
     display: none; } }
 body {
   overflow: hidden; }
@@ -487,5 +487,90 @@ body {
       font-weight: 300;
       color: #fff;
       display: block; }
+
+@media screen and (max-width: 1440px) {
+  .main__introduce {
+    padding: 120px 0 0 10%; }
+    .main__introduce_passion {
+      margin-right: 12%;
+      padding-top: 370px; } }
+@media screen and (max-width: 1024px) {
+  .main__title {
+    top: 160px; }
+  .main__visual_img {
+    height: 65vh;
+    padding-top: 220px; }
+  .main__visual_text strong {
+    font-size: 4rem;
+    margin-bottom: 15px; }
+  .main__introduce {
+    padding: 100px 0 0 5%; }
+    .main__introduce article > strong {
+      font-size: 1.875rem;
+      line-height: 4rem; }
+    .main__introduce_passion {
+      padding-top: 200px;
+      margin-right: 5%; }
+      .main__introduce_passion p {
+        width: max-content; }
+    .main__introduce_vision ul li {
+      margin-bottom: 12px; } }
+@media screen and (max-width: 768px) {
+  .main__visual_img {
+    width: 85%; }
+  .main__introduce {
+    padding: 190px 0 0 5%;
+    display: block; }
+    .main__introduce_passion {
+      padding-top: 0;
+      transform: translate(42%); }
+      .main__introduce_passion p {
+        margin-top: 10px;
+        font-size: 1rem; } }
+@media screen and (max-width: 640px) {
+  .main__title {
+    top: 100px; }
+  .main__visual_img {
+    width: 85%;
+    height: 60vh;
+    padding-top: 400px; }
+  .main__visual_text {
+    transform: translateY(30%); }
+  .main__introduce {
+    padding: 240px 0 0 5%; }
+    .main__introduce_passion {
+      transform: translate(30%);
+      margin-bottom: 50px; } }
+@media screen and (max-width: 425px) {
+  .main__title {
+    font-size: 3rem;
+    left: 25px;
+    top: 80px; }
+  .main__visual_img {
+    height: 50vh;
+    padding-top: 260px; }
+  .main__visual_text strong {
+    font-size: 2.5rem; }
+  .main__visual_text p {
+    font-size: 1rem; }
+  .main__visual_text span {
+    height: 40px; }
+  .main__introduce {
+    padding: 180px 0 0 5%; }
+    .main__introduce_passion {
+      display: none; }
+    .main__introduce article h3 {
+      font-size: 1.2rem; }
+    .main__introduce article > strong {
+      line-height: 3rem; }
+    .main__introduce_vision ul li {
+      margin-bottom: 6px; }
+      .main__introduce_vision ul li > p:nth-of-type(1) {
+        width: 110px;
+        font-size: 1rem; }
+      .main__introduce_vision ul li > p:nth-of-type(2) {
+        font-size: .9rem; }
+    .main__introduce_vision_tech div {
+      margin-bottom: 20px; } }
 
 /*# sourceMappingURL=about.css.map */

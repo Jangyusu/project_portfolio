@@ -309,7 +309,9 @@ html::-webkit-scrollbar {
   .header__nav_left {
     left: 10%; }
   .header__nav_right {
-    right: 10%; } }
+    right: 10%; }
+  .header__side {
+    display: none; } }
 @media screen and (max-width: 640px) {
   .header__nav_left {
     left: 5%; }
@@ -328,8 +330,6 @@ html::-webkit-scrollbar {
   .header__nav_right {
     display: none; }
   .header__nav_line {
-    display: none; }
-  .header__side {
     display: none; } }
 body {
   overflow: hidden; }

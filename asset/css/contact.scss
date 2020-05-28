@@ -203,13 +203,105 @@
 
 //반응형 시작 -------------------------------------------------------------------
 @include pc-mid { //1440px 이하 ------------------------------------------------
+    .question {
+        left: 60%;
+    }
 }
 @include tab-large { //1024px 이하 ------------------------------------------------
+    .contact {
+        padding-left: 35px;
+
+        &__title {
+            font-size: 3rem;
+        }
+        &__list li p {
+            font-size: 1rem;
+        }
+    }
+
+    .question {
+        width: 60%;
+
+        &__title {
+            font-size: 2rem;
+
+            span {
+                font-size: 2rem;
+            }
+        }
+    }
 }
 @include tab-small { //768px 이하 ------------------------------------------------
+    .contact {
+        width: 30%;
+    }
+
+    .question__title {
+        font-size: 1.5rem;
+
+        span {
+            font-size: 1.5rem;
+        }
+    }
 }
 @include mob-large { //640px 이하 ------------------------------------------------
+    .main {
+        margin-top: 120px;
+    }
+    .contact {
+        width: 100%;
+        height: auto;
+        margin-bottom: 70px;
+        position: initial;
+    }
+    
+    .question {
+        width: 80%;
+        margin: 0 auto;
+        position: initial;
+        transform: translate(0);
+    }
 }
 @include mob-mid { //425px 이하 ------------------------------------------------
+    .main {
+        margin-top: 80px;
+    }
+    .contact {
+        margin-bottom: 30px;
+
+        &__title {
+            margin-bottom: 20px;
+        }
+        &__list li {
+            margin-bottom: 10px;
+        }
+    }
+
+    .question {
+        &__title {
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+
+            span {
+                font-size: 1.2rem;
+            }
+        }
+        &__form {
+            &_left li {
+                margin-bottom: 43px;
+            }
+            &_right {
+                small {
+                    font-size: .7rem;
+                }
+                textarea {
+                    height: 260px;
+                }
+            }
+            &_submit {
+                margin-top: 20px;
+            }
+        }
+    }
 }
 //반응형 끝 -------------------------------------------------------------------

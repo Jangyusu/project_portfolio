@@ -309,7 +309,9 @@ html::-webkit-scrollbar {
   .header__nav_left {
     left: 10%; }
   .header__nav_right {
-    right: 10%; } }
+    right: 10%; }
+  .header__side {
+    display: none; } }
 @media screen and (max-width: 640px) {
   .header__nav_left {
     left: 5%; }
@@ -328,8 +330,6 @@ html::-webkit-scrollbar {
   .header__nav_right {
     display: none; }
   .header__nav_line {
-    display: none; }
-  .header__side {
     display: none; } }
 .main {
   margin-top: 200px; }
@@ -474,5 +474,70 @@ html::-webkit-scrollbar {
       cursor: pointer; }
       .question__form_submit:hover {
         background: rgba(255, 0, 0, 0.9); }
+
+@media screen and (max-width: 1440px) {
+  .question {
+    left: 60%; } }
+@media screen and (max-width: 1024px) {
+  .contact {
+    padding-left: 35px; }
+    .contact__title {
+      font-size: 3rem; }
+    .contact__list li p {
+      font-size: 1rem; }
+
+  .question {
+    width: 60%; }
+    .question__title {
+      font-size: 2rem; }
+      .question__title span {
+        font-size: 2rem; } }
+@media screen and (max-width: 768px) {
+  .contact {
+    width: 30%; }
+
+  .question__title {
+    font-size: 1.5rem; }
+    .question__title span {
+      font-size: 1.5rem; } }
+@media screen and (max-width: 640px) {
+  .main {
+    margin-top: 120px; }
+
+  .contact {
+    width: 100%;
+    height: auto;
+    margin-bottom: 70px;
+    position: initial; }
+
+  .question {
+    width: 80%;
+    margin: 0 auto;
+    position: initial;
+    transform: translate(0); } }
+@media screen and (max-width: 425px) {
+  .main {
+    margin-top: 80px; }
+
+  .contact {
+    margin-bottom: 30px; }
+    .contact__title {
+      margin-bottom: 20px; }
+    .contact__list li {
+      margin-bottom: 10px; }
+
+  .question__title {
+    margin-bottom: 25px;
+    font-size: 1.2rem; }
+    .question__title span {
+      font-size: 1.2rem; }
+  .question__form_left li {
+    margin-bottom: 43px; }
+  .question__form_right small {
+    font-size: .7rem; }
+  .question__form_right textarea {
+    height: 260px; }
+  .question__form_submit {
+    margin-top: 20px; } }
 
 /*# sourceMappingURL=contact.css.map */

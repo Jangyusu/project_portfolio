@@ -230,13 +230,158 @@ body {
 
 //반응형 시작 -------------------------------------------------------------------
 @include pc-mid { //1440px 이하 ------------------------------------------------
+    .main {
+        &__introduce {
+            padding: 120px 0 0 10%;
+
+            &_passion {
+                margin-right: 12%;
+                padding-top: 370px;
+            }
+        }
+    }
 }
 @include tab-large { //1024px 이하 ------------------------------------------------
+    .main {
+        &__title {
+            top: 160px;
+        }
+        &__visual {
+            &_img {
+                height: 65vh;
+                padding-top: 220px;
+            }
+            &_text {
+                strong {
+                    font-size: 4rem;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+        &__introduce {
+            padding: 100px 0 0 5%;
+
+            article > strong {
+                font-size: 1.875rem;
+                line-height: 4rem;
+            }
+            &_passion {
+                padding-top: 200px;
+                margin-right: 5%;
+
+                p {
+                    width: max-content;
+                }
+            }
+            &_vision ul li {
+                margin-bottom: 12px;
+            }
+        }
+    }
 }
 @include tab-small { //768px 이하 ------------------------------------------------
+    .main {
+        &__visual {
+            &_img {
+                width: 85%;
+            }
+        }
+        &__introduce {
+            padding: 190px 0 0 5%;
+            display: block;
+
+            &_passion {
+                padding-top: 0;
+                transform: translate(42%);
+
+                p {
+                    margin-top: 10px;
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
 }
 @include mob-large { //640px 이하 ------------------------------------------------
+    .main {
+        &__title {
+            top: 100px;
+        }
+        &__visual {
+            &_img {
+                width: 85%;
+                height: 60vh;
+                padding-top: 400px;
+            }
+            &_text {
+                transform: translateY(30%);
+            }
+        }
+        &__introduce {
+            padding: 240px 0 0 5%;
+
+            &_passion {
+                transform: translate(30%);
+                margin-bottom: 50px;
+            }
+        }
+    }
 }
 @include mob-mid { //425px 이하 ------------------------------------------------
+    .main {
+        &__title {
+            font-size: 3rem;
+            left: 25px;
+            top: 80px;
+        }
+        &__visual {
+            &_img {
+                height: 50vh;
+                padding-top: 260px;
+            }
+            &_text {
+                strong {
+                    font-size: 2.5rem;
+                }
+                p {
+                    font-size: 1rem;
+                }
+                span {
+                    height: 40px;
+                }
+            }
+        }
+        &__introduce {
+            padding: 180px 0 0 5%;
+
+            &_passion {
+                display: none;
+            }
+            article {
+                h3 {
+                    font-size: 1.2rem;
+                }
+                > strong {
+                    line-height: 3rem;
+                }
+            }
+            &_vision {
+                ul li {
+                    margin-bottom: 6px;
+
+                    > p:nth-of-type(1) {
+                        width: 110px;
+                        font-size: 1rem;
+                    }
+                    > p:nth-of-type(2) {
+                        font-size: .9rem;
+                    }
+                }
+                &_tech div {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
 }
 //반응형 끝 -------------------------------------------------------------------
