@@ -16,7 +16,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
 
 
     function firstEvent() { //초기값 실행
-        if (sessionStorage.getItem("check") == "on") {
+        if (sessionStorage.getItem("check") == "on") { //웹사이트 최초 접속 시
             pageSwitch("0s", "0s", "0s", "0s", addActive); //header menu on
             for (var i = 0; i < navList.length; i++) {
                 addActive(navList[i]);
@@ -27,7 +27,6 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
                 textSlideFun(removeActive);
             }, 100);
         }
-
         sessionStorage.setItem("check", "on");
 
         function pageSwitch(fir, sec, thi, four, fun) { //header menu on/off 함수

@@ -63,7 +63,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
         });
     }
 
-    function detailSlide(calc, fun) {
+    function detailSlide(calc, fun) { //work detail slide 함수
         workDetailIndex = workDetailIndex + calc;
 
         if (workDetailIndex == 2) {

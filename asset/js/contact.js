@@ -5,12 +5,16 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
         formTyping = document.querySelectorAll(".question__form_typing"),
         formTel = document.querySelectorAll("input")[3];
 
+
+
     function firstEvent() { //초기값 실행
         setTimeout(function () {
             addActive(header); //header 색상 변경
         }, 900);
     }
     firstEvent();
+
+
 
     function typing() { //input typing 함수
         for (var i = 0; i < formTyping.length; i++) {

@@ -24,6 +24,8 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
     }
     firstEvent();
 
+
+
     window.addEventListener("mousewheel", function (e) {
         if (scrollBln) { //중복 실행 방지
             scrollBln = !scrollBln;
@@ -34,7 +36,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
                 wheelIndex(-1, -1, 0, addActive, 0);
             }
 
-            for (var i = 0; i < section.length; i++) {
+            for (var i = 0; i < section.length; i++) { //section 스크롤 적용
                 section[i].style.transform = "translateY(-" + scrollIndex + "00%)";
             }
 
@@ -43,8 +45,6 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
             }, 600);
         }
     });
-
-
 
     function wheelIndex(calc, condition, result, fun, time) { //wheel Index Control 함수
         scrollIndex = scrollIndex + calc;

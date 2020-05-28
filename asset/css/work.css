@@ -287,11 +287,11 @@ html::-webkit-scrollbar {
 
 @keyframes scroll {
   33% {
-    top: 50%; }
+    bottom: 40px; }
   66% {
-    top: 51%; }
+    bottom: 30px; }
   100% {
-    top: 50%; } }
+    bottom: 40px; } }
 @keyframes wheel {
   33% {
     top: 20%;
@@ -305,6 +305,35 @@ html::-webkit-scrollbar {
     top: 20%;
     height: 0;
     opacity: 1; } }
+@media screen and (max-width: 1024px) {
+  .header__nav_left {
+    left: 10%; }
+  .header__nav_right {
+    right: 10%; } }
+@media screen and (max-width: 640px) {
+  .header__nav_left {
+    left: 5%; }
+  .header__nav_right {
+    right: 5%; } }
+@media screen and (max-width: 425px) {
+  .header__title {
+    left: 25px;
+    top: 15px; }
+  .header__menu {
+    right: 15px;
+    top: 10px; }
+  .header__nav_left_list li a {
+    font-size: 3rem;
+    line-height: 5rem; }
+  .header__nav_right {
+    display: none; }
+  .header__nav_line {
+    display: none; }
+  .header__side {
+    display: none; } }
+@media screen and (max-width: 375px) {
+  .header__nav_left {
+    left: 3%; } }
 .main {
   margin-top: 240px;
   display: flex; }
