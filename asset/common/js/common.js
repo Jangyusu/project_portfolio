@@ -65,7 +65,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
             if (!headerMenu.classList.contains("active")) { //menu 열린상태로 클릭 시
                 sessionStorage.removeItem("check");
             }
-            location.href = "index.html";
+            location.href = "index.php";
         }
     }
     pageChange();
