@@ -5,12 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yusu's portfolio</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="asset/common/js/util.js"></script>
-    <script src="asset/common/js/common.js"></script>
-    <script src="asset/js/index.js"></script>
     <link rel="icon" href="asset/common/img/favicon.png" type="image/png">
     <link rel="stylesheet" href="asset/css/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="asset/js/index.js"></script>
 </head>
 
 <body>

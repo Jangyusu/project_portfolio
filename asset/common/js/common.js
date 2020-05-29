@@ -1,3 +1,4 @@
+document.write('<script src="asset/common/js/util.js"></script>'); //util.js 로드
 window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 실행
     //start
 
