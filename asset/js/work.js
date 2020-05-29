@@ -37,6 +37,11 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
 
     var touchStartX, touchEndX;
     for (var i = 0; i < workDetailWrapper.length; i++) { //work 상세메뉴 슬라이드 이벤트
+        workDetailWrapper[i].addEventListener("scroll", function (e) { //work detail에서는 스크롤 막기
+            e.preventDefault();
+            e.stopPropagation;
+        });
+
         workDetailWrapper[i].addEventListener("mousewheel", function (e) { //work 상세메뉴 휠 기능
             e.preventDefault();
 
@@ -65,9 +70,9 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
             if (workDetailBln) { //중복 실행 방지
                 workDetailBln = false;
 
-                if (touchEndX + 100 < touchStartX) { //오른쪽에서 왼쪽 혹은 아래에서 위로 터치
+                if (touchEndX + 50 < touchStartX) { //오른쪽에서 왼쪽 혹은 아래에서 위로 터치
                     detailNext();
-                } else if (touchStartX + 100 < touchEndX) { //왼쪽에서 오른쪽 혹은 위에서 아래로 터치
+                } else if (touchStartX + 50 < touchEndX) { //왼쪽에서 오른쪽 혹은 위에서 아래로 터치
                     detailSlide(-1, removeActive);
                 }
 
