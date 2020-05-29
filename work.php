@@ -4,18 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="asset/common/img/favicon.png" type="image/png">
-    <link rel="stylesheet" href="asset/css/work.css">
+    <title>Yusu's portfolio | work</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="asset/common/js/util.js"></script>
     <script src="asset/common/js/common.js"></script>
     <script src="asset/js/work.js"></script>
-    <title>Yusu's portfolio | work</title>
+    <link rel="icon" href="asset/common/img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="asset/css/work.css">
 </head>
 
 <body>
     <!-- 헤더 시작 -->
-    
+    <?
+        include_once $_SERVER['DOCUMENT_ROOT']."/project_portfolio/asset/common/php/header.php";
+    ?>
     <!-- 헤더 끝 -->
     <!-- 메인 시작 -->
     <main class="main">
@@ -24,13 +26,13 @@
             <h2 class="main__left_title">Work</h2>
             <ul class="main__left_list">
                 <li>
-                    <h3><a href="work.html">All</a></h3>
+                    <h3><a href="work.php">All</a></h3>
                 </li>
                 <li>
-                    <h3><a href="work.html">Web</a></h3>
+                    <h3><a href="work.php">Web</a></h3>
                 </li>
                 <li>
-                    <h3><a href="work.html">App</a></h3>
+                    <h3><a href="work.php">App</a></h3>
                 </li>
             </ul>
         </section>
