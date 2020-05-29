@@ -139,11 +139,11 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
                 e.preventDefault();
 
                 var targets = this;
-                addActive(workDetailWrapper[targets.dataset.num - 1]); //work detail wrapper on
-                addActive(workList[targets.dataset.num - 1]); //봤던 work list
+                addActive(workDetailWrapper[workList.length - targets.dataset.num]); //work detail wrapper on
+                addActive(workList[workList.length - targets.dataset.num]); //봤던 work list
 
                 setTimeout(function () { //work detail scroll on
-                    addActive(workDetailScroll[targets.dataset.num - 1]);
+                    addActive(workDetailScroll[workList.length - targets.dataset.num]);
                 }, 1000);
             });
         }
@@ -162,7 +162,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
     for (var i = 0; i < workList.length; i++) { //preview 이미지 on/off
         workList[i].addEventListener("mouseenter", function () { //work List 마우스 오버시
             addActive(workPreview);
-            workPreview.style.backgroundImage = "url('asset/img/work/preview_0" + this.dataset.num + ".jpg')"
+            workPreview.style.backgroundImage = "url('asset/img/work/preview_0" + ((workList.length + 1) - this.dataset.num) + ".jpg')"
         });
 
         workList[i].addEventListener("mouseleave", function () {  //work List 마우스 리브시

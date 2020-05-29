@@ -67,7 +67,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
         document.body.removeChild(loading); //loading tag 제거
         visualCurrent.innerHTML = "0" + (visualIndex + 1); //visual 현재 슬라이드 입력
         visualTotalText.innerHTML = "0" + visualTotal; //visual total 슬라이드 입력
-        visualCurrentBg.style.backgroundImage = "url('asset/img/index/bg_01.jpg')"; //visual 첫 배경
+        visualCurrentBg.style.backgroundImage = "url('asset/img/index/bg_0" + visualTotal + ".jpg')"; //visual 첫 배경
         setTimeout(function () { //1초 Delay Event 실행
             slideStart(); //슬라이드 시작
             TextOn(); //Text on
@@ -115,7 +115,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
 
             function slideUpDown(top, className) { //slide Event
                 visualNextBg.style.top = top; //visual Next 배경
-                visualNextBg.style.backgroundImage = "url('asset/img/index/bg_0" + (visualIndex + 1) + ".jpg')"; //visual Next 배경
+                visualNextBg.style.backgroundImage = "url('asset/img/index/bg_0" + (visualTotal - visualIndex) + ".jpg')"; //visual Next 배경
                 visualCurrentBg.classList.add(className);
                 visualNextBg.classList.add(className);
                 setTimeout(function () {
@@ -139,6 +139,5 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
             }, 1800);
         }
     }
-
     //end
 })
