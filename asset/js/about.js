@@ -58,9 +58,9 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
             if (scrollBln) { //중복 실행 방지
                 scrollBln = !scrollBln;
 
-                if (touchEndX + 100 < touchStartX || touchEndY + 100 < touchStartY) { //오른쪽에서 왼쪽 혹은 아래에서 위로 터치
+                if (touchEndX + 50 < touchStartX || touchEndY + 50 < touchStartY) { //오른쪽에서 왼쪽 혹은 아래에서 위로 터치
                     wheelIndex(1, section.length, section.length - 1, removeActive, 300);
-                } else if (touchStartX + 100 < touchEndX || touchStartY + 100 < touchEndY) { //왼쪽에서 오른쪽 혹은 위에서 아래로 터치
+                } else if (touchStartX + 50 < touchEndX || touchStartY + 50 < touchEndY) { //왼쪽에서 오른쪽 혹은 위에서 아래로 터치
                     wheelIndex(-1, -1, 0, addActive, 0);
                 }
                 slide();
