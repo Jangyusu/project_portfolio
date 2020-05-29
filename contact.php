@@ -1,22 +1,7 @@
-<!DOCTYPE html>
-<html lang="ko">
+<?
+    include_once $_SERVER['DOCUMENT_ROOT']."/asset/common/php/header.php";
+?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yusu's portfolio | contact</title>
-    <link rel="icon" href="asset/common/img/favicon.png" type="image/png">
-    <link rel="stylesheet" href="asset/css/contact.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="asset/js/contact.js"></script>
-</head>
-
-<body>
-    <!-- 헤더 시작 -->
-    <?
-        include_once $_SERVER['DOCUMENT_ROOT']."/project_portfolio/asset/common/php/header.php";
-    ?>
-    <!-- 헤더 끝 -->
     <!-- 메인 시작 -->
     <main class="main">
         <!-- contact 시작 -->

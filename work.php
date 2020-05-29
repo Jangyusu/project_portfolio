@@ -1,22 +1,7 @@
-<!DOCTYPE html>
-<html lang="ko">
+<?
+    include_once $_SERVER['DOCUMENT_ROOT']."/asset/common/php/header.php";
+?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yusu's portfolio | work</title>
-    <link rel="icon" href="asset/common/img/favicon.png" type="image/png">
-    <link rel="stylesheet" href="asset/css/work.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="asset/js/work.js"></script>
-</head>
-
-<body>
-    <!-- 헤더 시작 -->
-    <?
-        include_once $_SERVER['DOCUMENT_ROOT']."/project_portfolio/asset/common/php/header.php";
-    ?>
-    <!-- 헤더 끝 -->
     <!-- 메인 시작 -->
     <main class="main">
         <!-- left 시작 -->
@@ -38,70 +23,46 @@
         <!-- right 시작 -->
         <section class="main__right">
             <div class="main__right_title">
+                <?
+                    $query = "select * from project order by num desc";
+                    $result = mq($query);
+                    while($row = mysqli_fetch_array($result)){
+                ?>
                 <h2>
-                    포트폴리오 랜딩페이지 제작
-                    <span>Portfolio Landing Page</span>
+                    <?=$row['workTitle']?>
+                    <span><?=$row['workSub']?></span>
                 </h2>
-                <h2>
-                    닌텐도 스위치 웹사이트 리뉴얼
-                    <span>Nintendo Switch</span>
-                </h2>
-                <h2>
-                    Batman DarkKnight 웹사이트 제작
-                    <span>Batman DarkKnight</span>
-                </h2>
-                <h2>
-                    한국관광공사 웹사이트 리뉴얼
-                    <span>Korea Tourism Organization</span>
-                </h2>
+                <? } ?>
             </div>
             <div class="main__right_ind">
                 <button type="button" data-text="prev" class="active"></button>
                 <button type="button" data-text="next"></button>
             </div>
             <button type="button" class="main__right_img">
-                <figure data-num="1" class="active"></figure>
-                <figure data-num="2"></figure>
-                <figure data-num="3"></figure>
-                <figure data-num="4"></figure>
+                <?
+                    $query = "select * from project order by num desc";
+                    $result = mq($query);
+                    while($row = mysqli_fetch_array($result)){
+                ?>
+                <figure data-num="<?=$row['num']?>"></figure>
+                <? } ?>
             </button>
             <ul class="main__right_list">
-                <li data-num="1">
+                <?
+                    $query = "select * from project order by num desc";
+                    $result = mq($query);
+                    while($row = mysqli_fetch_array($result)){
+                ?>
+                <li data-num="<?=$row['num']?>">
                     <button type="button">
                         <div>
-                            <time>2020-06</time>
+                            <time><?=$row['date']?></time>
                             <small>WebSite</small>
                         </div>
-                        <p>포트폴리오 랜딩페이지 제작</p>
+                        <p><?=$row['workTitle']?></p>
                     </button>
                 </li>
-                <li data-num="2">
-                    <button type="button">
-                        <div>
-                            <time>2020-05</time>
-                            <small>WebSite</small>
-                        </div>
-                        <p>닌텐도 스위치 웹사이트 리뉴얼</p>
-                    </button>
-                </li>
-                <li data-num="3">
-                    <button type="button">
-                        <div>
-                            <time>2020-04</time>
-                            <small>WebSite</small>
-                        </div>
-                        <p>Batman DarkKnight 웹사이트 제작</p>
-                    </button>
-                </li>
-                <li data-num="4">
-                    <button type="button">
-                        <div>
-                            <time>2020-03</time>
-                            <small>WebSite</small>
-                        </div>
-                        <p>한국관광공사 웹사이트 리뉴얼</p>
-                    </button>
-                </li>
+                <? } ?>
             </ul>
             <figure class="main__right_preview"></figure>
             <!-- 포트폴리오 랜딩페이지 시작 -->

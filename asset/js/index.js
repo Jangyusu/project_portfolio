@@ -88,6 +88,12 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
         addActive(visualLink[visualIndex]); //visual Link on
     }
 
+    for (var i = 0; i < visualLink.length; i++) { //index -> work detail 이동
+        visualLink[i].addEventListener("click", function () {
+            sessionStorage.removeItem("check");
+        })
+    }
+
     function visualControl(calc, condition, reset) { //visual Next, Prev 실행
         if (visualBln == true) { //중복 실행 방지
             visualBln = false;

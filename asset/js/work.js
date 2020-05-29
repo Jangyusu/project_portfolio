@@ -30,6 +30,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
             workOpen(); //home에서 view more 클릭 시 해당 리스트 on
         }, 900);
 
+        addActive(workImg[0]); //work 첫 이미지 on
         for (var i = 0; i < workImg.length; i++) { //workImg 삽입
             workImg[i].style.backgroundImage = "url('asset/img/work/bg_0" + (i + 1) + ".jpg')";
         }

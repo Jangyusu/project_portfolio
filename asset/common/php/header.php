@@ -1,3 +1,26 @@
+<? 
+    include_once $_SERVER['DOCUMENT_ROOT']."/asset/common/php/db.php";
+
+    $linkOrigin = $_SERVER['PHP_SELF']; //link 원본
+    $linkNum = strpos($linkOrigin, '.') - 1; //link '.'까지의 길이
+    $linkText = substr($linkOrigin, 1, $linkNum); //link text
+?>
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yusu's portfolio</title>
+    <link rel="icon" href="asset/common/img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="asset/css/<?=$linkText?>.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="asset/js/<?=$linkText?>.js"></script>
+</head>
+
+<body>    
+    <!-- 헤더 시작 -->
     <header class="header">
         <h1 class="header__title"><a href="index.php">YUSU</a></h1>
         <button type="button" class="header__menu">
@@ -41,3 +64,4 @@
             <span class="header__nav_line"></span>
         </nav>
     </header>
+    <!-- 헤더 끝 -->
