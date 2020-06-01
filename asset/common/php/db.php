@@ -1,9 +1,7 @@
 <?
     $host = 'localhost';
-    $db_user = 'root';
-    $db_password = '';
-    // $db_user = 'dbtnss2';
-    // $db_password = 'gosem9120!';
+    $db_user = 'dbtnss2'; //DB id
+    $db_password = 'gosem9120!'; //DB pw
     $db_name = 'dbtnss2'; //user DB
 
     $dbcon = new mysqli($host, $db_user, $db_password, $db_name);
