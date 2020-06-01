@@ -394,10 +394,12 @@
                 &:nth-of-type(5), &:nth-of-type(6) {
                     width: 100%;
                 }
-                & span {
+                & span, text {
                     margin: 4px 0 0 16px;
                     font-family: "Chakra Petch";
                     color: #ccc;
+                    line-height: 1.75rem;
+                    white-space: pre-line;
                     display: block;
                 }
             }

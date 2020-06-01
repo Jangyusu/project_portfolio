@@ -643,10 +643,12 @@ html::-webkit-scrollbar {
           z-index: -1; }
         .main__detail_text p:nth-of-type(5), .main__detail_text p:nth-of-type(6) {
           width: 100%; }
-        .main__detail_text p span {
+        .main__detail_text p span, .main__detail_text p text {
           margin: 4px 0 0 16px;
           font-family: "Chakra Petch";
           color: #ccc;
+          line-height: 1.75rem;
+          white-space: pre-line;
           display: block; }
       .main__detail_text_link {
         padding: 0 30px;
