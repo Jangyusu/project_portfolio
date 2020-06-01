@@ -23,10 +23,10 @@
         <!-- question 시작 -->
         <section class="question">
             <p class="question__title">“문의하실 내용을 보내주시면 <span>빠른 시일 내로 연락드리겠습니다.”</span></p>
-            <form action="#" class="question__form">
+            <form action="contact_res.php" method=post class="question__form">
                 <ul class="question__form_left">
                     <li>
-                        <input type="text" id="name" name="name" class="question__form_typing">
+                        <input type="text" id="name" name="name" required class="question__form_typing">
                         <label for="name">*이름</label>
                     </li>
                     <li>
@@ -34,7 +34,7 @@
                         <label for="company">회사명</label>
                     </li>
                     <li>
-                        <input type="email" id="email" name="email" class="question__form_typing">
+                        <input type="email" id="email" name="email" required class="question__form_typing">
                         <label for="email">*이메일</label>
                     </li>
                     <li>
@@ -43,7 +43,7 @@
                     </li>
                 </ul>
                 <div class="question__form_right">
-                    <textarea id="contents" name="contents" class="question__form_typing"></textarea>
+                    <textarea id="contents" name="contents" required class="question__form_typing"></textarea>
                     <label for="contents">*문의내용</label>
                     <small>*는 필수 입력 사항입니다.</small>
                 </div>

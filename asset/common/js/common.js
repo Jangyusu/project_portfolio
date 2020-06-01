@@ -52,21 +52,22 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
 
     function pageChange() { //페이지 이동 함수
         window.addEventListener("keydown", function (e) { //새로고침
-            if (e.keyCode == 116) {
-                refresh(e);
+            if (e.keyCode == 116) { //F5키
+                pageLoad(e, window.location.href);
             }
         });
 
         headerLogo.addEventListener("click", function (e) { //header Logo click
-            refresh(e);
+            pageLoad(e, "index.php");
         });
 
-        function refresh(e) {
+        function pageLoad(e, link) { //페이지 이동 함수
             e.preventDefault();
+
             if (!headerMenu.classList.contains("active")) { //menu 열린상태로 클릭 시
                 sessionStorage.removeItem("check");
             }
-            location.href = "index.php";
+            location.href = link;
         }
     }
     pageChange();

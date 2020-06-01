@@ -4,7 +4,8 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
 
     var header = document.querySelector(".header"),
         formTyping = document.querySelectorAll(".question__form_typing"),
-        formTel = document.querySelectorAll("input")[3];
+        formTel = document.querySelectorAll("input")[3],
+        submit = document.querySelectorAll("input")[4];
 
 
 
@@ -14,8 +15,6 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
         }, 900);
     }
     firstEvent();
-
-
 
     function typing() { //input typing 함수
         for (var i = 0; i < formTyping.length; i++) {
