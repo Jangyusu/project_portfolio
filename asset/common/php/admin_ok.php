@@ -5,9 +5,10 @@
 <style>
     h1 {
         margin: 0;
+        text-align: center;
     }
     div {
-        width:50%;
+        width:40%;
         position: absolute;
         left: 50%;
         top: 50%;
@@ -15,17 +16,24 @@
     }
     form {
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
     }
-    p {
-        margin: 20px 0 10px;
+    p, input[type="text"] {
+        width: 100%;
     }
-    input, textarea {
-        margin: 2px 0;
-        line-height: 1.5rem;
+    small, input[type="file"] {
+        width: 34%;
+    }
+    input {
+        margin-bottom: 10px;
+        height: 1.5rem;
+        font-size: .8rem;
     }
     textarea {
-        height: 200px;
+        width: 100%;
+        height: 150px;
+        margin-bottom: 10px;
+        resize: none;
     }
 </style>
 
@@ -34,18 +42,24 @@
     <form action="admin_register_ok.php" method="post" enctype="multipart/form-data">
         <p>★Project★</p>
         <input type="text" name="homeTitle" placeholder="PORTFOLIO RANDING">
-        <input type="file" name="homeImg" placeholder="헤이요">
+        <input type="file" name="homeImg">
+        <small>index 메인 - [1920x1080]</small>
         <input type="text" name="workTitle" placeholder="포트폴리오 랜딩페이지 제작">
         <input type="text" name="workSub" placeholder="Portfolio Landing Page">
         <input type="text" name="date" placeholder="2020-06">
         <p>★Detail★</p>
         <input type="text" name="title" placeholder="포트폴리오 랜딩페이지 제작">
         <input type="text" name="sub" placeholder="Portfolio Landing Page">
-        <input type="file" name="visualImg" placeholder="bg_04.jpg [1446x813]">
-        <input type="file" name="previewImg" placeholder="preview_04.jpg 711x400]">
-        <input type="file" name="workImg1" placeholder="detail_01_01.png [950x601]">
-        <input type="file" name="workImg2" placeholder="detail_01_02.jpg [1920x1200]">
-        <input type="file" name="workImg3" placeholder="detail_01_03.jpg [1920x1200]">
+        <input type="file" name="visualImg">
+        <small>work 메인 - [1446x813]</small>
+        <input type="file" name="previewImg">
+        <small>work 미리보기 - [711x400]</small>
+        <input type="file" name="workImg1">
+        <small>work 목업 - [950x601]</small>
+        <input type="file" name="workImg2">
+        <small>work 상세 1번 - [1920x1080]</small>
+        <input type="file" name="workImg3">
+        <small>work 상세 2번 - [1920x1080]</small>
         <input type="text" name="period" placeholder="2020-05 ~ 2020-06">
         <input type="text" name="participation" placeholder="기획 : 100%, 디자인 : 100%, 코딩 : 100%">
         <input type="text" name="technology" placeholder="html5, css3, Javascript, SCSS, php, MySQL">

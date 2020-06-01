@@ -31,36 +31,42 @@
 
     //homeImg
     $homeImg['name'] = "bg_0$next_row.jpg";
-    move_uploaded_file($homeImg['tmp_name'], '../../img/index/'.$homeImg['name']);
+    $homeImgName = $homeImg['name'];
+    move_uploaded_file($homeImg['tmp_name'], '../../img/index/'.$homeImgName);
 
     //visualImg
     $visualImg['name'] = "bg_0$next_row.jpg";
-    move_uploaded_file($visualImg['tmp_name'], '../../img/work/'.$visualImg['name']);
+    $visualImgName = $visualImg['name'];
+    move_uploaded_file($visualImg['tmp_name'], '../../img/work/'.$visualImgName);
 
     //previewImg
     $previewImg['name'] = "preview_0$next_row.jpg";
-    move_uploaded_file($previewImg['tmp_name'], '../../img/work/'.$previewImg['name']);
+    $previewName = $previewImg['name'];
+    move_uploaded_file($previewImg['tmp_name'], '../../img/work/'.$visualImgName);
 
     //workImg1
-    $workImg1['name'] = "detail_01_$next_row.png";
-    move_uploaded_file($workImg1['tmp_name'], '../../img/work/detail/'.$workImg1['name']);
+    $workImg1['name'] = "detail_01_0$next_row.png";
+    $workImg1Name = $workImg1['name'];
+    move_uploaded_file($workImg1['tmp_name'], '../../img/work/detail/'.$workImg1Name);
 
     //workImg2
-    $workImg2['name'] = "detail_02_$next_row.jpg";
-    move_uploaded_file($workImg2['tmp_name'], '../../img/work/detail/'.$workImg2['name']);
+    $workImg2['name'] = "detail_02_0$next_row.jpg";
+    $workImg2Name = $workImg2['name'];
+    move_uploaded_file($workImg2['tmp_name'], '../../img/work/detail/'.$workImg2Name);
 
     //workImg3
-    $workImg3['name'] = "detail_03_$next_row.jpg";
-    move_uploaded_file($workImg3['tmp_name'], '../../img/work/detail/'.$workImg3['name']);
+    $workImg3['name'] = "detail_03_0$next_row.jpg";
+    $workImg3Name = $workImg3['name'];
+    move_uploaded_file($workImg3['tmp_name'], '../../img/work/detail/'.$workImg3Name);
 
 
     // project테이블 쿼리명령문 실행
-    $query = "insert into project(homeTitle, homeImg, workTitle, workSub, date) values ('$homeTitle','$homeImgFolder','$workTitle','$workSub','$date')";
+    $query = "insert into project(homeTitle, homeImg, workTitle, workSub, date) values ('$homeTitle','$homeImgName','$workTitle','$workSub','$date')";
     mq($query);
 
     //detail테이블 쿼리명령문 실행
-    $query = "insert into detail(title, sub, visualImg, previewImg, workImg1, workImg2, workImg3, period, participation, technology, device, explanation, link) values ('$title','$sub','$visualImgFolder','$previewImgFolder','$workImg1Folder','$workImg2Folder','$workImg3Folder','$period','$participation','$technology','$device','$explanation','$link')";
+    $query = "insert into detail(title, sub, visualImg, previewImg, workImg1, workImg2, workImg3, period, participation, technology, device, explanation, link) values ('$title','$sub','$visualImgName','$previewName','$workImg1Name','$workImg2Name','$workImg3Name','$period','$participation','$technology','$device','$explanation','$link')";
     mq($query);
 
-    // page("등록이 완료되었습니다.", "admin_ok.php");
+    page("등록이 완료되었습니다.", "admin_ok.php");
 ?>
