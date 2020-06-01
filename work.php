@@ -65,8 +65,43 @@
                 <? } ?>
             </ul>
             <figure class="main__right_preview"></figure>
-            <!-- 포트폴리오 랜딩페이지 시작 -->
+            <?
+                $query = "select * from detail order by num desc";
+                $result = mq($query);
+                while($row = mysqli_fetch_array($result)){
+            ?>
             <article class="main__detail_wrapper">
+                <div class="main__detail">
+                    <h3 class="main__detail_title">
+                        <?=$row['title']?>
+                        <small><?=$row['sub']?></small>
+                    </h3>
+                    <img src="asset/img/work/detail/<?=$row['img']?>" alt="#">
+                    <span class="main__detail_scroll"></span>
+                </div>
+                <div class="main__detail">
+                    <figure class="main__detail_img"></figure>
+                    <figcaption class="main__detail_text">
+                        <p>Title<span><?=$row['title']?></span></p>
+                        <p>Period<span><?=$row['period']?></span></p>
+                        <p>Participation<span><?=$row['participation']?></span></p>
+                        <p>Technology Stack<span><?=$row['technology']?></span></p>
+                        <p>Device<span><?=$row['device']?></span></p>
+                        <p>Explanation
+                            <p>1. 메인페이지 이미지, 텍스트 슬라이드 기능 구현(클릭, 휠, 자동)
+                               2. Work페이지 리스트에 맞는 컨텐츠 뷰 구현
+                               3. About페이지 마우스 휠을 이용한 원스크롤 페이지 구현
+                               4. Contact페이지 사용자 정보를 서버로 전송하여 관리자가 관리하는 기능 구현</p>
+                        </p>
+                        <a href="<?=$row['link']?>" target="_blank"
+                            class="main__detail_text_link">go to website.</a>
+                    </figcaption>
+                </div>
+                <button type="button" class="main__detail_close"></button>
+            </article>
+            <? } ?>
+            <!-- 포트폴리오 랜딩페이지 시작 -->
+            <!-- <article class="main__detail_wrapper">
                 <div class="main__detail">
                     <h3 class="main__detail_title">
                         포트폴리오 랜딩페이지 제작
@@ -94,10 +129,10 @@
                     </figcaption>
                 </div>
                 <button type="button" class="main__detail_close"></button>
-            </article>
+            </article> -->
             <!-- 포트폴리오 랜딩페이지 끝 -->
             <!-- 닌텐도 스위치 리뉴얼 시작 -->
-            <article class="main__detail_wrapper">
+            <!-- <article class="main__detail_wrapper">
                 <div class="main__detail">
                     <h3 class="main__detail_title">
                         닌텐도 스위치 웹사이트 리뉴얼
@@ -130,10 +165,10 @@
                     </figcaption>
                 </div>
                 <button type="button" class="main__detail_close"></button>
-            </article>
+            </article> -->
             <!-- 닌텐도 스위치 리뉴얼 끝 -->
             <!-- 다크나이트 웹사이트 제작 시작 -->
-            <article class="main__detail_wrapper">
+            <!-- <article class="main__detail_wrapper">
                 <div class="main__detail">
                     <h3 class="main__detail_title">
                         Batman DarkKnight 웹사이트 제작
@@ -164,10 +199,10 @@
                     </figcaption>
                 </div>
                 <button type="button" class="main__detail_close"></button>
-            </article>
+            </article> -->
             <!-- 다크나이트 웹사이트 제작 끝 -->
             <!-- 한국관광공사 리뉴얼 시작 -->
-            <article class="main__detail_wrapper">
+            <!-- <article class="main__detail_wrapper">
                 <div class="main__detail">
                     <h3 class="main__detail_title">
                         한국관광공사 웹사이트 리뉴얼
@@ -197,7 +232,7 @@
                     </figcaption>
                 </div>
                 <button type="button" class="main__detail_close"></button>
-            </article>
+            </article> -->
             <!-- 한국관광공사 리뉴얼 끝 -->
         </section>
         <!-- right 끝 -->
