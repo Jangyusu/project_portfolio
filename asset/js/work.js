@@ -32,7 +32,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
 
         addActive(workImg[0]); //work 첫 이미지 on
         for (var i = 0; i < workImg.length; i++) { //workImg 삽입
-            workImg[i].style.backgroundImage = "url('asset/img/work/bg_0" + (i + 1) + ".jpg')";
+            workImg[i].style.backgroundImage = "url('asset/img/work/bg_0" + (workImg.length - i) + ".jpg')";
         }
     }
     firstEvent();
@@ -154,15 +154,14 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
         var workNumber = window.location.href.split("#")[1];
 
         if (workNumber != null) {
-            console.log(workList[workNumber - 1].querySelector("button"));
-            workList[workNumber - 1].querySelector("button").click();
+            workList[workList.length - workNumber].querySelector("button").click();
         }
     }
 
     for (var i = 0; i < workList.length; i++) { //preview 이미지 on/off
         workList[i].addEventListener("mouseenter", function () { //work List 마우스 오버시
             addActive(workPreview);
-            workPreview.style.backgroundImage = "url('asset/img/work/preview_0" + ((workList.length + 1) - this.dataset.num) + ".jpg')"
+            workPreview.style.backgroundImage = "url('asset/img/work/preview_0" + (this.dataset.num) + ".jpg')"
         });
 
         workList[i].addEventListener("mouseleave", function () {  //work List 마우스 리브시

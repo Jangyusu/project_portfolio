@@ -1,0 +1,22 @@
+★Project★
+homeTitle = PORTFOLIO RANDING
+homeImg = bg_04.jpg [1920x1080]
+workTitle = 포트폴리오 랜딩페이지 제작
+workSub = Portfolio Landing Page
+date = 2020-06
+
+
+★Detail★
+title = 포트폴리오 랜딩페이지 제작
+sub = Portfolio Landing Page
+visualImg = bg_04.jpg [1446x813]
+PreviewImg = preview_04.jpg 711x400]
+workImg1 = detail_01_01.png [950x601]
+workImg2 = detail_01_02.jpg [1920x1200]
+workImg3 = detail_01_03.jpg [1920x1200]
+period = 2020-05 ~ 2020-06
+participation = 기획 : 100%, 디자인 : 100%, 코딩 : 100%
+technology = html5, css3, Javascript, SCSS, php, MySQL
+device = PC, Tablet, Mobile
+explanation = 1. 메인페이지 이미지, 텍스트 슬라이드 기능 구현(클릭, 휠, 자동)
+link = http://dbtnss2.dothome.co.kr

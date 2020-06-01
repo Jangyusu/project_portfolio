@@ -1,13 +1,14 @@
 <?
     include_once $_SERVER['DOCUMENT_ROOT']."/asset/common/php/db.php";
 
-    $name = $_POST['name'];
-    $company = $_POST['company'];
-    $email = $_POST['email'];
-    $tel = $_POST['tel'];
-    $contents = $_POST['contents'];
+    $name = $_POST['name']; //이름
+    $company = $_POST['company']; //회사명
+    $email = $_POST['email']; //이메일
+    $tel = $_POST['tel']; //전화번호
+    $contents = $_POST['contents']; //문의내용
+    $date = date("Y-m-d H:i:s"); //현재 시간
 
-    $query = "insert into contact(name, company, email, tel, contents) values ('$name','$company','$email','$tel','$contents')";
+    $query = "insert into contact(name, company, email, tel, contents, date) values ('$name','$company','$email','$tel','$contents', '$date')";
     mq($query);
 
     echo "<script>sessionStorage.removeItem('check');</script>"; //sessionStorage check 제거

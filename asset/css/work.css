@@ -537,22 +537,6 @@ html::-webkit-scrollbar {
       z-index: 4;
       transform: translate(100%);
       transition: 1s cubic-bezier(0.87, 0, 0.13, 1); }
-      .main__detail_wrapper:nth-of-type(1) .main__detail_img {
-        background-image: url("../img/work/detail/detail_01_01.jpg"); }
-        .main__detail_wrapper:nth-of-type(1) .main__detail_img::after {
-          background-image: url("../img/work/detail/detail_01_02.jpg"); }
-      .main__detail_wrapper:nth-of-type(2) .main__detail_img {
-        background-image: url("../img/work/detail/detail_02_01.jpg"); }
-        .main__detail_wrapper:nth-of-type(2) .main__detail_img::after {
-          background-image: url("../img/work/detail/detail_02_02.jpg"); }
-      .main__detail_wrapper:nth-of-type(3) .main__detail_img {
-        background-image: url("../img/work/detail/detail_03_01.jpg"); }
-        .main__detail_wrapper:nth-of-type(3) .main__detail_img::after {
-          background-image: url("../img/work/detail/detail_03_02.jpg"); }
-      .main__detail_wrapper:nth-of-type(4) .main__detail_img {
-        background-image: url("../img/work/detail/detail_04_01.jpg"); }
-        .main__detail_wrapper:nth-of-type(4) .main__detail_img::after {
-          background-image: url("../img/work/detail/detail_04_02.jpg"); }
       .main__detail_wrapper:nth-of-type(1) p::before {
         background: #282c6b; }
       .main__detail_wrapper:nth-of-type(2) p::before {
@@ -584,20 +568,12 @@ html::-webkit-scrollbar {
       width: 60%; }
     .main__detail_img {
       width: 44%;
-      height: 50vh;
       margin-left: 6%;
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat; }
-      .main__detail_img::after {
-        content: "";
-        width: 100%;
-        height: 50vh;
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
-        display: block;
-        transform: translateY(100%); }
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly; }
+      .main__detail_img img {
+        width: 100%; }
     .main__detail_text {
       width: 50%;
       padding: 125px 30px 140px 75px;

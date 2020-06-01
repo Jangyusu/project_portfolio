@@ -76,11 +76,14 @@
                         <?=$row['title']?>
                         <small><?=$row['sub']?></small>
                     </h3>
-                    <img src="asset/img/work/detail/<?=$row['img']?>" alt="#">
+                    <img src="asset/img/work/detail/<?=$row['workImg1']?>" alt="#">
                     <span class="main__detail_scroll"></span>
                 </div>
                 <div class="main__detail">
-                    <figure class="main__detail_img"></figure>
+                    <div class="main__detail_img">
+                        <img src="asset/img/work/detail/<?=$row['workImg2']?>" alt="#">
+                        <img src="asset/img/work/detail/<?=$row['workImg3']?>" alt="#">
+                    </div>
                     <figcaption class="main__detail_text">
                         <p>Title<span><?=$row['title']?></span></p>
                         <p>Period<span><?=$row['period']?></span></p>
