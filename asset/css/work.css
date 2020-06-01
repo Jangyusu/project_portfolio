@@ -714,6 +714,8 @@ html::-webkit-scrollbar {
       font-size: 1.2rem; }
       .main__detail_text p span {
         margin: 10px 0 0 16px;
+        font-size: .9rem; }
+      .main__detail_text p text {
         font-size: .9rem; } }
 @media screen and (max-width: 768px) {
   .main {
@@ -779,7 +781,7 @@ html::-webkit-scrollbar {
     padding: 30px 10px 70px 30px; }
     .main__detail_text p {
       font-size: 1rem; }
-      .main__detail_text p span {
+      .main__detail_text p span, .main__detail_text p text {
         font-size: 0.8rem; }
     .main__detail_text_link {
       font-size: 1.2rem;

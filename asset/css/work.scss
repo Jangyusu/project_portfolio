@@ -531,6 +531,9 @@
                         margin: 10px 0 0 16px;
                         font-size: .9rem;
                     }
+                    text {
+                        font-size: .9rem;
+                    }
                 }
             }
         }
@@ -652,7 +655,7 @@
                 p {
                     font-size: 1rem;
 
-                    span {
+                    span, text {
                         font-size: 0.8rem;
                     }
                 }
