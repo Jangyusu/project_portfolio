@@ -19,7 +19,7 @@
     <script src="asset/js/<?=$linkText?>.js"></script>
 </head>
 
-<body>    
+<body>
     <!-- 헤더 시작 -->
     <header class="header">
         <h1 class="header__title"><a href="index.php">YUSU</a></h1>
@@ -29,15 +29,15 @@
         </button>
         <div class="header__side">
             <a href="tel:010-2911-6847" class="header__side_tel">T.010 2911 6847</a>
-            <a href="https://github.com/Jangyusu" class="header__side_link" target="_blank">
+            <a href="https://github.com/Jangyusu" target="_blank" class="header__side_link">
                 <img src="asset/common/img/link_01.png" alt="#">
                 <span>깃허브</span>
             </a>
-            <a href="https://jangyusu.github.io" class="header__side_link" target="_blank">
+            <a href="https://jangyusu.github.io" target="_blank" class="header__side_link">
                 <img src="asset/common/img/link_02.png" alt="#">
                 <span>블로그</span>
             </a>
-            <a href="#" class="header__side_link" target="_blank">
+            <a href="/asset/common/pdf/yusu.pdf" target="_blank" class="header__side_link">
                 <img src="asset/common/img/link_03.png" alt="#">
                 <span>이력서</span>
             </a>
@@ -54,9 +54,9 @@
             </div>
             <div class="header__nav_right">
                 <ul class="header__nav_right_list">
-                    <li><a href="https://github.com/Jangyusu"><img src="asset/common/img/link_01.png" alt="">깃허브</a></li>
-                    <li><a href="https://jangyusu.github.io"><img src="asset/common/img/link_02.png" alt="">블로그</a></li>
-                    <li><a href="#"><img src="asset/common/img/link_03.png" alt="">이력서</a></li>
+                    <li><a href="https://github.com/Jangyusu" target="_blank"><img src="asset/common/img/link_01.png" alt="">깃허브</a></li>
+                    <li><a href="https://jangyusu.github.io" target="_blank"><img src="asset/common/img/link_02.png" alt="">블로그</a></li>
+                    <li><a href="/asset/common/pdf/yusu.pdf" target="_blank"><img src="asset/common/img/link_03.png" alt="">이력서</a></li>
                 </ul>
                 <a href="tel:010-2911-6847" class="header__nav_right_tel">T. 010 2911 6847</a>
                 <a href="mailto:dbtnss@naver.com">dbtnss@naver.com</a>

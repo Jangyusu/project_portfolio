@@ -6,8 +6,7 @@
 
     $dbcon = new mysqli($host, $db_user, $db_password, $db_name);
 
-    function mq($sql) //쿼리명령문 함수
-    {
+    function mq($sql) { //쿼리명령문 함수
         global $dbcon;
         return $dbcon->query($sql);
     }
@@ -16,5 +15,3 @@
         echo "<script>alert(\"$msg\");location.href=\"$url\";</script>";
     }
 ?>
-
-<meta charset="UTF-8">

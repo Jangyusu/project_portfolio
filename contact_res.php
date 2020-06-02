@@ -1,3 +1,5 @@
+<meta charset="UTF-8">
+
 <?
     include_once $_SERVER['DOCUMENT_ROOT']."/asset/common/php/db.php";
 

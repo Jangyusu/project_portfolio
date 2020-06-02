@@ -428,6 +428,7 @@ body {
     margin-right: 15%; }
     .main__introduce_passion p {
       margin-top: 20px;
+      white-space: pre-line;
       font-size: 1.125rem;
       font-weight: 100;
       color: #fff; }

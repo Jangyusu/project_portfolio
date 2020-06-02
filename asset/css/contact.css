@@ -331,6 +331,9 @@ html::-webkit-scrollbar {
     display: none; }
   .header__nav_line {
     display: none; } }
+body {
+  overflow: hidden; }
+
 .main {
   margin-top: 200px; }
 
