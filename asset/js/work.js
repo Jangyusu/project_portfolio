@@ -44,28 +44,19 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
             e.stopPropagation;
         });
 
-        workDetailWrapper[i].addEventListener("mousewheel", function (e) { //work 상세메뉴 휠 기능
-            e.preventDefault();
-
-            if (workDetailBln) { //중복 실행 방지
-                workDetailBln = false;
-
-                if (e.deltaY > 0) { //아래로 휠
-                    detailNext();
-                } else { //위로 휠
-                    detailSlide(-1, removeActive);
-                }
-
-                setTimeout(function () { //중복 실행 방지 시간
-                    workDetailBln = true;
-                }, 1000);
-            }
-        });
+        if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) { // Firefox browser일 경우
+            workDetailWrapper[i].addEventListener("DOMMouseScroll", function (e) { //work 상세메뉴 휠 기능 [Firefox browser]
+                mouseScroll(e.detail);
+            });
+        } else { //Firefox browser가 아닐 경우
+            workDetailWrapper[i].addEventListener("mousewheel", function (e) { //work 상세메뉴 휠 기능 [Crome browser]
+                mouseScroll(e.deltaY);
+            });
+        }
 
         workDetailWrapper[i].addEventListener("touchstart", function (e) { //터치 시작
             touchStartX = e.changedTouches[0].pageX;
         });
-
         workDetailWrapper[i].addEventListener("touchend", function (e) { //터치 끝
             touchEndX = e.changedTouches[0].pageX;
 
@@ -83,6 +74,24 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
                 }, 1000);
             }
         });
+    }
+
+    function mouseScroll(delta) {
+        event.preventDefault();
+
+        if (workDetailBln) { //중복 실행 방지
+            workDetailBln = false;
+
+            if (delta > 0) { //아래로 휠
+                detailNext();
+            } else { //위로 휠
+                detailSlide(-1, removeActive);
+            }
+
+            setTimeout(function () { //중복 실행 방지 시간
+                workDetailBln = true;
+            }, 1000);
+        }
     }
 
     function detailNext() { //detail next 함수

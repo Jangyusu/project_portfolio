@@ -28,11 +28,21 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
 
 
     function wheelAndTouch() { //휠과 터치 함수
-        window.addEventListener("mousewheel", function (e) { //마우스 휠
+        if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) { // Firefox browser일 경우
+            window.addEventListener("DOMMouseScroll", function (e) { //마우스 휠 [Firefox browser]
+                mouseScroll(e.detail);
+            });
+        } else { //Firefox browser가 아닐 경우
+            window.addEventListener("mousewheel", function (e) { //마우스 휠 [Crome browser]
+                mouseScroll(e.deltaY);
+            });
+        }
+
+        function mouseScroll(delta) {
             if (scrollBln) { //중복 실행 방지
                 scrollBln = !scrollBln;
 
-                if (e.deltaY > 0) { //아래로 휠
+                if (delta > 0) { //아래로 휠
                     wheelIndex(1, section.length, section.length - 1, removeActive, 300);
                 } else { //위로 휠
                     wheelIndex(-1, -1, 0, addActive, 0);
@@ -43,7 +53,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
                     scrollBln = !scrollBln;
                 }, 600);
             }
-        });
+        }
 
 
         var touchStartX, touchStartY, touchEndX, touchEndY;
@@ -54,7 +64,7 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
 
         window.addEventListener("touchend", function (e) { //터치 끝
             touchEndX = e.changedTouches[0].pageX;
-            touchEndY = e.changedTouches[0].pageY;
+            touchEndY = e.changedTouches[0].pageY; DOMMouseScroll
 
             if (scrollBln) { //중복 실행 방지
                 scrollBln = !scrollBln;

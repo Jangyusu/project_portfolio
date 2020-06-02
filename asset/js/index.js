@@ -19,16 +19,26 @@ window.addEventListener("DOMContentLoaded", function () { //문서 로드 후 �
         loading = document.querySelector(".loading");
 
 
+    if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) { // Firefox browser일 경우
+        window.addEventListener("DOMMouseScroll", function (e) {
+            mouseScroll(e.detail);
+        });
+    } else { //Firefox browser가 아닐 경우
+        window.addEventListener("mousewheel", function (e) {
+            mouseScroll(e.deltaY);
+        });
+    }
 
-    window.addEventListener("mousewheel", function (e) { //visual mousewheel Event
+    function mouseScroll(delta) {
         removeActive(visualScroll); //visual scroll off
 
-        if (e.deltaY > 0) { //아래로 휠
+        if (delta > 0) { //아래로 휠
             visualControl(1, visualTotal, 0);
         } else { //위로 휠
             visualControl(-1, -1, visualTotal - 1);
         }
-    });
+    }
+
     visualNext.addEventListener("click", function () { //visual Next 버튼
         visualControl(1, visualTotal, 0);
     });
