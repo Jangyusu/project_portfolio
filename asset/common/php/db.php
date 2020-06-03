@@ -15,3 +15,5 @@
         echo "<script>alert(\"$msg\");location.href=\"$url\";</script>";
     }
 ?>
+
+<meta charset="UTF-8">
