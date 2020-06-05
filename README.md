@@ -4,30 +4,16 @@
 
 ## 들어가며...
 
-URL : http://dbtnss2.dothome.co.kr
 * 본 웹 사이트는 상업용 목적이 아닌 개인용 포트폴리오 목적으로 제작되었습니다.
+* URL : http://dbtnss2.dothome.co.kr
 
-### Installing
+## 웹 사이트 예시
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
+![page_main](https://github.com/Jangyusu/project_portfolio/blob/master/readme/img/index_01.jpg);
+![page_main](https://github.com/Jangyusu/project_portfolio/blob/master/readme/img/menu_01.jpg);
+![page_main](https://github.com/Jangyusu/project_portfolio/blob/master/readme/img/work_04.jpg);
+![page_main](https://github.com/Jangyusu/project_portfolio/blob/master/readme/img/about_01.jpg);
+![page_main](https://github.com/Jangyusu/project_portfolio/blob/master/readme/img/contact_01.jpg);
 
 ### Break down into end to end tests
 
