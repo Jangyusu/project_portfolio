@@ -238,8 +238,10 @@ function typing() { //input typing 함수
 * ver 1.0.0
   * 포트폴리오 랜딩페이지 웹 사이트 오픈
 
-### 작업자
-* 장유수 - *Github* (https://github.com/Jangyusu)
+### 정보
+* 장유수
+  * *Github* (https://github.com/Jangyusu)
+  * *E-mail* (dbtnss@naver.com)
 
 ### 개선해야할 점
 * admin 페이지에 접속할 때 주소로 접속할 수 없게 막기
