@@ -15,8 +15,9 @@
 ![page_main](https://github.com/Jangyusu/project_portfolio/blob/master/readme/img/about_01.jpg)
 ![page_main](https://github.com/Jangyusu/project_portfolio/blob/master/readme/img/contact_01.jpg)
 
-## 주요 코딩 목록
+## 주요 코드
 
+* 
 ```javascript
 function visualControl(calc, condition, reset) { //visual Next, Prev 실행
         if (visualBln == true) { //중복 실행 방지
