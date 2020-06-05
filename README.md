@@ -1,6 +1,6 @@
 # 포트폴리오 랜딩페이지 제작
 
-프론트엔드 취업을 위해 지금까지 작업했거나 앞으로 추가 할 다양한 포트폴리오를 소개하는 사이트입니다.
+개인적인 포트폴리오 또는 실무에서 직접 참여했던 다양한 작업물들을 소개하는 사이트입니다.
 
 ## 들어가며...
 
@@ -16,7 +16,6 @@
 ![page_main](https://github.com/Jangyusu/project_portfolio/blob/master/readme/img/contact_01.jpg)
 
 ## 주요 코드
-
 ### 메인 페이지
 ```javascript
 function visualControl(calc, condition, reset) { //visual Next, Prev 실행
@@ -205,7 +204,7 @@ function typing() { //input typing 함수
 
 ## 작업자
 
-* **장유수** - *Github* (https://github.com/Jangyusu)
+* 장유수 - *Github* (https://github.com/Jangyusu)
 
 ## 개선해야할 점
 * admin 페이지에 접속할 때 주소로 접속할 수 없게 막기
