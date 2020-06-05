@@ -199,36 +199,15 @@ function typing() { //input typing 함수
     }
 ```
 
-## Deployment
+## 버전 관리
+### ver 1.0.0
+포트폴리오 랜딩페이지 웹 사이트 오픈
 
-Add additional notes about how to deploy this on a live system
+## 작업자
 
-## Built With
+* **장유수** - *Github* (https://github.com/Jangyusu)
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+## 개선해야할 점
+* admin 페이지에 접속할 때 주소로 접속할 수 없게 막기
+* IE 브라우저에서도 정상적으로 동작할 수 있게 크로스 브라우징 구현
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
