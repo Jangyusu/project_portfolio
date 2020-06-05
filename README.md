@@ -12,7 +12,6 @@
 * 100%
 
 ### 사용 기술
-* html5
 * css3
 * Javascript
 * SASS
