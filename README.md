@@ -67,6 +67,142 @@ function visualControl(calc, condition, reset) { //visual Next, Prev 실행
     }
 ```
 
+
+* about 페이지
+
+```javascript
+function wheelAndTouch() { //휠과 터치 함수
+        if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) { // Firefox browser일 경우
+            window.addEventListener("DOMMouseScroll", function (e) { //마우스 휠 [Firefox browser]
+                mouseScroll(e.detail);
+            });
+        } else { //Firefox browser가 아닐 경우
+            window.addEventListener("mousewheel", function (e) { //마우스 휠 [Crome browser]
+                mouseScroll(e.deltaY);
+            });
+        }
+
+        function mouseScroll(delta) {
+            if (scrollBln) { //중복 실행 방지
+                scrollBln = !scrollBln;
+
+                if (delta > 0) { //아래로 휠
+                    wheelIndex(1, section.length, section.length - 1, removeActive, 300);
+                } else { //위로 휠
+                    wheelIndex(-1, -1, 0, addActive, 0);
+                }
+                slide();
+
+                setTimeout(function () { //중복 실행 방지 시간
+                    scrollBln = !scrollBln;
+                }, 600);
+            }
+        }
+
+
+        var touchStartX, touchStartY, touchEndX, touchEndY;
+        window.addEventListener("touchstart", function (e) { //터치 시작
+            touchStartX = e.changedTouches[0].pageX;
+            touchStartY = e.changedTouches[0].pageY;
+        });
+
+        window.addEventListener("touchend", function (e) { //터치 끝
+            touchEndX = e.changedTouches[0].pageX;
+            touchEndY = e.changedTouches[0].pageY; DOMMouseScroll
+
+            if (scrollBln) { //중복 실행 방지
+                scrollBln = !scrollBln;
+
+                if (touchEndX + 50 < touchStartX || touchEndY + 50 < touchStartY) { //오른쪽에서 왼쪽 혹은 아래에서 위로 터치
+                    wheelIndex(1, section.length, section.length - 1, removeActive, 300);
+                } else if (touchStartX + 50 < touchEndX || touchStartY + 50 < touchEndY) { //왼쪽에서 오른쪽 혹은 위에서 아래로 터치
+                    wheelIndex(-1, -1, 0, addActive, 0);
+                }
+                slide();
+
+                setTimeout(function () { //중복 실행 방지 시간
+                    scrollBln = !scrollBln;
+                }, 600);
+            }
+        });
+
+        function wheelIndex(calc, condition, result, fun, time) { //wheel Index Control 함수
+            scrollIndex = scrollIndex + calc;
+
+            if (scrollIndex == condition) {
+                scrollIndex = result;
+            }
+
+            setTimeout(function () {
+                fun(visualTitle); //About title 색상 변경
+
+                setTimeout(function () {
+                    fun(header); //Header 색상 변경
+                }, time);
+            }, time);
+        }
+
+        function slide() {
+            for (var i = 0; i < section.length; i++) { //section 스크롤 적용
+                section[i].style.transform = "translateY(-" + scrollIndex + "00%)";
+            }
+        }
+    }
+```
+
+
+* contact 페이지
+
+```javascript
+function typing() { //input typing 함수
+        for (var i = 0; i < formTyping.length; i++) {
+            formTyping[i].addEventListener("focus", function () { //input focus on일 때
+                addActive(this.parentNode);
+                addActive(this.nextElementSibling);
+            });
+
+            formTyping[i].addEventListener("focusout", function () { //input focus off일 때
+                removeActive(this.parentNode);
+
+                if (this.value === "") {
+                    removeActive(this.nextElementSibling);
+                }
+            });
+        }
+
+        formTel.addEventListener("keyup", function () { //input 전화번호 입력
+            this.value = autoHypenPhone(this.value);
+        });
+
+        var autoHypenPhone = function (str) { //input 전화번호 입력 함수
+            str = str.replace(/[^0-9]/g, '');
+            var tmp = '';
+            if (str.length < 4) {
+                return str;
+            } else if (str.length < 7) {
+                tmp += str.substr(0, 3);
+                tmp += '-';
+                tmp += str.substr(3);
+                return tmp;
+            } else if (str.length < 11) {
+                tmp += str.substr(0, 3);
+                tmp += '-';
+                tmp += str.substr(3, 3);
+                tmp += '-';
+                tmp += str.substr(6);
+                return tmp;
+            } else {
+                tmp += str.substr(0, 3);
+                tmp += '-';
+                tmp += str.substr(3, 4);
+                tmp += '-';
+                tmp += str.substr(7);
+                return tmp;
+            }
+        }
+    }
+```
+
 ## Deployment
 
 Add additional notes about how to deploy this on a live system
