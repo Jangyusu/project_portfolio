@@ -1,12 +1,11 @@
 # 포트폴리오 랜딩페이지 제작
-
 개인적인 포트폴리오 또는 실무에서 직접 참여했던 다양한 작업물들을 소개하는 사이트입니다.
 
 ## 시작하며...
-
 * 본 웹 사이트는 상업용 목적이 아닌 개인용 포트폴리오 목적으로 제작되었습니다.
 * URL : http://dbtnss2.dothome.co.kr
-* 웹 사이트 예시
+
+### 웹 사이트 예시
 ![page_main](https://github.com/Jangyusu/project_portfolio/blob/master/readme/img/index_01.jpg)
 ![page_main](https://github.com/Jangyusu/project_portfolio/blob/master/readme/img/menu_01.jpg)
 ![page_main](https://github.com/Jangyusu/project_portfolio/blob/master/readme/img/work_04.jpg)
