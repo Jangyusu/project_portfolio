@@ -3,7 +3,7 @@
 
 ## 시작하며...
 > 본 웹 사이트는 상업용 목적이 아닌 개인용 포트폴리오 목적으로 제작되었습니다.
-> URL : http://dbtnss2.dothome.co.kr
+* URL : http://dbtnss2.dothome.co.kr
 
 ### 작업 기간
 * 2020-05 ~ 2020-06 (약 3주)
