@@ -17,7 +17,8 @@
 
 ## 주요 코드
 
-* 
+* 메인 페이지
+
 ```javascript
 function visualControl(calc, condition, reset) { //visual Next, Prev 실행
         if (visualBln == true) { //중복 실행 방지
