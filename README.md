@@ -15,20 +15,54 @@
 ![page_main](https://github.com/Jangyusu/project_portfolio/blob/master/readme/img/about_01.jpg)
 ![page_main](https://github.com/Jangyusu/project_portfolio/blob/master/readme/img/contact_01.jpg)
 
-### Break down into end to end tests
+## 주요 코딩 목록
 
-Explain what these tests test and why
+```javascript
+function visualControl(calc, condition, reset) { //visual Next, Prev 실행
+        if (visualBln == true) { //중복 실행 방지
+            visualBln = false;
 
-```
-Give an example
-```
+            removeActive(visualLine); //visual Line off
+            clearInterval(slideStop); //슬라이드 초기화
 
-### And coding style tests
+            visualIndex = visualIndex + calc;
+            if (visualIndex == condition) { //visual Index 초기화
+                visualIndex = reset;
+            }
+            visualCurrent.innerHTML = "0" + (visualIndex + 1); //visual Index업데이트
 
-Explain what these tests test and why
+            if (calc == 1) { //visual Next 실행
+                slideUpDown("150%", "slideUp");
+            } else { //visual Prev 실행
+                slideUpDown("-50%", "slideDown");
+            }
 
-```
-Give an example
+            function slideUpDown(top, className) { //slide Event
+                visualNextBg.style.top = top; //visual Next 배경
+                visualNextBg.style.backgroundImage = "url('asset/img/index/bg_0" + (visualTotal - visualIndex) + ".jpg')"; //visual Next 배경
+                visualCurrentBg.classList.add(className);
+                visualNextBg.classList.add(className);
+                setTimeout(function () {
+                    visualCurrentBg.style.backgroundImage = visualNextBg.style.backgroundImage; //visual Next 배경
+                    visualCurrentBg.classList.remove(className);
+                    visualNextBg.classList.remove(className);
+                    visualNextBg.style.top = "150%"; //visual Next 배경
+                }, 1800);
+            }
+
+            for (var i = 0; i < visualText.length; i++) {
+                removeActive(visualText[i]); //visual Text on
+                removeActive(visualLink[i]); //visual Link on
+            }
+
+            setTimeout(function () { //중복 실행 방지 시간
+                visualBln = true;
+
+                TextOn(); //Text on
+                slideStart(); //슬라이드 시작
+            }, 1800);
+        }
+    }
 ```
 
 ## Deployment
