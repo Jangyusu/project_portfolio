@@ -235,8 +235,8 @@ function typing() { //input typing 함수
 * 425 x 736
 
 ### 버전 관리
-#### ver 1.0.0
-포트폴리오 랜딩페이지 웹 사이트 오픈
+* ver 1.0.0
+  * 포트폴리오 랜딩페이지 웹 사이트 오픈
 
 ### 작업자
 * 장유수 - *Github* (https://github.com/Jangyusu)
