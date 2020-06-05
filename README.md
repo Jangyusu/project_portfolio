@@ -2,12 +2,12 @@
 
 개인적인 포트폴리오 또는 실무에서 직접 참여했던 다양한 작업물들을 소개하는 사이트입니다.
 
-## 들어가며...
+## 시작하며...
 
 * 본 웹 사이트는 상업용 목적이 아닌 개인용 포트폴리오 목적으로 제작되었습니다.
 * URL : http://dbtnss2.dothome.co.kr
 
-## 웹 사이트 예시
+### 웹 사이트 예시
 
 ![page_main](https://github.com/Jangyusu/project_portfolio/blob/master/readme/img/index_01.jpg)
 ![page_main](https://github.com/Jangyusu/project_portfolio/blob/master/readme/img/menu_01.jpg)
@@ -197,6 +197,18 @@ function typing() { //input typing 함수
         }
     }
 ```
+
+## 크로스 브라우징(확인된 것)
+* Crome
+* Firefox
+* Samsung Internet
+
+## 반응형 화면 해상도
+* 1440 x 900
+* 1024 x 768
+* 768 x 1024
+* 640 x 1136
+* 425 x 736
 
 ## 버전 관리
 ### ver 1.0.0
