@@ -5,6 +5,32 @@
 * 본 웹 사이트는 상업용 목적이 아닌 개인용 포트폴리오 목적으로 제작되었습니다.
 * URL : http://dbtnss2.dothome.co.kr
 
+### 작업 기간
+* 2020-05 ~ 2020-06 (약 3주)
+
+### 참여도
+* 100%
+
+### 사용 기술
+* html5
+* css3
+* Javascript
+* SASS
+* php
+* MySQL
+
+### 호환 기종
+* PC
+* Tablet
+* Mobile
+
+### 기능 구현
+1. 메인페이지 이미지, 텍스트 슬라이드 기능 구현(클릭, 휠, 자동)
+2. Work페이지 리스트에 맞는 컨텐츠 뷰 구현
+3. About페이지 마우스 휠을 이용한 원스크롤 페이지 구현
+4. Contact페이지 사용자 정보를 서버로 전송하여 관리자가 관리하는 기능 구현
+5. 관리자만 접속할 수 있는 admin페이지에서 프로젝트 등록 기능 구현
+
 ### 웹 사이트 예시
 ![page_main](https://github.com/Jangyusu/project_portfolio/blob/master/readme/img/index_01.jpg)
 ![page_main](https://github.com/Jangyusu/project_portfolio/blob/master/readme/img/menu_01.jpg)
@@ -212,10 +238,8 @@ function typing() { //input typing 함수
 포트폴리오 랜딩페이지 웹 사이트 오픈
 
 ## 작업자
-
 * 장유수 - *Github* (https://github.com/Jangyusu)
 
 ## 개선해야할 점
 * admin 페이지에 접속할 때 주소로 접속할 수 없게 막기
 * IE 브라우저에서도 정상적으로 동작할 수 있게 크로스 브라우징 구현
-
