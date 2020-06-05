@@ -17,8 +17,7 @@
 
 ## 주요 코드
 
-* 메인 페이지
-
+### 메인 페이지
 ```javascript
 function visualControl(calc, condition, reset) { //visual Next, Prev 실행
         if (visualBln == true) { //중복 실행 방지
@@ -67,9 +66,7 @@ function visualControl(calc, condition, reset) { //visual Next, Prev 실행
     }
 ```
 
-
-* about 페이지
-
+### about 페이지
 ```javascript
 function wheelAndTouch() { //휠과 터치 함수
         if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) { // Firefox browser일 경우
@@ -151,8 +148,7 @@ function wheelAndTouch() { //휠과 터치 함수
 ```
 
 
-* contact 페이지
-
+### contact 페이지
 ```javascript
 function typing() { //input typing 함수
         for (var i = 0; i < formTyping.length; i++) {
