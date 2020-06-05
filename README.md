@@ -24,13 +24,6 @@
 * Tablet
 * Mobile
 
-### 기능 구현
-1. 메인페이지 이미지, 텍스트 슬라이드 기능 구현(클릭, 휠, 자동)
-2. Work페이지 리스트에 맞는 컨텐츠 뷰 구현
-3. About페이지 마우스 휠을 이용한 원스크롤 페이지 구현
-4. Contact페이지 사용자 정보를 서버로 전송하여 관리자가 관리하는 기능 구현
-5. 관리자만 접속할 수 있는 admin페이지에서 프로젝트 등록 기능 구현
-
 ### 웹 사이트 예시
 ![page_main](https://github.com/Jangyusu/project_portfolio/blob/master/readme/img/index_01.jpg)
 ![page_main](https://github.com/Jangyusu/project_portfolio/blob/master/readme/img/menu_01.jpg)
@@ -38,8 +31,9 @@
 ![page_main](https://github.com/Jangyusu/project_portfolio/blob/master/readme/img/about_01.jpg)
 ![page_main](https://github.com/Jangyusu/project_portfolio/blob/master/readme/img/contact_01.jpg)
 
-## 주요 코드
-### 메인 페이지
+## 상세 설명
+### 주요 코드
+#### 메인 페이지
 ```javascript
 function visualControl(calc, condition, reset) { //visual Next, Prev 실행
         if (visualBln == true) { //중복 실행 방지
@@ -88,7 +82,7 @@ function visualControl(calc, condition, reset) { //visual Next, Prev 실행
     }
 ```
 
-### about 페이지
+#### about 페이지
 ```javascript
 function wheelAndTouch() { //휠과 터치 함수
         if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) { // Firefox browser일 경우
@@ -170,7 +164,7 @@ function wheelAndTouch() { //휠과 터치 함수
 ```
 
 
-### contact 페이지
+#### contact 페이지
 ```javascript
 function typing() { //input typing 함수
         for (var i = 0; i < formTyping.length; i++) {
@@ -221,25 +215,32 @@ function typing() { //input typing 함수
     }
 ```
 
-## 크로스 브라우징(확인된 것)
+### 기능 구현
+1. 메인페이지 이미지, 텍스트 슬라이드 기능 구현(클릭, 휠, 자동)
+2. Work페이지 리스트에 맞는 컨텐츠 뷰 구현
+3. About페이지 마우스 휠을 이용한 원스크롤 페이지 구현
+4. Contact페이지 사용자 정보를 서버로 전송하여 관리자가 관리하는 기능 구현
+5. 관리자만 접속할 수 있는 admin페이지에서 프로젝트 등록 기능 구현
+
+### 크로스 브라우징
 * Crome
 * Firefox
 * Samsung Internet
 
-## 반응형 화면 해상도
+### 반응형 화면 해상도
 * 1440 x 900
 * 1024 x 768
 * 768 x 1024
 * 640 x 1136
 * 425 x 736
 
-## 버전 관리
-### ver 1.0.0
+### 버전 관리
+#### ver 1.0.0
 포트폴리오 랜딩페이지 웹 사이트 오픈
 
-## 작업자
+### 작업자
 * 장유수 - *Github* (https://github.com/Jangyusu)
 
-## 개선해야할 점
+### 개선해야할 점
 * admin 페이지에 접속할 때 주소로 접속할 수 없게 막기
 * IE 브라우저에서도 정상적으로 동작할 수 있게 크로스 브라우징 구현
