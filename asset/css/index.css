@@ -337,7 +337,8 @@ body {
 .visual {
   height: 100vh;
   background: #000;
-  position: relative; }
+  position: relative;
+  display: block; }
   .visual__bg {
     width: 100%;
     height: 100vh;
