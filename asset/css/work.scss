@@ -6,7 +6,7 @@
 
 //main 시작 -------------------------------------------------------------------
 .main {
-    margin-top: 240px;
+    margin-top: 160px;
     display: flex;
 
     //left 시작 -------------------------------------------------------------------
@@ -121,14 +121,14 @@
         }
         &_img {
             width: 95%;
-            height: 720px;
+            height: 600px;
             margin-bottom: 150px;
             position: relative;
             overflow: hidden;
 
             & figure {
                 width: 0;
-                padding-bottom: 720px;
+                padding-bottom: 600px;
                 background-repeat: no-repeat;
                 background-size: auto;
                 background-position: center;
@@ -335,7 +335,7 @@
         }
         &_text {
             width: 50%;
-            padding: 125px 30px 140px 75px;
+            padding: 90px 15px 90px 35px;
             text-align: left;
             position: relative;
             display: flex;
@@ -393,7 +393,7 @@
                 color: #fff;
                 position: absolute;
                 left: 50%;
-                bottom: 85px;
+                bottom: 50px;
                 visibility: hidden;
                 opacity: 0;
                 transform: translate(-50%, 10%);

@@ -332,7 +332,7 @@ html::-webkit-scrollbar {
   .header__nav_line {
     display: none; } }
 .main {
-  margin-top: 240px;
+  margin-top: 160px;
   display: flex; }
   .main__left {
     width: 20%;
@@ -415,13 +415,13 @@ html::-webkit-scrollbar {
           background-image: url("../img/work/next.png"); }
     .main__right_img {
       width: 95%;
-      height: 720px;
+      height: 600px;
       margin-bottom: 150px;
       position: relative;
       overflow: hidden; }
       .main__right_img figure {
         width: 0;
-        padding-bottom: 720px;
+        padding-bottom: 600px;
         background-repeat: no-repeat;
         background-size: auto;
         background-position: center;
@@ -576,7 +576,7 @@ html::-webkit-scrollbar {
         width: 100%; }
     .main__detail_text {
       width: 50%;
-      padding: 125px 30px 140px 75px;
+      padding: 90px 15px 90px 35px;
       text-align: left;
       position: relative;
       display: flex;
@@ -634,7 +634,7 @@ html::-webkit-scrollbar {
         color: #fff;
         position: absolute;
         left: 50%;
-        bottom: 85px;
+        bottom: 50px;
         visibility: hidden;
         opacity: 0;
         transform: translate(-50%, 10%);
