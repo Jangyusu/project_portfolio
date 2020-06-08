@@ -24,10 +24,7 @@
             <article class="main__introduce_passion">
                 <h3>Passion</h3>
                 <strong>열정이 없으면 노력도 없다.</strong>
-                <p>시작이 반이다.
-                고대 그리스의 철학자 아리스토텔레스의 명언입니다.
-
-                코딩과는 관련 없는 전기과를 전공하여
+                <p>인하공업전문대학교 전기과를 전공하여
                 남들보다 한 발짝 늦게 발걸음을 내디뎠습니다.
 
                 하지만 성장에 대한 강한 열정으로 쉼 없이 도전하고
@@ -81,7 +78,7 @@
                                     <img src="asset/img/about/information.png" alt="information">
                                     <span class="main__introduce_vision_tech_info">자주 이용하거나 능숙하게 사용가능한 기술입니다.</span>
                                 </strong>
-                                <small>HTML5, CSS3, Javascript, jQuery, SCSS, Git, ajax</small>
+                                <small>HTML5, CSS3, Javascript, jQuery, SCSS, Git, ajax, php, MySQL</small>
                             </div>
                             <div>
                                 <strong>
@@ -90,7 +87,7 @@
                                     <span class="main__introduce_vision_tech_info">가끔 이용하거나 한번 사용해봤으며 앞으로 공부해 나갈
                                         기술입니다.</span>
                                 </strong>
-                                <small>React, Bootstrap, php, MySQL</small>
+                                <small>React, Bootstrap</small>
                             </div>
                         </div>
                     </li>
