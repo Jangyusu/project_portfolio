@@ -44,7 +44,7 @@ body {
                 width: 75%;
                 height: 72vh;
                 margin: 0 auto;
-                padding-top: 295px;
+                padding-top: 160px;
                 transition: .7s .7s cubic-bezier(0.76, 0, 0.24, 1);
             }
             div {
@@ -112,7 +112,7 @@ body {
     //visual 끝 -------------------------------------------------------------------
     //introduce 시작 -------------------------------------------------------------------
     &__introduce {
-        padding: 200px 0 0 20%;
+        padding: 100px 0 0 20%;
         background-image: url("../img/about/about_bg_01.jpg");
         background-position: center;
         background-repeat: no-repeat;
@@ -134,7 +134,7 @@ body {
             }
         }
         &_passion {
-            margin-right: 15%;
+            margin-right: 10%;
 
             p {
                 margin-top: 20px;
@@ -149,7 +149,7 @@ body {
                 margin-top: 20px;
 
                 li {
-                    margin-bottom: 24px;
+                    margin-bottom: 16px;
                     display: flex;
 
                     &:last-of-type {

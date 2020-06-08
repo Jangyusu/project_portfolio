@@ -357,7 +357,7 @@ body {
     width: 75%;
     height: 72vh;
     margin: 0 auto;
-    padding-top: 295px;
+    padding-top: 160px;
     transition: 0.7s 0.7s cubic-bezier(0.76, 0, 0.24, 1); }
   .main__visual_img div {
     width: 100%;
@@ -408,7 +408,7 @@ body {
       visibility: visible;
       opacity: 1; }
 .main__introduce {
-  padding: 200px 0 0 20%;
+  padding: 100px 0 0 20%;
   background-image: url("../img/about/about_bg_01.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -425,7 +425,7 @@ body {
     line-height: 7rem;
     color: #fff; }
   .main__introduce_passion {
-    margin-right: 15%; }
+    margin-right: 10%; }
     .main__introduce_passion p {
       margin-top: 20px;
       white-space: pre-line;
@@ -435,7 +435,7 @@ body {
   .main__introduce_vision ul {
     margin-top: 20px; }
     .main__introduce_vision ul li {
-      margin-bottom: 24px;
+      margin-bottom: 16px;
       display: flex; }
       .main__introduce_vision ul li:last-of-type {
         margin-bottom: 0; }
